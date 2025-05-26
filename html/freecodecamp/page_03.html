@@ -1,0 +1,118 @@
+<!-- Understanding HTML Attributes and HTML Boilerplate -->
+
+<!-- Role of html in web? -->
+<!-- 
+    its a markup lang to create webpages, any webpage with paragraphs, links, videos
+    that all is html.
+    - HTML is the content and structure of a webpage via use of elements
+    eg: <p> Hello </p>
+    - most elements have an open/start and close/end tabs, and the content between them
+    
+    - Some dont have a close tag, and they are void elements
+    eg: <img> ---- a void element (they cant have any content)
+    but if nothing how to show image, then u have to add some attributes to the tag
+    
+    eg: <img src="image path"/>
+    img == tag, src = attribute name, "" = attribute value
+    
+    eg: <img src="example_cat_img_url" alt= "Cat sleeping in the grass">
+    - alt attribute here is used to provide short descriptive text for the images
+
+    is html itself not enough to create website?
+    > depends if ur creating a small webpage with only text and images, then yes
+
+    if u want a modern website then u need html, css, js
+        html -> content/structure
+        css -> styling
+        js -> interacitivity
+    
+    html = foundation and frame
+    css = interior and exterior design - make pretty
+    js = electricial and water system, so the house is usable    
+-->
+
+<!-- What are attributes how do they work? -->
+ <!-- 
+    attribute is a value placed in the opening tag of an html element
+    - they either provide additional info or how the element should behave
+
+    eg: <div id='root'></div> 
+    id is the attribute here
+
+    eg: hyperlink
+    <a href="ur_url.com">some description of url or text</a>
+
+    eg: <img src="example_cat_img_url" alt= "Cat sleeping in the grass">
+    - "alt" attribute here is used to provide short descriptive text for the images
+    - here alt is not necessary, but its recommeneded for accessibility purposes,
+    it can help some one understand the image for example
+
+    some attributes are a little more unique like the checkbox input's checked
+    eg: <input type="checkbox" checked />
+    the "checked" attribute is used to specify the checkbox is always checked by default
+ 
+    html has loads of elements and loads of attributes that can alter the behavior or
+    appearance of elements on a webpage
+    -->
+
+<!-- What Is the Role of the Link Element in HTML,
+      and How Can It Be Used to Link to External Stylesheets? -->
+<!-- 
+    The link element is used to link to external resources like stylesheets 
+    and site icons. 
+    These link elements help define the relationship between linked resource
+    and the html document 
+    - u add it inside the head element.
+
+    eg: <link rel="stylesheet" href="./styles.css" /> -- basic syntax
+    -- if html is in a sub fodler, from css location u do "../style.css"
+    
+    - ./ means to look into the current file directory
+    "note: it is best practice to have ur css and html in seperate files 
+    but u can have them in the same file too just saying"
+
+    - use cases would be text styles(fonts) or icons to use freely,
+    it can help save resources loading them into html
+    eg: <link rel="icon" href="favicon.ico"/> 
+    -- here "rel" attribute specifies the relationship between the linked resource and the HTML document.
+-->
+
+<!-- HTML boiler plate, and why is it important -->
+ <!-- 
+    The HTML boilerplate is a ready-made template for ur webpages.
+    - boilerplates are like foundation of a house
+    - it includes the basic structure and essential elements every html doc needs
+    - it also saves u time and makes sure the basic structure is set up
+
+    <!DOCTYPE html> -- specifes the version of html ur using
+    <html lang="en"> -- wraps around all of ur content and can specify lang of ur page
+    <head> contains imp metadata or machine readable info about the doc
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        - ur sites metadata, has details about things like character encoding, also how
+        other website should preview ur link
+    
+    <title>text</title> -ur sites title, text on the browser tab
+    
+    <link rel="stylesheet" href="url/path" />
+        - u typically link ur external stylesheets or css in the head using link
+
+    <body> - this where all the content goes, what visitors actually see on ur webpage
+ -->
+
+<!-- What is UTF-8 character encoding, and why its needed -->
+ <!-- 
+    UTF-9, or UCS Transformation Format 8, is a standardized character encoder
+    widely used on the web
+
+    Character encoding is the method computers use to store characters as data
+    > essentially all text on a webpage is a sequence of characters stored as one
+    or more bytes
+    - UTF-8 stores characters in the unico character set 
+    (includes characters and symbols from all writing systems, languages)
+    
+    <meta charset="UTF-8" />
+    By setting character encoding to ut8 it will ensure that the accident e (e with ') 
+    is displayed correctly on the page.
+ -->
