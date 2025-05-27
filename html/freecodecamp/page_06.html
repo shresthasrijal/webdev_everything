@@ -1,0 +1,171 @@
+<!-- 
+ 
+HTML Fundamentals
+
+1) What are divs and when should you use them?
+
+    - div is a content division element.
+    - It is a beautiful being that can be anything you want it to be
+    - The div can be given a height, width, and even a background color using css
+
+    - We can also use div as a standalone that holds other content together
+    eg: <div> 
+        <h1> I am a heading</h1>
+        <p> I am a paragrapjh</p>
+    </div>
+    - Just be aware that there could be better elemnts when to group elements together
+    A section elemnt for example, if ur doing a naked div
+        - This is because the section element has a semantic meaning, 
+        Semantics are the meanings of words or phrases in a language
+        HTML- a language, elements have their own semantic meaning too
+    
+2) What are ids and classes and when should you use them?
+
+#    The "id" attribute
+    - It adds a unique identifier to an HTML element
+    eg: <h1 id="title">Movie Review Page</h1>
+    - U can refernce the id name of "title" within css or js
+    - css eg:
+    #title{
+        color: red;
+    } 
+    The # here tells the computer u want to target an id with that value
+    - U cant repeat an id more than once, and they should be unique always
+    - U also cant have spaces in id names
+    Only letters, digits, underscores and dashes allowed
+
+#    The "class" attribute
+    In contrast to the ID attribute, the class attribute also adds an identifier to an
+    element or multiple elements
+    - it doesnt have to be unique, can be used multiple times, and can have spaces
+
+    eg: <div  class="box"></div>
+    Now if u want to add multiple classes to an element, u can do so by a space
+    eg: <div class="box red"></div>
+
+    -class eg:
+    .box {
+        height: 200px
+        width:200 px
+        border: 2px solid black;
+    }
+    here the "." is used to reference class names
+
+# Classes are best used when u want to apply a set of styles to many elements
+# But if u want to target a specific element its best to use an id
+
+
+3) What are HTML entities, and what are some common examples?
+
+    - An HTML entity, or character refernce, is a set of characters used to represent
+    reserved characters in html
+    eg: <p> THis is an <img/> element</p>
+    In the eg, there is a img element inside paragraph element
+    - We might think that the result would show THis is an <img/> element
+    - But we get: This is an element
+
+    This is happening bc when the HTML parser sees less than symbol followed by an html
+    tag name it interprets it as an HTML element
+
+    -To fix this issue use an HTML entity
+    <p> THis is an &lt;img/&gt; element</p>
+    &lt; == less than symbol
+    &gt; == greater than symbol
+
+    - These type of character refernces are known as named character references. 
+    They start with an "&" sign and end with a ";" semicolon
+    - With these, html parser wont confuse ur code to an actual html element
+
+
+    Another type of entity refernce would be the decimal nuemeric refernce
+    &#60;
+    Another one is hexadecimal numeric reference
+    &#x3C;
+
+4) What is he role of the Script Element in HTML, and how can it be used to link
+    to external javascript files?
+
+    - The Script element
+    It is used to embed executable code. Most developers will use this to execute JS code
+   
+    javaScript is used to add interactivity to ur webpages, common examples:
+        - interactive games
+        - image sliders
+        - dynamic forms that validate user input in real time
+    eg:
+    <body>
+        <script>
+            alert("Welcome to freeCodeCamp")
+        </script>
+    </body>
+
+    You can technically write all of ur javascript code inside the script tags
+    But it is considered best practice to create a sperate file and link it
+    eg:
+    <body>
+        <script src="app.js"></script>
+    </body>
+    - We dont usually write all of our js inside script tag, is for 
+    seperation of concerns
+    - This is a principle where you seperate ur program into distinct sections and
+    have each section address a seperate concern. In this case we want to seperate
+    our javascript code from our html. Usually Ui vs Function
+
+
+5) What is the role of the meta tag, and how does it affect SEO?
+
+    - SEO, or Search Engine Optimization, is a practice that optimizes web pages so
+    they become more visible and rank higher on search engines
+    - One way to improve SEO, is to provide a short description for the webpage using
+    the meta element
+    eg: <meta name="description" content="Discover expert tips and techniques here" />
+
+    - this meta tag can not be seen on the website but it can be seen on google or other
+    searches below the site links
+    (it can give info about the page and help ppl decide to click)
+    -It could help bring traffic to ur site
+
+6) What is the role of the Open graph tags, and how do they affect SEO?
+
+    -The open graph protocol enables u to control how ur websites content appears
+    across various social media platforms such as Facebook and LinkedIn
+
+    - In a fb post or linkedin card,if u set up open graph properties, u can allow users
+    to click and engage with ur content
+    - These properties can be set through a collection of meta elements inside ur 
+    HTML head section
+
+    1: title property
+    # <meta content="title text here" property="og:title" />
+    here og: means the title u want to show on social media sites
+    
+    2: type property
+    Here is an example of og type
+    # <meta property="og:type" content="website" />
+    - It is used to represent the type of content being shared on social media
+    (can be artcile, website, videos, or music)
+
+    3: The third important OG property would be the image, here is an example of
+    sending the image for freecodecamp page
+    # <meta property="og:image" 
+    content = "https://cdn.freecodecamp.org/something/smething/file.png" />
+    
+    - most social media sites will provide criterais to enusre that ur content 
+    displays well on their site
+
+    4: The url peropert
+    This would be the most important og proeperty
+    # <meta property="og:url" content="https://www.website.com" />
+
+    And there are many more properties like:
+    og:description, og:audio, og:video, og:locale
+
+    However, type url,and title are the most important ones
+
+
+    BUT but but, how do these open graph properties affect search engine optimization,
+    when ur content is shared on social media, well crafted og properties can
+    enhance the appearance for ur content in users feeds, this in turn can lead to
+    high clickthrough rates which could increase traffic by signalling search engines
+    that ur content is relevant
+-->
