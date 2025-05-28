@@ -1,0 +1,169 @@
+<!-- Working with links
+
+1) What Are the Different Target Attribute Types, and How Do They Work?
+    - uve seen it on anchor elements or links
+    The target attribute tells the browser where to open the URL for that anchor element
+    - There are 4 important possible values for the target attribute:
+        - _self
+        This opens a link in the current browsing context
+        (current tab or window)
+        - _blank
+        This opens a link in a new browsing context
+        (typically a new tab, can be configured to be new window instead)
+        - _parent
+        This opens a link in the parent of the current context
+        (say ur website has an iframe, _parent makes it change the parent webpage)
+        - _top
+        This opens a link in the top most browser context,
+        (if multi layer iframe then, the top parent is changed to link)
+
+    -There is a 5th type called
+        _unfencedTop
+        This is currently used for the experimental fence frame API
+
+    If you do not set a target attribute, the link opens in the current window/tab
+
+
+2) What Is the Difference Between Absolute and Relative Paths?
+    A path is a string that specifies the location of a file or directory in a file system
+
+    - In web dev, paths are developers link to resources like images, stylesheets,
+        videos, audios, and other web pages
+
+    There are 2 types of paths, absoulte and relative path:
+    - absolute path:
+    file://Users/user/desktop/code_folder/about.html
+    -relative path:
+    about.html
+
+    Both are essential in specifying file locations within a file system
+
+    But how do we decide which one of them use and when?
+    - An absoulte path is a complete link to a resource, it starts from the root directroy
+    and it includes every other directory and finally the file name and extension
+    
+    The absoulte path also includes the protocol, http:// or https:// or file:// and the
+    domain name and then file name
+    eg: "https://webpage-domain.com/filedirectroy/filename.extension"
+
+    Now, relative path
+    They specify the location of a file relative to the directroy of the current file.
+    - it does not include protocol or domain name, making it shorter and flexible for
+    internal links within the same website
+    (u can use relative file path, if say 2 html files are in the same directory
+    and u need to call one file from the other file)
+
+    But the standard:
+    Use absolute paths when linkning to a resource hosted on an external website.
+    And use absolute paths when u need the link to a page or resource to work 
+    consistently regardless of the document location within the site.
+
+    Use relative paths when linking to resources within the same website
+    Use it if u want to keep ur code cleaner and easier to maintain during development
+    Use it during local testing to ensure links work without and internet connection
+
+3) What Is the Difference Between Slashes, a Single Dot, and Double Dot in Path Syntax?
+
+    there are various types of links:
+    - /public/logo.png
+    - ./script.js
+    - ../style.css
+
+    These are all file paths, there are 3 key syntaxes to know:
+    1) THe slash, which can be a backslash or forward slash depending on 
+    ur operating sys "/" or "\"
+    2) It is a single dot "."
+    3) a double dot ".."
+
+    The slash is known as the "path separator". It is used to indicate a "break" in 
+    the text between folders or file names
+
+    namois-files: points to a directroy of that same name
+    namois/files; points to a file in the namois directory
+
+    a single dot means that the path is recognized as a relative path. 
+
+    double dots are much more common to acess files outside the current working directory,
+    for eg in a file tree:
+    my-app/
+        - nodemodules/
+        - public/
+            - favicon.ico
+            - index.html
+            - robots.txt
+        - src/
+            - index.css
+            - index.js
+        - .gitignore 
+        - readme.md
+
+    If ur public/index.html needed to load favicon.ico file, u would use a
+    relative path a single dot to access the current directory: ./favicon.ico
+
+    If ur public/index.html needed to load index.css, then u would use a
+    relative path with double dot to navigate to parent my-app directory, then src
+    and then the file:
+        ../src/index.css
+
+    #note: absolute paths always start with a slash "/"
+
+4) What Are the Different Link States, and Why Are They Important?
+ 
+    Link states, when u click a link on a webpage it turns purple, that is a link state
+    - mainly bc clicking caused the link state to change
+
+    There are five different link states:
+    - :link (default)
+    A link a user has not clicked,visited, interacted with yet
+    This is the base starting state for all links, the other states build on top of it
+
+    - :visited (visited)
+    This state is applied when a user has already visited a page being linked to
+    By default it turns purple but u can leverage ur css to turn it into any color.
+
+    - :hover (hovering over)
+    THis state applies when a user is hovering their cursor over a link, it provides
+    extra attention to a link to ensure a user actually intends to click it
+
+    - :focus (focused)
+    This state applies when we focus on a link,
+    when u press tab on a webapge and it goes to that element, if its the link then focus
+
+    - :active (activated)
+    This state are for links activated by the user, this means clicking and holding 
+    on the link with the primary mouse button by left clicking in most cases, 
+    this can be helpful in showing a user that the element they clicked on is interactive
+
+    usually its l-v-h-a
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ -->

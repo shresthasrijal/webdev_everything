@@ -1,0 +1,146 @@
+<!-- 
+ 
+
+1) What Are Replaced Elements, and What Are Some Examples?
+    - A replaced element is an element whose content is determined by an external
+    resource - rather than by css itself.
+    eg: <img>, <iframe>, <video> elements
+    - With replaced elements u can control the position or layout of an element but 
+    ur CSS can not directly modify the content of that element
+    (with iframe u can embedd external website 
+    - common eg: to embedd maps or utube videos onto the page)
+
+    There are other elements such as video and embedd, and some elements behave
+    as replaced elements under specific circumstances
+    eg: <input type="image" alt="Descriptive text goes here" src="example-image" />
+        - but text and input are not replaced elements
+
+2) What Are Common Ways to Optimize Media Assets?
+    There are 3 tools to consider when using media such as images on ur webpages:
+    - size
+        When u build websites, ull often style images to display in a specifc size
+
+        for eg, ull have a 650x480px image. And when preparing an image u want to scale
+        and image to that resolution. But if u use a 1920x1080px image and scale it down,
+        ure requiring ur users to download unnecessary data.
+
+    - format
+        This is the next thing to consider, in images the most common types are png and
+        jpg. But these are no longer the most ideal formats for serving images unless u
+        need to consider older browsers. 
+        
+        - Right now the best img formats are webp or avif.
+
+    - compression
+        Finally- u can run compression algos on ur images, it is used to reduce the size
+        for files or data. 
+        There are several optons like png crush to compress ur images locally or
+        u can use online compression tools. 
+        
+        But its good to note, some file formats like JPEG are not lossless. Lossless means
+        that the original data can be perfectly reconstructued  from the compressed data.
+        
+        - u should keep this in mind when selecting jpeg for image in ur website. 
+
+3) What Are the Different Types of Image Licenses, and How Do They Work?
+    Images are considered intellectual property, this means that they are protected
+    via copyright regulations. Usually belonging to the creator.
+    - Images are usually released as all rights reserved.
+    Meaning that the creator or publisher hold all copyright for the image.
+
+    This means that u can not use it in ur webpage unless u do 1 of 3 things:
+        - Obtain written permission
+        - Purchase a license
+        - Incorporate in a way that falls under fair use
+    (Fair use is tricky, u have to show ur use of img is both limited and transformitive)
+    
+    U have sveral types of liscence, but creative commons 0 = free to use,
+    CC and BSD have rules
+
+4) What Are SVGs, and When Should You Use Them?
+    First we need to understand how images work, common img formates like png and jpg,
+    are classified as raster formats. Basically means they are pixel based, with each
+    pixel being one color. A downside of raster images is that they do not upscale well.
+
+    An SVG is a different kind of image, an svg stands for a scalable vector graphic,
+    a vector graphic tracks data based on paths and equations to plot points lines and 
+    curves.
+    This means u can scale an SVG to any size without affecting the quality.
+
+    SVG have the added benefit of storing data in XML, this means u can use them directly,
+    in ur code as raw HTML with the SVG element. - U can also edit colors and everything
+
+    BUt, when would u use an SVG, a common usecase is for icons, custom bulletpoints,
+    or to add icons to ur link. 
+    - One of the most popular svg libraries "font awesome" uses SVG for their icons.
+    And they scale properly for website icons too
+
+
+5) What Are the Roles of the HTML Audio and Video Elements, and How Do They Work?
+    <audio> and <video> element allows u to add sound and video to ur HTML
+    
+    <audio> supports popular formats like .mp3, .wav, .ogg
+    <video> supports popular formats like .mp4, .ogg, and .webm
+
+    eg: <audio src="audiofile.mp3"></audio>
+    this will add it to ur page, but u cant see it
+    
+    - If u want to interact with it, u need to add the controls attribute
+    eg: <audio src="audiofile.mp3" controls></audio>
+        - it adds duration, volume, pausing, playback, etc
+    
+    There are more attributes that improve functionality of the audio
+    - the loop attribute
+        it is a boolean attribute that makes the audio replay continuosly 
+        <audio src="audiofile.mp3" loop controls></audio>
+    - the muted attribute
+        this boolean attribute will start the audio in a muted stated
+        <audio src="audiofile.mp3" muted loop controls></audio>
+    
+    When it comes to audio file types there are differences in which browser supports
+    which audio type, to accomodate this, 
+    -U can use source element inside the audio element and the browser will 
+    select the first source that it understands
+
+    <audio controls>
+        <source src="audio.ogg" type="audio/ogg" />
+        <source src="audio.wav" type="audio/wav" />
+        <source src="audio.mp3" type="audio/mpeg" />
+    </audio>
+
+    Note: All of the audio attributes and sub elements also work with video
+    - There is an extra attribute in video not in audio, say show a thumbnail or image
+    when the video is downloading use the "poster" attribute
+    <video src="video.mp4" poster="image_src"></video>
+
+6) How Do You Embed Videos onto Your Page Using the iframe Element?
+
+    <iframe> - this stands for inline frame. It is an inline element used to embed other
+    HTML content directly within an HTML page.
+
+    That HTML content could be a video, map, anothe html element, or even other webpages
+    eg: 
+    <iframe src="video-url" width="width-value" height="height-value" allowfullscreen>
+    </iframe>
+    eg of utubure:
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/Zfz-_W70krE"
+        title="Youtube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope
+        ; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+
+    Note with utube, youtube.be is the share link, u have to have youtube.com/embed
+    and youtube.com/watch is wrong too
+
+    Correct format: https://www.youtube.com/embed/VIDEO_ID
+
+    if u were to embed an html doc,
+    then u will have to use "srcdoc" attribute instead of src
+
+
+-->
