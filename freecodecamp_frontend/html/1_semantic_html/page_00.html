@@ -1,0 +1,304 @@
+<!-- 
+ Semantic HTML and why should you care about it?
+
+1) Why Should You Care About Semantic HTML?
+    Semantics are the meaning of words or phrases in a language,
+    HTML which is a language,  have their own semantic meaning too
+
+    Html can be seen as a text doc, where we have image text, heading and formatting
+    The semantic related to an element, refers to what special info that element conveys
+    eg: <p> </p> refers to a paragraph or text
+
+    Most elements have a semantic meaning, but one that doesnt is the <div> element
+    Why is this important, 
+    - Using propert semantic html, will ensure the best experience for users with
+    assistive like improving ur search ranking this is referred to as SEO
+    - Also using semantic elments can improve ur development experience
+    eg: like instead of finding the <div> that u used as ur navigation bar, u can
+        just find the <nav> experience and edit it instantly, and sutff like that
+
+2) Why is it Important to Have Good Structural Hierarchy?
+    The most important way to have structural hierarchy is via heading elements
+    <h1> <h2> and so on. Much like a text document, u do not want to use a heading
+    element in the incorrect order
+
+    U usually want to have only 1 h1 element on a page, and it comes before all ur
+    other content, h2 is always after h1, never before, as it is a sub heading
+    - U shouldnt skip h1 to h3, but u can have multiple heading elements at the same 
+    level (multiple h2 for example)
+
+    It may be tempting to use a specific heading element over another bc of its styling
+    like <h1> for large texts. Instead u should use the proper element required for 
+    ur doc structure and then use css to achieve the styling u like.
+
+    <article>
+        <p> Here is some
+            <div class="large-text">Large Text</div>
+        </p>
+    </article>
+
+    Using the right styling and element for hierachy is important for accessibility,
+    assistive sturctures like screen readers rely on the structure of a web page
+    to determine how to pause and announce that webpage to the user
+
+    Proper website structure is also important for SEO
+    as search engines parse the content of ur webpage, and determine then where and where
+    it should show up in results.
+    - If ur structure is malformed, search engines may not be able to rank ur website
+    properly in relecvant search results.
+
+    If ur structure isnt right, the web browser may have to guess what ur trying to show
+    and it may not be what u wanted to do in acutality
+
+
+3) What Is the Difference Between Presentational and Semantic HTML?
+    Presentational HTML focuses on the appearance and style of the content, in the early
+    days of HTML developers would use elements like the center, big and font elements
+    BUT in mordern web dev u shouldnt use these types of elements bc of their limitations,
+    and negative impacts on accessibility and maintainability.
+    
+    - Most presentational html elements have been deprecated. There are better ways
+    to get the same results
+
+    eg: font element - used to set font size and color of the text
+    <font size="5" color="blue">sample text</font>
+    default value is 3, ranges from 1 to 7
+
+    - Even though this works, u should rather set font size and color via css not this
+
+    eg: center element-was used to center the content horizontally with in its container
+    <center> The texdt is centered.
+        <p>HTML is awesome</p>
+    </center>
+
+    eg: big element- this was use to make enclosed text, one level bigger than its
+    surrounding
+
+    Semantic HTML - the now recommended practice
+    - It describes the content of the elements so its much easier to read, understand
+    , and maintain.
+    - Search engines can easily understand ur webpage when u use semantic html
+    - Good for accessibility purposes, and the semantic info in elements describes
+    what they are, and what they do
+
+
+4) When Should You Use the Emphasis Element Over the Idiomatic Text Element?
+- these elements are closesly related to the concepts of presentational and semantic
+    html. The idiomatic element<i> was originally used for presentational purposes but
+    now-a-days, its used for highlighting alternative voice or mood idiomatic terms from
+    another language technical language or thoughts
+    <p> sample text <i lang="fr">je ne sais pas</i> sample text </p>
+
+    U can also use a similar semantic element called the emphasis element <em>
+    - u should use this element, when there is requirement of special emphasis compared
+    surrounding text
+    - its limited to a few words as it can alter the meaning of a sentence
+    <p>Never give up on <em>your</em> dreams</p>
+
+    If u dont have any special meaning ur html and u need italic, just use css instead
+
+5) When Should You Use the Strong Element Over the Bring Attention To Element?
+    The bring to attention elemnt - <b>
+    is used to highlight keywords in summaries or porduct names in reviews
+
+    Browsers usually do that via bold text. This draws visual emphasis to the product
+    
+    <p> <b> Product A</b> is very good at one thing over all the others</p>
+
+    But, if u just need to highlight importance of a text, u should use the strong
+    element instead of the B element. 
+    <strong> is a semantic html element that emphasizes text that is crucial or urgent.
+
+    <p> <strong> Warning: </strong> this food contains peanut butter</p>
+    
+
+6) What Are Description Lists, and When Should You Use Them?
+    Description Lists -perfect element for presenting terms and definitions in an 
+    organized and easy-to-read format.
+eg: <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+    </dl>
+
+    But description lists arent limited to just terms and definitions,
+    they are much more versatile than that
+eg: <dl>
+        <dt>Flour</dt>
+        <dd>2 cups</dd>
+        <dt>Surgar</dt>
+        <dd>1/2 cup</dd>
+    </dl>
+
+    When u have data in a key-value format, where one acts as a label, the
+    description list element is perfect.
+
+7) How Do Block and Inline Quotes Work in HTML?
+    In HTML quoted elements are used to distinguish quoted texts from surrounding 
+    content, this gives the quoted texts a format that is easy to identify
+
+    - U should use the block quotation element for representing a section quoted from 
+    another source, its mainly used for extended quotations.
+
+    if the quto of the text has an address, u can cite it with the cite attribute
+    eg: <blockquote cite="valid_url">"Kanye West is a gay fish"</blockquote>
+    - u have to write quotes explicitly
+    - Note cite doesnt show the source to the user, it only works behind the scenes
+    
+    - U can add citation element, an element u can use to mark up the title
+    of a referenced creative work like a book, article, song, film, etc
+eg: <blockquote cite="valid_url">"Kanye West is a gay fish"</blockquote>
+    <p>-- Matt Stone-<cite>South Park [TV Series]</cite></p>
+
+    U should use block quotes like these for long quotations from other sources, 
+    but sometimes u will only need to quote a few words within a larger paragraph
+
+    For that use the inline quotation element, and it adds quotation around the text
+    automatically for u
+    <p> As sharu said, <q cite="valid_url">my name is khan</q></p>
+
+    These cite attributes wont give any visual changes but it will give screen readers
+    and search engines more info about the quote
+
+8) How Do You Display Abbreviations and Acronyms in HTML?
+    An abbreviation = a shortened form of a word.
+    eg: Dr. is an abbreviation for a doctor
+
+    An acronum is a word formed from the initial letters of a phrase, with each letter
+    representing the first letter of a word in that phrase.
+    eg: WHO - acronym for world health organizaion
+
+    - If u need to display abbreviation in HTML, use the abbreviation element
+    U should always explain their full meaning when using them for the first time, 
+    then u can use the abbreviation element to hightlight them and provide more details
+
+eg: <p><abbr>HTML</abbr> is the foundation of the web</p>
+    visually no difference, but it adds useful context behind the scenes
+
+    If u want a user to see the whole name/meaning of acronym use the title attribute
+    (optional)
+eg: <p><abbr title="World Health Organization">WHO</abbr> is goated.</p>
+
+    U dont have to do this for every abbriviation or acronym but it is recommended 
+    to do so for those that are unclear and might need additional info.
+
+
+9) How Do You Display Addresses in HTML?
+    The contact address element is ued to represent contact info for a section
+    on a webpage. The address element is versatile and can be used for business pages,
+    author pages, personal sites and more. 
+
+    When it comes to building out ur websites contact sections, you should use a 
+    semantic address element over a generic element like a div
+
+eg: <address>
+        <h2> Company Name</h2>
+        <p> 
+            1234 Abc Street <br />
+            Sprinfield, WA 62523 <br />
+            United States
+        </p>
+        <p> Phone: <a href="tel +15555555555">+1 (555) 555-5555</a></p>
+        <p> Email: <a href="mailto:contant@company.com">contant@company.com</a></p>
+    </address>
+
+    One of the downsides of mailto links is that users often percieve it as a spam:
+    just keep in mind when u use it. 
+
+10) How Do You Display Times and Dates in HTML?
+    The time element is used to represent a specific moment and time
+
+eg: <p>The reservations are for <time datetime="20:00">20:00</time></p>
+    - This is imp as it helps with search engine results and helps the browser process
+    date time info more effectively. The value for the datetime attribute must be a
+    valid year, valid month, valid time, local date, global date, or valid duration.
+
+eg: <p> The graduation is on <time datetime="2024-06-15T15:00"> June 15</time></p>
+    Here date is in the ISO 8601 format, YYYY-MM-DD and the capital T
+    is a sperator for the time
+
+    YYYY-MM-DDTHH:MM:SS
+
+11) How Do You Display Mathematical Equations and Chemical Formulas in HTML?
+    The superscript element is used to display a piece of text as a super script.
+
+    A super script is a symbol or letter printed above the normal line of text.
+eg: <p>2<sup>2</sup> (2 squared) is 4.</p>
+    <sup>-- to show to exponents
+
+    Super script should only be used to typogrpahy, if u want a styled raised text,
+    just use CSS buddy
+    
+    The subScript Element, to show symbols or letters below usual line
+    <p> CO<sub>2</sub></p>
+
+12) How Do You Represent Computer Code in HTML?
+    - The inline code element is used to represent short snippets of code inside text.
+    Common uses would be for technical artciles and documentation pages.
+
+eg: <p> To set the color to bue in css, do this:
+        <code> color: blue;</code>
+    </p>
+
+    The code element is used to represent a single line of code.
+
+    - If u want to show multiple lines of code instead:
+    Wrap ur code in a "Preformatted Text Element"
+    - The preformatted text element is used to represent preformatted text
+eg: <pre>
+        <code>
+            body {
+                color: red;
+            }
+        </code>
+    </pre>
+
+    When using the <pre> element u need to be mindful of spacing, because it will 
+    display exactly as written inside the HTML doc, so extra spaces = extra spaces in web
+
+    
+13) What Are the U, S, and Ruby Elements Used For, and How Do They Work?
+
+#   The u elment aka unarticulated annotation element
+    - it is used to represent inline text that has non-textual annotation applied.
+
+    <p>
+    You can use u element to highlight <u>incccorect</u> <u>sping</u> <u>isseues</u>
+    </p>
+    Note: its basically underline, but if u want underline text just use css
+    - Use it only to indicate that text has non-textual annotation applied
+
+    The S element or strikethrough element for short, is used to represent when text is
+    no longer accurate or relevant.
+
+    <p><s>Tomorrows hike meeting is at noon</s></p>
+    <p>Due to unforseen weather conditions, hike is kil</p>
+
+#   The s element should never be used to show changes to a document, more appropriate
+    element would be the delete text element ad the insert text element. 
+
+#   The ruby element
+    - This represents small text shown above or below the main text. It is typically
+    used to show the pronunciation of East Asian Characters.
+
+    <ruby> 明日 <rp>(</rp> <rt>Ashita</rt><rp>)</rp> </ruby>
+    - means tomorrow jic
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
