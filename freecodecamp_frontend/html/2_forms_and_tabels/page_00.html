@@ -2,12 +2,139 @@
 Forms and Tables
 
 1) How Do Forms, Labels, and Inputs Work in HTML?
+    The form tab in html is used to collect user input. 
+    It can be names or email addresses.
+
+    It contains various elements such as labels, inputs,
+    buttons, and more. Labels are associated with inputs
+    to provide context, while inputs can be of different types
+    (text, password, checkbox, etc.) to capture different kinds
+    of data. 
+    The form data can be submitted to a server for processing.
+
+eg: <form action="url-goes-here">
+        --- input elements here ---
+    </form>
+    The action attribute specifies where the form data
+    should be sent when submitted. 
+
+    To collect specific info like names and email addresses,
+    u would use the input element
+
+    eg:
+    <form action="">
+        <input type="text" />
+    </form>
+
+    Input elements are void elements, no closing tag is needed.
+    The type attribute specifies the data type expected in input.
+
+    To add an label, use the label element.
+    eg:
+    <form action="">
+        <label>
+            Name:
+            <input type="text"/>
+        </label>
+    </form>
 
 
+    Nesting input inside label makes it an implicit association,
+    meaning clicking the label will focus the input.
+    - the term implicit means something that is understood
+    or inferred without needing to be explicitly stated or 
+    defined with additional attributes or elements.
 
-2) What Are the Different Types of Buttons, and When Should You Use Them?
+    To explicitly associate a label with an input,
+    use the for attribute in label and id attribute in input.
+    eg:
+    <form action="">
+        <label for="name">Name:</label>
+        <input type="text" id="name"/>
+    </form>
+
+    If u want to show additional hints or instructions
+    for the user, you can use the placeholder attribute
+    in the input element.
+    eg:
+    <form action="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" 
+        placeholder="Enter your name"/>
+    </form>
+
+2) What Are the Different Types of Buttons, 
+and When Should You Use Them?
+    The button element is used to perform a particular action
+    when clicked. 
+    eg: <button>Click Me</button>
+
+    Other examples of using buttons include:
+    - Submit button: Used to submit form data to a server.
+      eg: <button type="submit">Submit</button>
+    - Showing a popup or modal: 
+      Used to display additional information or options.
+      eg: <button type="button" onclick="showPopup()">
+        Show Popup</button>
+    - Toggling a side menu open or closed:
+      Used to show or hide a side menu.
+      eg: <button type="button" onclick="toggleMenu()">
+        Toggle Menu</button>
+
+    Note, the button element has a type attribute, it controls
+    the behavior of the button when clicked.
+    The type attribute can have values like:
+        - button
+        By default, the button element wont do anything when
+        clicked. However u can add some js code to make the
+        button interactive.
+        - submit
+        Another possible value for the type attribute is submit
+        eg:
+        <form action="submit-url">
+            <label for="name">Name:</label>
+            <input type="text" id="name" 
+            placeholder="Enter your name"/>
+            <button type="submit">Submit</button>
+        </form>
+        - reset
+        The reset type resets the form fields to their initial
+        values when clicked.
+        eg:
+        <form action="submit-url">
+            <label for="name">Name:</label>
+            <input type="text" id="name" 
+            placeholder="Enter your name"/>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </form>
+
+        Note reset buttons are not commonly used in modern
+        web design, as users typically expect to fill out forms
+        without resetting them. However, they can be useful
+        in certain situations, such as when users need to clear
+        a form and start over. And multiple buttons in ur form
+        can clutter the user interface, so it's important
+        to use them judiciously and only when necessary.
 
 
+        Another way to create button in HTMl is by using
+        the input element with type attribute set to button,
+        reset or submit.
+        eg:
+        <input type="button" value="Click Me" />
+        The value attribute specifies the text displayed on 
+        the button.
+
+        Difference between using button element and input
+        element with type attribute set to button:
+        The input element with type button is a void element,
+        meaning it doesn't have a closing tag, this also means
+        it cannot contain any child elements or text content.
+        
+        Whilst the button element can contain text, images,
+        or other HTML elements inside it, allowing for more
+        complex button designs and styles and flexibility.
 
 3) What Is Client-Side Form Validation in HTML Forms, and What Are Some Examples?
 
