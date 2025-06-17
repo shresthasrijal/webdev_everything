@@ -137,10 +137,60 @@ and When Should You Use Them?
         complex button designs and styles and flexibility.
 
 3) What Is Client-Side Form Validation in HTML Forms, and What Are Some Examples?
+        
+html forms has a lot of in built validation. check before submitted
 
+(client side) anything that happens in the users computer
+- layout
+- design
+- any design features
+
+(server side) anything that happens on the server
+- handle requests from the user computer
+
+we need both side validation bc people can bypass client side
+
+eg: required attribute - means that user has to fill it out before submitting
+        <form action="submit-from">
+            <label for="email">Email:</label>
+            <input required type="email" id="email" />
+            <button type="submit">Submit</button>
+        </form>
+
+other attributes for validation are minlength and maxlength:
+
+eg: <form action="">
+        <label for="email">Email: (Required field)</label>
+        <input 
+            required
+            type="email"
+            name="email"
+            id="email"
+            minlength="5"
+            maxlength="50" />
+        <button type="submit">Submit</button>
+    </form>
 
 
 4) What Are the Different Form States, and Why Are They Important?
+
+in html , form controls can be in different stages or conditions
+    - focused, read only or disabled
+
+    default sate = empty (nothing entered)
+    
+    focused state (default css. = blue border)
+    when a user selects a form element then in becomes a focuses state
+
+    disabled state, an input cannot be focuses or activated
+    - with that the input will be like
+        <input disabled type="email" name="email" id="email" />
+
+    readonly
+    makes input readonly
+        <input readonly type="email" name="email" id="email" 
+            value="example@example.com" />
+
 
 
 
