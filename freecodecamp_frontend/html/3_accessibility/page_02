@@ -1,0 +1,42 @@
+1. What is ARIA?
+ARIA stands for Accessible Rich Internet Applications. It's a set of attributes you can add to HTML elements to improve accessibility for users who rely on assistive technologies like screen readers.
+
+Purpose: Helps describe roles, states, and properties of UI elements that are not natively accessible.
+
+Common ARIA attributes:
+
+role: Defines the role of an element (e.g., button, navigation).
+
+aria-label: Provides an accessible name when visible text isn’t enough.
+
+aria-hidden="true": Hides content from screen readers.
+
+Best practice: Use native HTML elements when possible (they’re accessible by default). Use ARIA only when necessary.
+
+
+2. Working with Accessible Media Elements
+This section covers how to make audio and video content accessible to everyone.
+
+Captions & Subtitles:
+
+Use <track> element with kind="captions" to provide text for video/audio.
+
+Example:
+
+html
+Copy code
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  <track src="captions.vtt" kind="captions" srclang="en" label="English">
+</video>
+Transcripts:
+
+Provide a full text transcript of audio/video content.
+
+Helps users who are deaf or hard of hearing, and also improves SEO.
+
+Audio descriptions:
+
+Extra narration describing visual content.
+
+Important for blind or low-vision users.

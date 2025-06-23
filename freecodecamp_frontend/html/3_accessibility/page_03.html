@@ -1,0 +1,42 @@
+<!-- Build a checkout page -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta property="og:description" content="Simple accsible checkout page" />
+    <title>Checkout Page</title>
+</head>
+
+<body>
+
+    <main>
+        <h1>Checkout</h1>
+        <section>
+            <h2>Your Cart</h2>
+            <image src="https://cdn.freecodecamp.org/curriculum/labs/cube.jpg" alt="cube"></image>
+        </section>
+        <section>
+            <h2>Payment Information</h2>
+            <form>
+                <label for="card-name">Name on Card</label>
+                <input id="card-name" name="card-name" type="text" placeholder="Name on Card" />
+                <label for="card-number">Card Number</label>
+                <input required id="card-number" name="card-number" type="text" placeholder="Card Number"
+                    aria-required="true" />
+                <label for="expiry-date">Expiry Date</label>
+                <input required id="expiry-date" name="expiry-date" type="text" placeholder="Expiry Date"
+                    aria-required="true" />
+                <label for="cvv">CVV</label>
+                <input required id="cvv" name="cvv" type="text" placeholder="CVV" aria-required="true" />
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <p>No Copyright but Srijal was here...</p>
+    </footer>
+</body>
+
+</html>
