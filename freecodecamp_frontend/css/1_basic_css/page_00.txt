@@ -1,0 +1,114 @@
+1) What is CSS?
+
+CSS (Cascading Style Sheets) is used to style HTML by controlling layout, colors, fonts, and overall appearance. While HTML provides webpage structure, CSS makes it visually appealing.
+
+CSS separates content from presentation, making websites more flexible and easier to maintain. It applies styles to HTML elements and supports responsive design, adapting layouts to different devices.
+
+Its cascading nature allows styles to be inherited or overridden, and external stylesheets enable sharing styles across multiple pages.
+
+In web development, CSS is essential for creating attractive, responsive, and user-friendly websites.
+
+////////////////////////////////////////////
+
+2) What Is the Basic Anatomy of a CSS Rule?
+
+So CSS is responsible for the styles of a web page. 
+All of the styles are made up of various CSS rules
+
+Rules have two main parts:
+    - a selector, and a declaration black
+eg: selector {
+  property: value;
+}
+
+Selector: Targets specific HTML elements (like type, class, or ID selectors).
+Declaration block: Contains one or more declarations inside curly braces {}. Each declaration has a property (what to style) and a value (how to style it), separated by a colon and ending with a semicolon.
+
+eg: p {
+  color: blue;
+}
+This rule will target all <p> elements, by setting text blue
+
+eg: #title, .subheading {
+  color: navy;
+}
+With the baove u can style multiple selectors at once, by comma seperation
+#title = id, and .subheading = class
+note:
+- All id selectors start with # 
+- all class selectors starting with a . (dot)
+- for elements selectors, just put the element without brackets
+
+/////////////////////////////
+
+3) What is meta viewport element used for?
+
+The meta viewport element is a crucial component in responsive web design. 
+Its essential in responsive web design, telling browsers how to control page dimensions and scaling on different devices, especially mobiles and tablets. It’s placed in the HTML document’s head section, typically like this:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+"width=device-width" sets the page width to match the device’s screen width, enabling layouts to adapt to various screen sizes.
+
+"initial-scale=1.0" sets the initial zoom to 100%, displaying the page without scaling.
+
+Without this element, mobile browsers render pages as if on a desktop screen and then shrink them, causing tiny, hard-to-read text.
+
+The element can also control zooming with attributes like "user-scalable=no", but disabling zoom is discouraged for accessibility since many users depend on zooming for readability.
+
+Proper use of the meta viewport element ensures responsive designs display correctly across devices, improving the user experience on mobile and tablet screens.
+
+/////////////////////////////////
+
+4) What Are Some Default Browser Styles Applied to HTML?
+
+When you create a webpage using HTML, browsers automatically apply default styles to ensure content is displayed in a basic, readable way. These are known as default browser styles or user-agent styles.
+-> these styles can vary across browsers, so understanding them is important for creating a consistent website layout.
+
+common default styles:
+  i) Headings (<h1> to <h6>)
+    - Displayed with varying font sizes and weights.
+    - <h1> is typically the largest and boldest, followed by smaller headings.
+    - These elements establish a hierarchy and structure.
+  
+  eg: <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  ...
+  <h6>Heading 6</h6>
+
+  ii) Horizontal Rule (<hr>)
+    - Renders as a thin horizontal line.
+    - Includes spacing above and below to visually separate sections.
+  
+  eg: <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <hr>
+  <p>Paragraph 3</p>
+
+  iii) Blockquote (<blockquote>)
+  - Browsers typically indent the text.
+  - Some may also italicize it.
+  - Used to quote other sources, visually distinguishing the content.
+
+  eg: <blockquote>I think, therefore I am. (Rene Descartes)</blockquote>
+
+  iv) 4. Anchor (<a>)
+  - Styled by default as blue and underlined.
+  - Makes hyperlinks easily recognizable to users.
+
+  eg: <a href="https://freecodecamp.org/">Visit freeCodeCamp</a>
+
+  v) 5. Lists (<ol> and <ul>)
+  - Given basic indentation.
+  - <ul> uses bullets; <ol> uses numbers.
+  - Items are slightly indented by default.
+
+  eg: <ol>
+    <li>item 1</li>
+    <li>item 2</li>
+  </ol>
+  <ul>
+    <li>item</li>
+    <li>another item</li>
+  </ul>
+
+  Each of these HTML elements comes with default spacing, font styles, and layout rules. While useful for initial readability, these styles often need to be overridden or reset using CSS to ensure consistent design across browsers.
