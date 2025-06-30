@@ -112,3 +112,7 @@ common default styles:
   </ul>
 
   Each of these HTML elements comes with default spacing, font styles, and layout rules. While useful for initial readability, these styles often need to be overridden or reset using CSS to ensure consistent design across browsers.
+
+///////////////////////////////////
+
+5) What Are Inline, Internal, and External CSS, and When Should You Use Each One?
