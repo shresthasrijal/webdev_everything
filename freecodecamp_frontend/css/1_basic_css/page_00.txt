@@ -116,3 +116,346 @@ common default styles:
 ///////////////////////////////////
 
 5) What Are Inline, Internal, and External CSS, and When Should You Use Each One?
+
+  i) Inline CSS
+  - Applied directly within an HTML element using the style attribute.
+  eg:
+  <p style="color: red;">This is an inline-styled paragraph.</p>
+
+  Use when: Quickly styling a single element or overriding other styles.
+  Avoid: Overusing because it clutters HTML and makes maintenance harder
+
+  ii) Internal CSS
+  - Placed inside <style> tags within the <head> section of an HTML document.
+  eg:
+    <head>
+    <style>
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This paragraph is styled using internal CSS.</p>
+  </body>
+
+  Use when: Styling a single page or small websites where styles don’t need to be reused.
+  Limitations: Styles can’t be reused across multiple pages and mixes CSS with HTML.
+
+  iii) External CSS
+  - Written in a separate .css file and linked in the HTML with a <link> tag inside the <head>.
+  eg: 
+  # style.css
+  p {
+    color: green;
+  }
+  # index.html
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <p>This paragraph is styled using external CSS.</p>
+  </body>
+
+  Use when: Creating large or multi-page websites to maintain consistent styles.
+  Benefits: Separates style from structure, making code more maintainable and scalable.
+
+  Overall, external CSS is recommended for most projects, especially larger ones, while inline and internal CSS have niche uses for quick or single-page styling.
+
+//////////////
+
+
+6) How do width and height work in CSS?
+  - The width and height properties control the size of elements.
+  - They can be set using various units like pixels (px), percentages (%), or viewport units (vw, vh).
+  - By default, both width and height are auto:
+    - width: auto means the element takes the full width of its parent container.
+    - height: auto means the element adjusts to the height of its content.
+  
+  eg: Creating a div with 100px width and height and a skyblue background.
+  <head>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+
+  # Minimum dimensions: min-width and min-height
+    - min-width sets the minimum width an element can have.
+    - min-height sets the minimum height an element can have.
+  
+  These properties prevent the element from shrinking below the specified size, even if the width or height values are smaller.
+
+  eg:
+  <head>
+    <style>
+      .box {
+        width: 50px;
+        min-width: 100px;
+        height: 50px;
+        min-height: 100px;
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+
+  Although width and height are 50px, the box will actually be 100px by 100px because min-width and min-height override smaller values.
+
+  # Maximum dimensions: max-width and max-height
+    - max-width limits the maximum width an element can grow to. 
+    - max-height limits the maximum height an element can grow to.
+
+  These properties restrict the size even if the specified width or height is larger.
+
+  eg:
+  <head>
+    <style>
+      .box {
+        width: 200px;
+        max-width: 150px;
+        height: 200px;
+        max-height: 150px;
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+
+  The box will be 150px by 150px despite the 200px width and height, because max-width and max-height limit its size.
+
+7) What Are the Different Types of CSS Combinators?
+  
+  - CSS combinators define relationships between selectors to target elements based on their position relative to others. 
+  
+  i) Descendant combinator (space): selects elements nested anywhere inside an ancestor.
+
+  eg:
+    figure img {
+      border: 4px solid black;
+    }
+
+  This targets all img elements inside figure elements.
+
+  ii) Child combinator (>): selects only direct children of a specified parent.
+  
+  eg:
+    .container > p {
+      color: blue;
+    }
+
+  This targets only the p elements that are direct children of .container, not deeper nested ones.
+
+  iii) Next-sibling combinator (+): selects the element immediately following a specified sibling.
+  
+  eg:
+    img + figcaption {
+      border: 4px solid black;
+    }
+
+  This applies a border to the figcaption immediately after an img.
+
+  iv) Subsequent-sibling combinator (~): selects all siblings that come after a specified element (not just the immediate one).
+
+  eg:
+    h2 ~ p {
+      color: green;
+    }
+
+  This styles all p elements that follow an h2 sibling, regardless of how many elements are in between.
+
+  Using combinators allows precise and flexible styling by targeting elements based on their relationships in the HTML structure. Mastery of these enhances the control over the design and behavior of web pages.
+
+8) What is the difference between inline and block-level elements?
+  i) Block-level elements
+  - Take up the full width of their container by default.
+  - Always start on a new line, pushing following content down.
+  - Have display: block; by default.
+  - Examples include <div>, <p>, <h1>, <ul>, and <section>.
+  - Used for structuring large sections of content and vertical stacking.
+  
+  eg:
+    <p style="border: 2px solid red;">
+      First paragraph
+    </p>
+    <p>Second paragraph</p>
+
+  (q) How can you change the behavior of a block-level element to behave like an inline element? 
+  - Apply display: inline;
+
+  ii) Inline elements
+  - Take up only as much width as needed.
+  - Do not start on a new line, flowing alongside other content.
+  - Have display: inline; by default.
+  - Examples include <span>, <a>, and <img>.
+  - Used for styling or formatting small parts of text within a line.
+
+  eg:
+    <p>This is a
+      <span style="color: red; border: 2px solid green;">red</span>
+      word inside a paragraph.
+    </p>
+
+  Understanding these differences helps control webpage layout and content display effectively.
+
+9) How Does Inline-Block Work, and How Does It Differ from Inline and Block Elements?
+
+  i) Block elements
+  - Take up the full width of their container.
+  - Always start on a new line.
+  - You can set width and height freely.
+
+  ii) Inline elements
+  - Only take up as much space as their content needs.
+  - Flow within the surrounding text without breaking lines.
+  - Width and height cannot be controlled.
+
+  iii) Inline-block elements
+  - Behave like inline elements by staying in the flow and sitting side by side.
+  - Unlike inline elements, you can set width and height like block elements.
+  - This makes them a hybrid with the flexibility of both.
+
+  eg:
+    # html
+    <div class="container">
+      <span class="inline-block-element element1">Inline-Block Element 1</span>
+      <span class="inline-block-element element2">Inline-Block Element 2</span>
+    </div>
+
+    # css
+    .inline-block-element {
+      display: inline-block;
+      width: 150px;
+      height: 100px;
+    }
+
+    .element1 {
+      background-color: lightblue;
+    }
+
+    .element2 {
+      background-color: lightgreen;
+    }
+
+  With display: inline-block, the two spans sit side by side and respect the specified width and height.
+
+  eg: 
+    .inline-block-element {
+      width: 150px;
+      height: 100px;
+    }
+
+    .element1 {
+      background-color: lightblue;
+    }
+
+    .element2 {
+      background-color: lightgreen;
+    }
+
+  If u remove display: inline-block: 
+    The spans revert to inline behavior, ignoring width and height and only taking up the space needed by their content.
+
+  So having inline-block means, it tries to stay on the same line instead of seperate lines
+
+  (q) In what situation would an element with display: inline-block; behave differently than one with display: block;?
+  - When you want the element to flow alongside text and other inline elements.
+
+10) What Are Margins and Padding, and How Do They Work?
+
+  # Margin = space outside an element (between elements).
+  # Padding = space inside an element (between content and border).
+
+  Both can be controlled on all four sides: top, right, bottom, left.
+
+  eg) Margin Example (Top Margin Only):
+    <p>Paragraph one</p>
+    <p>Paragraph two</p>
+    <p>Paragraph three</p>
+
+    p {
+      margin-top: 20px;
+      border: 2px solid black;
+    }
+  
+  Adds 20px above each paragraph, with borders showing spacing clearly.
+
+  eg) Margin on All Four Sides:
+    <span>Paragraph one</span>
+    <p>Paragraph two</p>
+    <span>Paragraph three</span>
+
+    p {
+      margin-top: 10px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+      margin-left: 40px;
+      border: 2px solid black;
+    }
+
+  Top: 10px, Right: 20px, Bottom: 30px, Left: 40px.
+
+  eg) Margin Shorthand Examples:
+
+  - 1 value (all sides):
+      p {
+        margin: 10px;
+      }
+
+  - 2 values (top-bottom, left-right):
+      p {
+        margin: 10px 20px;
+      }
+  
+  - 3 values (top, left-right, bottom):
+      p {
+        margin: 10px 20px 30px;
+      }
+  
+  - 4 values (top, right, bottom, left):
+      p {
+        margin: 10px 20px 30px 40px;
+      }
+
+  eg) Padding Example (Four Sides):
+      <span>Paragraph one</span>
+      <p>Paragraph two</p>
+      <span>Paragraph three</span>
+
+      p {
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        padding-left: 40px;
+        border: 2px solid black;
+      }
+
+  Padding is applied inside the element, between content and border.
+
+  eg) Padding Shorthand Example:
+
+    p {
+      padding: 10px 20px 30px 40px;
+      border: 2px solid black;
+    }
+
+  Top: 10px, Right: 20px, Bottom: 30px, Left: 40px.
+
+
+  - Margin separates elements on the outside. 
+  - Padding creates space inside an element.
+  - Both can use individual side properties or shorthand notation for cleaner code.
+
+
+  Remember for shorthand:
+  top, right, bottom, left
