@@ -1,0 +1,180 @@
+1) What is CSS specificity and the specificity for inline, internal, and external CSS?
+
+CSS specificity determines which style applies when multiple rules target the same element. It's based on selector types and calculated as a four-part value: (a, b, c, d)
+
+- a: Inline styles (1,0,0,0) — highest specificity
+- b: ID selectors (0,1,0,0)
+- c: Classes, attributes, pseudo-classes (0,0,1,0)
+- d: Type selectors, pseudo-elements (0,0,0,1)
+
+- Universal selector (*) adds nothing (0,0,0,0)
+
+- Inline CSS overrides all,
+- Internal CSS can override external if more specific,
+- External CSS has the lowest precedence but is best for scalability.
+
+/././././/./../././././/././././././././
+2) What Is the Universal Selector, and What Is Its Specificity?
+
+The universal selector (*) in CSS matches all elements and is commonly used to apply global styles, like resetting margins and paddings:
+
+eg: * {
+  margin: 0;
+  padding: 0;
+}
+
+It has the lowest specificity (0, 0, 0, 0), meaning any other selector (type, class, ID, or inline style) will override it.
+
+/././././/./../././././/././././././././
+3) What is the specificity for type selectors?
+
+Type selectors (also called element selectors) target elements by their tag name (e.g., p, h1, div).
+eg: p {
+  color: blue;
+}
+
+This sets the text color of all <p> elements to blue.
+Specificity of a type selector is (0, 0, 0, 1).
+
+It has low specificity, so it's overridden by:
+
+- Class selectors (specificity: 0, 0, 1, 0)
+- ID selectors (0, 1, 0, 0)
+- Inline styles (1, 0, 0, 0)
+
+/././././/./../././././/././././././././
+4) What Is the Specificity for Class Selectors?
+
+Class selectors (specificity: 0, 0, 1, 0)
+
+They allow developers to target multiple elements with the same class attribute and apply consistent styling.
+eg: .highlight {
+  color: green;
+}
+
+/././././/./../././././/././././././././
+5) What is the specificity for ID selectors?
+ID selectors (0, 1, 0, 0)
+
+Style for a specific id(single use class)
+
+eg: #unique {
+  color: purple;
+}
+
+/././././/./../././././/././././././././
+6) What Is the important Keyword, and What Are the Best Practices for Using It?
+
+The "!important" keyword in CSS is used to give a style rule the highest priority, allowing it to override any other declarations for a property.
+
+When used, it forces the browser to apply the specified style, regardless of the specificity of other selectors.
+
+eg: 
+<p class="para" style="background-color: lightblue; color: black;">
+  This is a paragraph.
+</p>
+and u also have:
+eg:
+.para {
+  background-color: black;
+  color: white;
+}
+
+but since inline > class specificity, it uses inline, but if u wanna make sure override happens:
+eg:
+.para {
+  background-color: black !important;
+  color: white !important;
+}
+
+Note: the !important keyword does not change the specificity of the CSS selector itself. It simply ensures that the rule with !important is applied, even if there are other conflicting rules with higher specificity.
+
+However, overusing the !important keyword can lead to difficulties in maintaining and debugging your CSS, as it breaks the natural cascading of styles and can lead to unintended consequences.
+
+/././././/./../././././/././././././././
+7) How Does the Cascade Algorithm Work at a High Level?
+
+> The Cascade Algorithm determines which CSS rule gets applied when multiple rules target the same element. It follows a specific order of precedence:
+
+i) Relevance:
+Filters out rules that don’t apply to the element (e.g. selectors don’t match or media queries don’t apply).
+
+ii) Origin and Importance:
+CSS can come from different sources:
+
+User-agent styles (browser defaults)
+User styles (user-defined)
+Author styles (your CSS)
+!important rules override others based on this origin hierarchy.
+
+iii) Importance:
+Rules with !important take priority over normal rules, even if they have lower specificity.
+
+iv) Specificity:
+More specific selectors override less specific ones. Example:
+
+Type selector: p → (0, 0, 0, 1)
+
+Class selector: .example → (0, 0, 1, 0)
+
+ID selector: #id → (0, 1, 0, 0)
+
+v) Order of Appearance:
+If specificity and everything else are equal, the later rule wins.
+
+eg: p {
+  color: blue;
+}
+
+p {
+  color: green;
+}
+Since both rules have equal specificity and importance, the second rule (green) is applied because it comes later in the stylesheet.
+
+
+/////////////////////////////////////////////////
+8) How Does Inheritance Work with CSS at a High Level?
+
+Inheritance in CSS is the process by which child elements receive certain style properties from their parent elements. It helps maintain consistency and reduce repetition in stylesheets.
+
+i) Only Certain Properties Inherit by Default
+    Examples of inherited by default properties:
+
+    - color
+    - font-family
+    - font-size
+    - line-height
+    - visibility
+
+    Non-inherited by default (must be set explicitly):
+
+    - margin
+    - padding
+    - border
+    - background
+
+ii) Explicit Inheritance with inherit
+You can force inheritance of any property using the inherit keyword:
+
+eg: padding: inherit;
+
+iii) default inheritance:
+<div style="color: blue;">
+  This is the parent.
+  <p>This child inherits the text color.</p>
+</div>
+
+iv) Forced inheritnce
+<div style="color: blue;">
+  This is the parent.
+  <p>This child inherits the text color.</p>
+</div>
+
+v) One-Way Only:
+Inheritance flows from parent to child, not the other way around.
+
+🔍 Why It Matters:
+- Reduces CSS repetition
+- Promotes cleaner and more maintainable code
+- Helps establish global design rules (like fonts and colors)
+
