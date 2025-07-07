@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta property="og:description" content="text here" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled To-Do List</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: purple;
+            border-bottom: 1px solid purple;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:focus {
+            outline: 2px solid orange;
+        }
+
+        a:active {
+            color: darkorange;
+        }
+
+        .todo-list li {
+            background-color: aquamarine;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>My To-Do List</h1>
+        <ul class="todo-list">
+            <li>
+                <input id="walk-dog" type="checkbox" />
+                <!-- <span>Walk the dog</span> -->
+                <label for="walk-dog">Walk the dog</label>
+                <ul class="sub-item">
+                    <li>
+                        <a class="sub-item-link" target="_blank"
+                            href="https://www.youtube.com/watch?v=0wWrqhW1qBg&list=RD0wWrqhW1qBg&start_radio=1">
+                            Walk the dog
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input id="look_specs" type="checkbox" />
+                <label for="look_specs">Look at Switch 2 specs</label>
+                <ul class="sub-item">
+                    <li>
+                        <a class="sub-item-link" target="_blank"
+                            href="https://www.youtube.com/watch?v=0wWrqhW1qBg&list=RD0wWrqhW1qBg&start_radio=1">
+                            Lookup Review Videos
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input id="report" type="checkbox" />
+                <label for="report">Finish the report</label>
+                <ul class="sub-item">
+                    <li>
+                        <a class="sub-item-link" target="_blank"
+                            href="https://www.youtube.com/watch?v=0wWrqhW1qBg&list=RD0wWrqhW1qBg&start_radio=1">
+                            Finish the report
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input id="view_internet_bill" type="checkbox" />
+                <label for="view_internet_bill">Check Internet Bill</label>
+                <ul class="sub-item">
+                    <li>
+                        <a class="sub-item-link" target="_blank"
+                            href="https://www.youtube.com/watch?v=0wWrqhW1qBg&list=RD0wWrqhW1qBg&start_radio=1">
+                            View Receipts
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>No Copyright but Srijal was here...</p>
+    </footer>
+</body>
+
+</html>

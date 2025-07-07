@@ -1,0 +1,161 @@
+1) How Do Background Image Size, Repeat, Position, and Attachment Work?
+note: body is an element
+
+    To control background images in CSS, use these properties:
+
+    i) background-image sets the image:
+    eg)
+    background-image: url("image.jpg");
+
+    ii) background-size defines image scaling:
+    - contain: fits image without cropping
+    - cover: fills element while maintaining aspect ratio
+    eg)
+    background-size: contain;
+
+    iii) background-repeat controls repetition:
+    - no-repeat: no repeating
+    - repeat-x: repeats horizontally
+    - repeat-y: repeats vertically
+    eg)
+    background-repeat: no-repeat;
+
+    iv) background-position sets image position using keywords:
+        - like center, top, etc.:
+    eg)
+    background-position: center top;
+
+    v) background-attachment sets scroll behavior:
+    - scroll (default): scrolls with content
+    - fixed: stays in place
+    eg)
+    background-attachment: fixed;
+
+    vi) You can combine properties with shorthand:
+    eg)
+    background: center top fixed url("image.jpg");
+
+    Example setups included setting min-height: 100px to make the image visible.
+    body {
+    background-image: url("photo-app/relaxing-cat.jpg");
+    background-position: center top;
+    background-attachment: fixed;
+    min-height: 100px;
+    }
+
+2) What Is a Background Gradient, and How Does It Work?
+A background gradient is a way to create a smooth, visually pleasing
+ transition between two or more colors as the background of an element
+  — without needing an image.
+
+    Types of gradients (css offers 2 main types):
+
+    i) Linear Gradients
+    A linear gradient blends colors along a straight line 
+    — either vertically, horizontally, diagonally, or at any angle.
+
+    syntax:
+    background: linear-gradient(direction, color-stop1, color-stop2, ...);
+
+    - direction: Determines the gradient line (e.g., to right, 45deg, 
+        to bottom left)
+    - color-stop: Defines the colors and optional positions
+
+    eg:
+    .linear-gradient {
+    background: linear-gradient(to right, red, yellow);
+    height: 40vh;
+    }
+    - Transitions from red on the left to yellow on the right
+    - 40vh means 40% of the viewport height
+
+    ii) A radial gradient transitions colors in circles or ellipses
+    radiating from a center point outward.
+
+    syntax:
+    background: radial-gradient(shape size at position, 
+        color-stop1, color-stop2, ...);
+
+    - shape: circle or ellipse
+    - size: How far the gradient extends (e.g., closest-side, farthest-corner)
+    - position: Where the gradient originates (e.g., center, top left, 50% 50%)
+    - color-stop: Colors and optional positions like 50%, 30px
+
+    eg: .radial-gradient {
+    background: radial-gradient(circle closest-side at center, red, yellow 50%, green);
+    height: 60vh;
+    }
+    - A circular gradient, starting with red in the center, 
+        blending to yellow at 50%, and ending with green
+    -  Positioned at the center and sized to the closest side of the element
+
+    Gradients:
+    - Add depth, contrast, and visual interest
+    - Eliminate the need for background images
+    - Are lightweight and fully customizable
+
+3) What are some accessibility considerations for backgrounds?
+
+# Accessibility Tips for Backgrounds in Web Design:
+    i) Ensure sufficient contrast between background and text:
+
+    - WCAG recommends:
+        - 4.5:1 for normal text
+        - 3:1 for large text
+
+    Example:
+        ❌ Poor: light gray text on whitesmoke
+        ✅ Good: white text on dark slate gray
+
+    ii) Avoid text over busy images or complex gradients:
+        - They reduce readability, even with good contrast.
+
+    iii) Use overlays if using background images:
+    Example:
+    .background-image-text {
+    background-image: url('image.svg');
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    }
+
+    iv) Don’t rely on color alone to convey meaning:
+    - Add icons or text for clarity (e.g., not just red for errors).
+
+    v) Avoid or control background audio/video:
+    - Auto-play can distract users.
+    - Always provide pause/mute controls.
+
+4) What Are the Different Ways You Can Add Borders Around Images?
+Ways to Add Borders Around Images:
+
+i) Basic border (shorthand)
+    eg: 
+    img {
+        border: 2px solid red;
+    }
+    - Sets width, style (solid, dashed, etc.), and color.
+
+ii) Custom borders on each side
+    eg: 
+    img {
+        border-top: 1px solid red;
+        border-right: 2px dashed green;
+        border-bottom: 3px dotted blue;
+        border-left: 4px double yellow;
+    }
+    - Different styles per side.
+
+iii) Outline (doesn't affect layout)
+    eg:
+    img {
+        outline: 3px solid gold;
+    }
+    - Surrounds the image without changing its size.
+
+iv) Rounded corners
+    eg:
+    img {
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+    - Smooths the border edges.
