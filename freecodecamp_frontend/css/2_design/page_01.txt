@@ -1,0 +1,30 @@
+# User-Centered Design
+This comprehensive lecture series focuses on best practices for
+ designing user-facing features, emphasizing a user-centric approach.
+ It covers a wide range of common UI elements and design considerations,
+ alongside crucial aspects of the design process like user research,
+ requirements gathering, and testing.
+
+1) What Is User-Centered Design?
+User-Centered Design (UCD) is a web development philosophy that places
+ the end-user at the core of all design decisions. 
+ The primary objective of UCD is to create web pages that are intuitive,
+ efficient, and enjoyable for users to interact with.
+
+Key takewayas:
+ - Prioritize the User:
+  Focus on user needs and limitations.
+ - Target Demographics:
+  Adapt designs for specific age groups 
+  (e.g., flashy for younger users, clear for older).
+ - Align with User Goals:
+  Design page purpose to match user objectives
+  (e.g., e-commerce sells products, blogs seek ad revenue).
+ - Analyze User Behavior:
+ Use analytics (like Google Analytics) to find user pain points
+  and improve flow.
+ - Involve Users:
+ Provide feedback channels for direct input and iterative improvements.
+
+2) What Are User Requirements, User Research, and Testing?
+
