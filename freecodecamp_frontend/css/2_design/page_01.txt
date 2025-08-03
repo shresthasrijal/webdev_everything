@@ -27,4 +27,89 @@ Key takewayas:
  Provide feedback channels for direct input and iterative improvements.
 
 2) What Are User Requirements, User Research, and Testing?
+User Research is the systematic study of the people who use ur product.
+The goal is to measure user needs, beahviours, and pain points.
+
+NPS - Net Promoter Score
+
+3) What are best practices for designing a dark mode feature?
+
+Dark mode is a special feature on web applications where you can
+change the default light color scheme to a dark color scheme. 
+
+ helps reduce eye strain and improve readability in low-light conditions. When designing your dark mode features, it is important to understand best practices to ensure that your dark mode feature is effective and user-friendly.
+
+avoidance of saturated colors
+
+While this high contrast can be effective, it can also be too harsh 
+
+A brand identity is a set of visual elements that represent a brand, such as the logo, colors, and typography. When implementing dark mode, you should consider how the dark mode feature is consistent with your brand's colors and style. It is fine to have the brand icon and buttons at full saturation, while the surrounding elements are desaturated.
+
+4) What are best practices for designing breadcrumbs?
+Breadcrumbs are a navigation aid that shows the user where they are in the site's hierarchy. Here is an example of what breadcrumbs look like for a mock-up electronics website:
+
+Home / Electronics / Phones / Smartphone XYZ
+
+The use of breadcrumbs is helpful because it can help users understand where they are in the site's hierarchy and how to navigate back to the previous pages. 
+
+Common separators include the greater than sign (>), right angle quotation marks (») ,and the forward slash (/)
+
+The second consideration is the placement of the breadcrumbs. Breadcrumbs are typically placed at the top of the page, either above or below the main navigation bar
+
+Another consideration is the size of the breadcrumbs. You want to make sure the breadcrumbs are large enough to be easily read, but not so large that they take up too much space on the page
+
+5) What are best practices for designing cards?
+Card components are a very common occurrence in e-commerce, social media, and news sites. They are used to help display information in a structured way.
+
+- IT SHOULD BE SIMPLE
+- iT SHOULD BE EASY TO KNOW WHERE USERS CAN CLICK ON THE CARD, DEPENDS ON purpose
+- CONSIDER THE USE OF MEDIA IN UR card
+- Consider the use of color hierarchy,  bright for important, and 
+light color for less important stff 
+
+6) What Are Best Practices for Designing Infinite Scrolls?
+Infinite scrolling is a design pattern that loads more content as the user scrolls down the page. Oftentimes, this is used on social media sites like Twitter.
+
+Infinite scrolling is also used as a substitute for pagination. 
+Pagination often used when there is a lot of content to display.
+
+considerations with infinite scrolling:
+ - provide a "Load More" button that loads the next set of results when the user clicks on it
+ - add a "Back" button. This gives users the ability to go back to the previous page without having to scroll all the way back up
+ -  a "Back to the top" button which leads users back to the top of the page of results.
+
+7) What are best practices for designing modal dialogs?
+
+Modal is the type of pop-up that a website might show you on top of their content.
+
+It's always a good idea to allow the user to click outside of the modal to close it.
+
+You'll often see very prominent buttons on modals. These are called CTAs, or call-to-action. You want these to be easily identifiable since the purpose of interrupting the user's flow with a modal is to prompt them to take a specific action.
+
+Modals should also have a close button. 
+
+8) What are best practices for designing progress indication on forms, registration, and setup?
+
+Progress indication is a way to show users how far they are in a process.
+It can be used in forms, registration, and setup processes.
+
+eg: you can use a progress indication bar to show users what is left to do when filling forms. You don't want to create a situation where the user needs to fill out a lengthy form and they don't know how many more steps they need to complete.
+
+best practices:
+- keep it simple
+- make it possible to go back to previous steps
+- make the progress indication section easy to find
+- have clear section titles, percentages, or steps
+
+9) What are best practices for designing shopping carts?
+ thousands of e-commerce websites on the internet, and the shopping cart is a crucial part of the e-commerce experience
+
+ - making sure the shopping cart is visible to users at all times
+ - providing a clear way for users to update the quantity of items in their cart.
+ - also provide a "Remove" button next to each item in the cart.
+ - The icon should be something easily recognizable for all users. A common icon is a shopping cart with a handle and wheels. Other icons might be a shopping bag or a basket.
+ - When the user wants to review the total in their cart, they should be able to easily find the total cost of all items in the cart.
+ - You don't want to have too many buttons on the page, as this can lead to confusion. The call-to-action button should be the most prominent button
+
+10) What is progressive disclosure?
 
