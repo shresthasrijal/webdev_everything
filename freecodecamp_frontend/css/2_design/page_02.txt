@@ -1,0 +1,45 @@
+Common Design Tips
+
+1) What Are Design Briefs and How Do Developers Work with Them?
+    Definition:
+    - A design brief is a document outlining the objectives, goals, and requirements of a project.
+    - Acts as a roadmap to guide the design process and ensure the final product meets the client’s needs.
+
+    Who writes it:
+    - Usually created by the client as a working draft.
+    - Sometimes written by the designer, then reviewed and approved by the client.
+
+    Key elements of a design brief:
+        - Project & Business Overview
+            - Company details, mission, values, unique selling points (USPs), and products or services.
+        - Goals & Objectives
+            - Purpose of the project and desired outcomes.
+            - Examples: Increase site traffic, boost monthly page visits by a certain percentage, improve user engagement.
+        - Target Audience
+            - Demographics, interests, needs, and pain points of the intended users.
+        - Competitive Analysis
+            - Overview of competitors and how the project will differentiate itself.
+        - Project Scope
+            - Deliverables: e.g., mockups, final designs, prototypes.
+            - Timeline: Deadlines and milestones.
+            - Budget: Constraints and cost estimates.
+            - Importance of being specific to prevent scope creep and budget overruns.
+        - Constraints
+            - Realistic expectations on what can be achieved given time and budget limitations.
+
+    Approval process:
+        The brief should be reviewed and signed off by all stakeholders before work begins.
+
+    Developer’s role in the design brief:
+        - Interpret & Implement: Understand project requirements and translate designs into a functional product.
+        - Core tasks: Writing code, testing, debugging, and ensuring compliance with the brief.
+        - Teamwork: Often part of a multi-developer team, coordinated by a project manager.
+        - Even if not involved in early design decisions, developers must understand the brief as it directly impacts their work.
+
+    Why it matters:
+        - Prevents misunderstandings between client, designers, and developers.
+        - Helps keep projects on track, within budget, and aligned with goals.
+
+2)
+
+        

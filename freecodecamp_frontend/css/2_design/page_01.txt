@@ -112,4 +112,37 @@ best practices:
  - You don't want to have too many buttons on the page, as this can lead to confusion. The call-to-action button should be the most prominent button
 
 10) What is progressive disclosure?
+A progressive disclosure is a design pattern used to only show users relevant content based on their current activity and hide the rest.
+This is done to reduce cognitive load and make the user experience more intuitive.
+
+> rogressive disclosure is a design pattern that shows users only the information or options relevant to their current task,
+ revealing more details on demand to reduce cognitive load.
+
+  Examples include
+ - Google’s simple search page with an optional advanced search,
+ - e-commerce “More details” buttons that display extra product info when clicked. 
+
+ Best practices include 
+ - keeping essential information always visible, 
+ - offering a single clear access point for additional content, 
+ - and avoiding multiple or hidden entry points to prevent confusion.
+ 
+  Proper use improves clarity and overall user experience.
+
+  11)What Is Deferred and Lazy Registration?
+    Definition: Lazy registration lets users interact with an app before creating an account.
+
+    Purpose: Allows users to see the app’s value first, increasing willingness to register.
+
+    Example 1: E-commerce sites — users can browse and add items to a cart, then register only at checkout.
+    Example 2: YouTube — users can watch videos without an account but must register to like, comment, or subscribe.
+
+    Benefits:
+    - Builds trust by showing value before requesting personal data.
+    - Increases user engagement and retention.
+    - Reduces drop-off from early registration requirements.
+
+    Design tip: Clearly communicate that user data will be protected and secure.
+
+
 
