@@ -40,6 +40,40 @@ Common Design Tips
         - Prevents misunderstandings between client, designers, and developers.
         - Helps keep projects on track, within budget, and aligned with goals.
 
-2)
+2) What Are Some Common Tools Developers Should Know About That Are 
+    Used by Designers in the Industry?
 
-        
+    Design is the foundation of every enterprise-level web application. That's why designers and developers work closely to create user-focused interfaces that are visually appealing and functional.
+
+    Usually u have 2 differnt teams, but even so one needs to understand the role of the other
+    SO developers need to be familiar with common design tools to make most of what designers offer.
+        -note: design tools excel in vector-based design and prototyping
+    
+    vector based design involves creating digial art using math formulas
+    to degine lines,shapes and colors.
+    prototyping refers to the process of creating an ineractive model of a product or user interface.
+
+    #  common design tool: Figma 
+        - cloud based tool that specialized in ui/ux
+        it basically enables dsign and dev teams to collaborate from anywhere:
+
+    FIGMA features:
+        - vector-based design
+        - automatic layout
+        - commenting and feedback systems
+        - version history
+        - realtime collaboration
+        - design systems, and more.
+
+    U can use it via web or download desktop app.
+        - it has a free tier that has a lot without paying for process
+    
+    # Sketch
+    Another design tool, u can use web-bsed interfae or desktop app
+        - generious free tier again
+    - like figma it is vector based and primarily used for ui/ux design
+    - best for quick prototypes, and stuff like UIs, icons and web layouts
+
+    # Adobe XD is another vector-based design and prototyping tool for UI/UX design, known for its seamless integration with other Adobe apps like Photoshop, Illustrator, and After Effects.
+
+    # ANother is Canva

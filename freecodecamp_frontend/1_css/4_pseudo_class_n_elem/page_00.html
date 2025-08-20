@@ -1,0 +1,116 @@
+1) What Are Pseudo-classes, and How Do They Work?
+
+Pseudo-classes in CSS are special keywords that let you style elements
+depending on their state or their position within a parent element.
+
+- They are added to a selector with a colon (:) followed by the pseudo -
+class name. This makes it possible to style elements in ways that respond
+to user interaction or document structure.
+
+eg)
+the :active pseudo-class applies styles when an element is active. If a button is clicked, it can change color:
+
+button:active {
+background: greenyellow;
+}
+
+eg)
+The :hover pseudo-class defines what happens when a user hovers over an element, such as removing an underline and
+setting a crimson background on links:
+
+a:hover {
+text-decoration: none;
+background: crimson;
+}
+
+eg) Pseudo-classes also let you target elements based on their position. Using :first-child, you can select the very
+first child inside a parent. For example, given this HTML:
+
+<div class="container">
+    <p>first child</p>
+    <p>second child</p>
+    <p>third child</p>
+    <p>last child</p>
+</div>
+
+You can select only the first <p> inside the container:
+
+    .container p:first-child {
+    background: lightcoral;
+    padding: 0.4rem;
+    }
+
+    This would give the first paragraph a lightcoral background and padding. Similarly, :last-child targets the last
+    element in a parent, so the last
+<p> in that same container could be styled the same way:
+
+    .container p:last-child {
+    background: lightcoral;
+    padding: 0.4rem;
+    }
+
+
+    eg)
+    Pseudo-classes also help with user interactions beyond hovering or clicking. The :visited pseudo-class changes the
+    appearance of links a user has already clicked:
+
+    a:visited {
+    color: purple;
+    }
+
+    eg)
+    And the :disabled pseudo-class is useful for styling disabled form elements, such as making a button appear
+    inactive:
+
+    button:disabled {
+    background-color: lightgray;
+    }
+
+    In addition to these examples, CSS provides many other pseudo-classes. Some
+    of the most useful include :focus (applies when an input is focused),
+    :first-of-type and :last-of-type (for targeting elements based on type
+    rather than just child order), :nth-of-type (for more complex sequences),
+    :enabled, :checked, :required, and even newer ones like :modal.
+
+    Altogether, pseudo-classes give you powerful ways to style elements not
+    just based on what they are, but also on how users interact with them and
+    where they sit in the page structure. This makes websites feel more
+    interactive, responsive, and user-friendly.
+
+    2) What Are Examples of Element User Action Pseudo-classes?
+
+    User feedback in web design is essential for improving user experience. It
+    provides visual cues that indicate the state of interactive elements, like
+    whether a link has been visited or a button is being clicked. CSS user action
+    pseudo-classes let you implement this feedback without JavaScript.
+
+    Key Pseudo-Classes:
+    i) :hover = Triggered when a user hovers over an element (like a button or link).
+
+    .btn:hover {
+    background-color: darkgreen;
+    color: white;
+    cursor: pointer;
+    }
+
+    ii) :active – Applies styles when an element is being activated (clicked).
+
+    iii) :focus – Applies styles when an element gains focus, usually via
+    keyboard navigation or clicking into a form input. Important for
+    accessibility. (eg: tab buttons)
+
+    iv) :visited – Targets links the user has already visited.
+
+    v) :checked – Styles form elements (checkboxes, radio buttons) when selected.
+
+    Other Useful Pseudo-Classes:
+
+    i) :focus-within – Styles a parent when it or any child element has focus.
+
+    ii) :enabled / :disabled – Target form elements based on whether they are active or inactive.
+
+    iii) :target – Styles an element targeted by a URL fragment (after #).
+
+In short: pseudo-classes provide dynamic styling based on user actions, improving interactivity, clarity, and accessibility.
+
+3) What Are Examples of Input Pseudo-classes?

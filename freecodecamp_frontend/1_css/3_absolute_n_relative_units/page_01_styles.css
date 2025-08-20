@@ -1,0 +1,21 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    min-height: calc(100vh-100px);
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+header img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1rem;
+}
+
+section,
+hr {
+    width: 80%;
+    margin: 1rem auto;
+}

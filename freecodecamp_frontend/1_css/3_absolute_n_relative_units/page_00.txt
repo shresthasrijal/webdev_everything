@@ -1,0 +1,254 @@
+1) What are absolute units in css, and when to use them?
+
+When u work on designing web pages, u will come across differnt properties like
+width, heights, paddings, margins and more.
+- when u define these properties, u need to specify specific length units of 
+    measurement u want to use
+
+There are 2 types of units to define properties:
+    i) relative units
+- they are units of fixed length & arent relative to anything else.
+- relative means, length is relative to something else, like the size of screen,
+or the size of parent element like a box or a div
+
+    ii) absolute units
+- this is more common, units like 0px, pixels are fixed-sized units of
+measurement, providing precise control over dimensions. 
+- 1 px always equal 1/96th of an inch.
+ (note for css, px was standardized to 1/96th of an inch)
+ actual pixel might  be different with new displayes like small 4k screens
+
+eg: using px to set width and height for a box:
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+this is a red box with 100px width and height, and it doesnt change with ur
+screen size. so in a device with a small screen the box is the same size as in 
+desktop. 
+
+So when do we use absolute units? depends on the situation, but generally when 
+u need precise control element dimension, spacing and layout.
+
+eg: using pixel to set margin for a box
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 10px;
+}
+ margin is the space outside of the box. 
+
+Other types of absolute units include the following:
+
+- The in (inches) unit, which is equal to 96px
+- The cm (centimeters) unit, which is equal to 25.2/64 of an inch
+- The mm (millimeters) unit, which is equal to 1/10th of a centimeter
+- The q (quarter-millimeters) unit, which is equal to 1/40th of a centimeter
+- The pc (picas) unit, which is equal to 1/6th of an inch
+- The pt (points) unit, which is equal to 1/72th of an inch
+
+Most of these units will be used for print and not for screens
+
+2) What Are Percentages in CSS, and When Should You Use Them?
+
+Percentages in CSS are relative units that allow you to define sizes,
+dimensions, and other properties as a proportion of their parent element.
+
+when to use it? -> Make this X% of its container. eg: when u set width: 50% on
+an elment, it will occupy hald the width of its parent container.
+
+Percentages are ideal for creating fluid layouts that adjust to various screen
+sizes. For instance, setting a container to width: 80% ensures it takes up 80%
+of its parent's width, regardless of the device.
+
+Using percentages for flexible images is another common practice. By applying
+max-width: 100% to images, you allow them to scale down on smaller screens while
+maintaining their aspect ratio.
+
+While less common, percentages can also be used for font sizes to create
+scalable typography. For example, font-size: 120% would make the text 20% larger
+than its parent's font size.
+
+eg: use percentages with the transform property to center an element vertically:
+.center-me {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 300px;
+  height: 300px;
+  background-color: red;
+}
+
+Remember, percentages are always relative to something. For horizontal
+properties like width, they're relative to the parent's width. For vertical
+properties like height, they're usually relative to the parent's height
+
+However, be cautious when nesting elements with percentage-based dimensions, as
+this can lead to unexpected results. Also, keep in mind that percentage-based
+heights can be tricky if the parent doesn't have a defined height.
+
+percentages in CSS are powerful tools for creating flexible, responsive designs. 
+
+3) What Are ems and rems in CSS, and When Should You Use Them?
+absolute units can be helpful in certain situations, there will be times when
+you want to use relative units.
+
+There are two relative units: ems and rems. 
+
+Em units are relative to the font size of the element. If you are using ems for
+the font-size property, the size of the text will be relative to the font size
+of the parent element.
+
+-- html
+<p class="para">I am a paragraph element</p>
+
+<div class="blue-box"></div>
+--- css
+.para {
+  font-size: 20px;
+  margin-bottom: 1.5em;
+  border: 2px solid red;
+}
+
+.blue-box {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+}
+
+For the para class, we set the font-size to 20px and the margin-bottom to 1.5em.
+This means that the margin will be 1.5 times the font size of the paragraph
+element. 1.5em results in 30 pixels of margin at the bottom of the paragraph. We
+have also set a border of 2px solid red so you can see the margins better.
+
+and blue box is like a blue box, now there is a 30px diff between 2 objectives
+now if u remove font-size from para, margin changes to font size, so since font
+size changed and defaults to 16 px, the margin changed to 24px from 30 now.
+
+so when to use em?
+- Modular components (buttons, cards, etc.)
+- Ensures padding, margin, and borders scale proportionally with font size
+
+# Challenges with pixel units
+- Pixels are absolute units. 
+- Users can adjust the default font size in their browser, especially for
+accessibility.
+- If your design uses pixels for font sizes, text won’t scale proportionally
+with other content.
+
+"rem" units:
+
+rem = “root em”, relative to the font size of the root element (html). Default
+root font size = 16px If the user increases their browser font size, all rem
+units scale proportionally.
+
+eg: .para {
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+  border: 2px solid red;
+}
+here ->
+Font size = 1.2 × root font size
+Default: 1.2 × 16px = 19.2px
+Margin-bottom = 1.5 × paragraph font size = 1.5 × 19.2px ≈ 28.8px
+
+so on defualt u have 16px * 1.2 font size, and as user changes browser settings,
+it will maintian consistent spacing and layout across elements.
+
+GOOD for accessibility
+
+4) What Are vh and vw Units, and When Should You Use Them?
+
+vh and vw are viewport units,
+    - vh = viewport height (1 vh = 1% of the viewports height)
+    - vw = viewport width (1vw = 1% of viewport width)
+
+Allows elements to scale relative to the browser window, making desgins responsive
+
+-eg:
+
+.hero {
+    height: 100 vh;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 5 vw;
+}
+
+here:
+- .hero fills the full viewport.
+- h1 text scales with viewport width.
+
+Advantages:
+    - elements adapt automatically when browser resized
+    - useful for full screen layouts, mainting proportions, and responsive 
+    typography
+
+Cautions:
+    - Font sized based on vw can be too small or too large on extreme screens
+    - on mobile, vh may fluctuate due to browser interface changes, and can 
+        cause layout shifts
+
+Best Practice:
+Combine vh/vw with other CSS techniques to create responsive, stable designs.
+
+5) What Is the calc() Function, and How Does It Work?
+- the calc() function lets u perform calculations directly in css to determine
+property values dynamically, enabling flexible and responsive designs
+
+syntax:
+    property: calc(expression);
+
+    - Expression: combination of values (operands) and operators (+, -, *, /).
+    - can include lengths, percentages, ems, numbers, angles, time, colors, and
+    css variables or other functions
+
+eg:
+div {
+  width: calc(50% - 20px);
+  color: white;
+  background-color: #1b1b32;
+}
+Here, the div’s width is 50% of the parent minus 20px, adjusting dynamically
+if the parent resizes.
+
+Rules and Best Practices
+    i) Whitespace is required around + and - operators:
+        (space before and after the + and - ops)
+    calc(100% - 30px)  /* valid */
+    calc(100%-30px)     /* invalid */ 
+
+    ii) Multiplication/division: one operand must be unitless:
+
+    calc(5px * 50)      /* valid */
+    calc(50% / 5)       /* valid */
+    calc(5px * 50px)    /* invalid */
+
+    iii) Zero values must include units:
+
+    calc(100% - 0px)    /* valid */
+    (one reason could be consistency)
+        width: calc(50% - 20px);
+        width: calc(100% - 0px);
+    (for placeholder calcs or dynamic)
+        width: calc(100% - var(--sidebar-width, 0px));
+
+    iv) Operator precedence follows standard math rules; parentheses can control
+    order.
+
+    v) You can nest calc() calls if needed.
+
+Advantages:
+
+- Combines different units in calculations.
+- Adjusts dynamically when the parent or viewport size changes.
+- Supports responsive layouts and flexible UI designs.
+
+calc() allows you to dynamically compute CSS property values using math
+expressions, combining units and making designs responsive and adaptable to
+different screen sizes.
