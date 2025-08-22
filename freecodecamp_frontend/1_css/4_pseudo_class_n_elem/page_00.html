@@ -77,7 +77,7 @@ You can select only the first <p> inside the container:
     where they sit in the page structure. This makes websites feel more
     interactive, responsive, and user-friendly.
 
-    2) What Are Examples of Element User Action Pseudo-classes?
+    (2) What Are Examples of Element User Action Pseudo-classes?
 
     User feedback in web design is essential for improving user experience. It
     provides visual cues that indicate the state of interactive elements, like
@@ -111,6 +111,264 @@ You can select only the first <p> inside the container:
 
     iii) :target – Styles an element targeted by a URL fragment (after #).
 
-In short: pseudo-classes provide dynamic styling based on user actions, improving interactivity, clarity, and accessibility.
+    In short: pseudo-classes provide dynamic styling based on user actions,
+    improving interactivity, clarity, and accessibility.
 
-3) What Are Examples of Input Pseudo-classes?
+    (3) What Are Examples of Input Pseudo-classes?
+
+    The look and behavior of input elements can greatly improve form usability,
+    and CSS provides helpful pseudo-classes for this.
+
+    - :focus highlights the active input,
+    e.g)
+    input:focus { border: 2px solid crimson; }
+    - :hover gives feedback when hovering,
+    e.g) changing background to orange.
+    - :checked styles selected checkboxes/radio buttons,
+    e.g) making a checkbox coral.
+    - :required marks mandatory fields with an orange border.
+    - :valid / :invalid show validation states
+    e.g) (green for valid, crimson for invalid).
+    - :disabled styles non-interactive fields,
+    e.g) lightgray background with a not-allowed cursor.
+
+    Other useful ones:
+    - :autofill (browser-filled fields),
+    - :optional (non-required inputs),
+    - :in-range / :out-of-range (for numeric constraints).
+
+    these pseudo-classes help create forms that are clearer, more interactive, and
+    user-friendly.
+
+    (4) What Are Examples of Location Pseudo-classes?
+
+    Location pseudo-classes let you style links and elements based on whether
+    they've been visited or are currently targeted within the document.
+
+    - :link styles unvisited links.
+    eg) a:link { color: magenta; }
+    All unclicked links appear magenta.
+
+    - :visited applies once a link has been clicked.
+    eg) a:visited { color: purple; }
+    This helps users tell visited links apart.
+
+    - :any-link combines :link and :visited, targeting all anchors with href. eg) a:any-link { color: crimson; }
+
+    - :local-link styles links that point to the same document.
+
+    - :target styles the element targeted by the current URL fragment.
+    Great for in-page navigation. like say take u to section 2 in article
+    eg) section:target {
+    background-color: green;
+    border: 2px solid green;
+    padding: 10px;
+    }
+    Clicking a link like "Features" highlights that section.
+
+    :target-within works like :target but also applies if a child element is
+    the target.
+    Together, these pseudo-classes improve navigation by giving
+    visual cues: unvisited vs. visited links, links in focus, and highlighting
+    sections users jump to.
+
+(5) What Are Examples of Tree-structural Pseudo-classes?
+
+    Tree-structural pseudo-classes let you style elements based on their
+    position within the HTML document tree. They are very useful for applying
+    styles depending on hierarchy, order, or uniqueness of elements.
+
+    - :root selects the root element (usually <html>).
+    :root {
+    background: black;
+    color: aliceblue;
+    }
+    The :root pseudo-class is also commonly used in setting CSS variables:
+    :root {
+    --main-font: 'Arial, sans-serif';
+    --primary-color: blue;
+    --secondary-color: green;
+    }
+
+    With CSS variables, you get to store values and reuse them in your stylesheet.
+
+    - empty elements, that is elements with no children other than white space.
+    theyre also included in the document tree.
+    Thats why there is an "":empty" pseudo-class to target empty elements
+    eg) <ul>
+        <li>Item 1</li>
+        <li></li> <!-- This list is empty -->
+        <li>Item 2</li>
+        <li></li> <!-- Another empty list -->
+        <li>Item 3</li>
+    </ul>
+    With the :empty pseudo-class, you can style the empty list items differently:
+    :empty {
+    background: black;
+    }
+    But, The most practical thing to do with the empty list items is probably
+    not displaying them at all -- :empty {
+    display: none;
+    }
+
+    - :nth-child(n) and :nth-last-child(n) style elements based on order
+    within a parent (from start or end). For example, alternating table rows:
+    eg)
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td>$1.00</td>
+        </tr>
+        <tr>
+            <td>Banana</td>
+            <td>$0.50</td>
+        </tr>
+        <tr>
+            <td>Orange</td>
+            <td>$0.80</td>
+        </tr>
+    </table>
+
+    tr:nth-child(even) { background-color: orangered; }
+    tr:nth-child(odd) { background-color: lightgreen; }
+
+    - :first-child, :last-child, and :only-child pseudo-classes all act on items within a parent container or the entire
+    document.
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    li:first-child {
+    background-color: orangered;
+    }
+
+    li:last-child {
+    background-color: lightgreen;
+    }
+
+    note: If you have more unordered lists on the page, you have to be more specific with the selection:
+
+    ul li:first-child {
+    background-color: orangered;
+    }
+
+    ul li:last-child {
+    background-color: lightgreen;
+    }
+
+    for only child:
+    <div class="container">
+        <div>This is the only item in this container.</div>
+    </div>
+
+    .container div:only-child {
+    border: 2px solid crimson;
+    padding: 10px;
+    background-color: lightblue;
+    }
+
+    -The :first-of-type and :last-of-type pseudo-classes select the first and
+    last occurrence of a specific element type within its parent. They are
+    useful for applying unique styles to the first or last instance of that
+    element type among its siblings.
+
+    <section>
+        <h2>Introduction</h2>
+        <p>This is the first paragraph in the first section</p>
+        <p>This is the second paragraph in the first section</p>
+    </section>
+    <section>
+        <h2>Details</h2>
+        <p>This is the first paragraph in the second section.</p>
+        <p>This is the second paragraph in the second section.</p>
+    </section>
+
+    section p:first-of-type {
+    background-color: lightgreen;
+    }
+
+    section p:last-of-type {
+    background-color:lightblue;
+    }
+
+    - The :nth-of-type(n) pseudo-class lets you style elements based on their
+    position within the document tree. It's similar to :nth-child(n), but it
+    selects elements based on their type rather than their position in the
+    document tree.
+
+    <div class="container">
+        <p>First paragraph</p>
+        <h2>First heading</h2>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+        <h2>Second heading</h2>
+    </div>
+
+    p:nth-of-type(2) {
+    color: red;
+    font-weight: bold;
+    }
+
+    - :only-of-type selects an element if it's the only one of its type within 
+    its parent. This can be useful for emphasizing single items or ensuring 
+    that they are styled differently when they’re not part of a group.
+
+    <div class="container">
+        <p>First paragraph</p>
+        <h2>First heading</h2>
+        <h2>Second heading</h2>
+    </div>
+
+    p:only-of-type {
+        color: red;
+        font-weight: bold;
+    }
+
+(6) What Are Examples of Functional Pseudo-classes?
+
+Functional pseudo-classes are special CSS selectors that take arguments inside 
+parentheses. They let you style elements based on more complex conditions than 
+regular pseudo-classes like :hover or :focus.
+
+    i) :is()
+    Styles elements from a group of selectors in a shorter way.
+    eg. 
+        :is(button, a.button, input[type="submit"]) {
+            background: darkblue;
+            color: white;
+        }
+    Styles all buttons, link-buttons, and submit inputs.
+
+    ii) :where()
+    Works like :is(), but doesn’t add specificity, making it good for resets.
+    eg. 
+       :where(h1, h2, h3) {
+            margin: 0;
+            padding: 0;
+        }
+    Removes margin/padding from headings without overriding other styles.
+
+    iii) :has()
+    Styles a parent if it contains a certain child.
+    eg.
+        article:has(h2) {
+            border: 2px solid hotpink;
+        }
+    Adds a border to <article> only if it has an <h2> inside.
+
+    iv) :not()
+    Excludes elements from a group of selectors.
+    eg.
+        button:not(.primary) {
+            background: grey;
+        }
+    Styles all buttons except the ones with class .primary.
+
+(7) What Are Pseudo-elements, and How Do They Work?
