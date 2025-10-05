@@ -318,7 +318,7 @@ You can select only the first <p> inside the container:
 
     - :only-of-type selects an element if it's the only one of its type within 
     its parent. This can be useful for emphasizing single items or ensuring 
-    that they are styled differently when they’re not part of a group.
+    that they are styled differently when they're not part of a group.
 
     <div class="container">
         <p>First paragraph</p>
@@ -347,7 +347,7 @@ regular pseudo-classes like :hover or :focus.
     Styles all buttons, link-buttons, and submit inputs.
 
     ii) :where()
-    Works like :is(), but doesn’t add specificity, making it good for resets.
+    Works like :is(), but doesn't add specificity, making it good for resets.
     eg. 
        :where(h1, h2, h3) {
             margin: 0;
@@ -372,3 +372,100 @@ regular pseudo-classes like :hover or :focus.
     Styles all buttons except the ones with class .primary.
 
 (7) What Are Pseudo-elements, and How Do They Work?
+
+Pseudo-elements in CSS are virtual elements
+they are like synthetic constructs that do not directly exist in html but 
+lets you style specific parts of an element or insert content without adding extra markup.
+The syntax uses a double colon (::) to distinguish pseudo elements from pseudo Pseudo-Classes
+
+eg:
+selector::pseudo-element {
+  property: value;
+}
+Pseudo-elements can't exist alone; they're attached to an originating element.
+
+i) ::before and ::after
+
+
+These let you insert content before or after an element's content.
+
+eg:
+<button class="cta-button">Learn More</button>
+
+.cta-button {
+  background-color: lightseagreen;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.cta-button::before {
+  content: "⭐";
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  font-size: 0.75rem;
+}
+
+This adds a star before the button text using the content property.
+
+ii)
+
+.cta-button::after {
+  content: '➡️';
+  position: absolute;
+  right: 5px;
+  bottom: 6px;
+  font-size: 1.125rem;
+  transition: transform 0.3s ease;
+}
+
+Here, the transition property makes animations smooth over 0.3 seconds.
+
+iii) You can also add pseudo-classes like :hover to pseudo-elements:
+
+eg)     .cta-button:hover::after {
+            transform: translateX(2px);
+        }
+When hovering, the arrow moves 2px to the right using transform: translateX
+(2px) and the smooth transition from before.
+
+iv) ::first-letter Example
+It styles only the first letter of an element's content.
+
+<p>freeCodeCamp lets you learn to code without having to pay.</p>
+
+p::first-letter {
+  font-size: 4rem;
+}
+
+v) ::marker Example
+
+it styles list item markers (bullets or numbers).
+
+<ul>
+  <li>Unordered list item 1</li>
+  <li>Unordered list item 2</li>
+  <li>Unordered list item 3</li>
+  <li>Unordered list item 4</li>
+</ul>
+
+<ol>
+  <li>Ordered list item 1</li>
+  <li>Ordered list item 2</li>
+  <li>Ordered list item 3</li>
+  <li>Ordered list item 4</li>
+</ol>
+
+li::marker {
+  color: crimson;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+Other pseudo-elements you can explore include ::placeholder, 
+::spelling-error, and ::selection.
+These all enhance design by targeting specific parts of elements without 
+changing the HTML structure.
