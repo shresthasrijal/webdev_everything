@@ -11,14 +11,30 @@
 <body>
     <div class="container">
         <form>
+            <label for="name">Name</label>
             <input type="text" id="name">
+            <label for="email">Email</label>
             <input type="email" id="email">
+            <label for="position">Position Applied For</label>
             <select id="position">
                 <option value="front-end">Front End</option>
                 <option value="back-end">Back End</option>
                 <option value="full-stack">Full Stack</option>
             </select>
-            <fieldset class="radio-group"></fieldset>
+            <fieldset class="radio-group">
+                <legend>Availability</legend>
+                <label>
+                    <input type="radio" name="availability" value="full-time">
+                    Full-Time
+                </label>
+
+                <label>
+                    <input type="radio" name="availability" value="part-time">
+                    Part-Time
+                </label>
+            </fieldset>
+            <textarea id="message"></textarea>
+            <button type="submit">Submit</button>
         </form>
     </div>
 </body>

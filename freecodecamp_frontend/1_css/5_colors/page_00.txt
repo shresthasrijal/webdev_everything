@@ -1,0 +1,52 @@
+..........Working with Colors in CSS..........
+
+1) What is color theory in design??
+
+Color theory refers to the study of how colors interact, relate, and 
+influence perception. it explores color relationships, harmony, and
+psychological effects.
+
+3 classifications:
+    i) primary: red, blue yellow
+    Foundation colors from which all other colors derive
+    ii) secondary: green, orange, purple
+    Formed by mixing equal parts of 2 primary colors
+    iii) tertiary, yello-green, blue-green, and blue-violet
+    Made by combining primary with a neighbouring secondary color
+
+Colors can be divided into warm and cool categories too..
+- warm colors:
+    red, orange, yellow that evokes comfort, energy, warmth
+- cool colors:
+    blue, green, purple that gives calmness, serenity, professionalism
+
+Digitially, to show colors, designers use color models like RGB, HSV, and HSL, which define colors based on different properties and are essential for consistent reproduction across media.
+
+A fundamental design tool is the color wheel, a circular diagram showing color relationships, it helps selecting color combos and building color schemes which are groups of colors used in design projects based on color theory principles.
+
+---
+main types of color schemes include:
+    - analogues
+    Using adjacent colors on the wheel. that creates a cohesive and soothing effect
+    - complementary
+    use colors that are opposite eachother. it provides high contrast and visual impact
+    - triadic: uses three colors evenly spaced on the wheel
+    It forms an equilateral traingle, and makes a vibrant balanced look
+    - monochromatic: uses variations of a single color by adjusting 
+    lightness, darkness, and saturation;
+    evokes unity and harmony while maintaining contrast
+
+Color contrast is cruicial for web accessibility, ensuring text and 
+key elements are distinguishable, particularly for users with visual 
+impairments.
+
+--> tips for effective color use in web design:
+    i. Develop a color scheme that reflects your brand.
+    ii. Use colors to evoke emotions aligned with your goals.
+    iii. Ensure adequate contrast for accessibility.
+    iv. Use color to emphasize key elements like buttons.
+    v. Apply colors consistently to build visual hierarchy.
+
+color theory underpins effective design by combining color 
+psychology, harmony, and accessibility to create visuals that engage 
+users and enhance experiences.

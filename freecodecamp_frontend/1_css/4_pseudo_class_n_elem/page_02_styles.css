@@ -1,3 +1,44 @@
-.radio-group {
-    
+input:first-of-type {
+    border-color: yellowgreen;
+}
+
+input:focus, textarea:focus {
+    border-color: aquamarine;
+}
+
+input:invalid, select:invalid, textarea:invalid {
+    border-color: red;
+}
+
+input:valid, select:valid, textarea:valid {
+    border-color: green;
+}
+
+button:hover{
+    background-color: aquamarine;
+}
+
+.radio-group input[type="radio"]:checked {
+    border-color: red;
+    background-color: lightgray;
+    box-shadow: 0 0 5px blue;
+}
+
+label:has(input[type="radio"]:checked) {
+  color: blue;
+}
+
+.container {
+    background-color: #fff;
+    width: 400px;
+    padding: 2rem;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
