@@ -1,0 +1,44 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(140deg, rgb(152, 230, 9), yellow, orange, red);
+    color: #f5f6f7;
+    font-family: Tahoma;
+    font-size: 16px;
+}
+
+.form-container {
+    background-color: bisque;
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 300px;
+    width: 60vw;
+    padding-bottom: 2em;
+    border-radius: 20px;
+    padding: 1em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 2em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: rgb(14,255,14);
+    font-size: 12px;
+
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+label {
+    margin: 0.5rem 0;
+    color: black;
+}

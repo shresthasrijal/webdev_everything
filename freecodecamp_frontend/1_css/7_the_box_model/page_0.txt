@@ -1,0 +1,284 @@
+1) What Is Overflow in CSS, and How Does It Work?
+    Overflow occurs when an element’s content exceeds its container’s size, 
+    such as text spilling outside a div. Overflow works in two directions — 
+    x-axis (horizontal) and y-axis (vertical).
+
+    To manage overflow, you can use the overflow-y CSS property:
+        - overflow-y: hidden;
+            hides overflowing content but makes it inaccessible.
+        - overflow-y: scroll;
+            adds a scrollbar so users can view all content within the element.
+        - overflow-y: auto;
+            lets the browser decide when to show a scrollbar.
+    
+    Vertical scrolling is generally acceptable, while horizontal scrolling is 
+    less common in design. Controlling overflow helps you maintain cleaner, 
+    more flexible page layouts.
+
+2) What Is the CSS Transform Property, and How Does It Work?
+
+    The CSS transform property lets you visually modify elements—rotating, 
+    scaling, skewing, or moving them in 2D or 3D space—without changing their 
+    layout in the document flow. It works by applying mathematical 
+    transformations to an element’s coordinate system.
+
+    eg)
+        - Translate: moves an element’s position.
+            transform: translate(50px, 100px);
+            
+            moves the element 50px right and 100px down.
+
+        - Rotate: spins an element around a fixed point.
+            transform: rotate(45deg);
+
+            rotates the element 45° clockwise
+        
+        - Scale: resizes an element.
+            transform: scale(1.5, 2);
+
+            makes it 1.5× wider and 2× taller.
+
+        - Combining transforms:
+            transform: translate(50px, 50px) rotate(45deg) scale(1.5);
+
+            moves, rotates, and enlarges the element simultaneously.
+
+    Accessibility considerations:
+    - Screen readers read elements in their original DOM order, not their       
+        visual position after transforms.
+    - Avoid scaling text too much—small text becomes unreadable; oversized text 
+        may overflow.
+    - Animations using transforms can cause motion sensitivity; offer an option 
+        to reduce motion.
+    - 3D transforms shouldn’t convey critical information solely through depth.
+    - Hidden or interactive elements moved with transforms must remain 
+        accessible and easy to interact with.
+
+    In short: The transform property is a powerful tool for dynamic design, but 
+    it should be used thoughtfully to maintain accessibility and usability.
+
+3) What Is the CSS Box Model, and How Does It Work?
+
+    The CSS box model defines how elements are structured and sized on a 
+    webpage. Each element is surrounded by a box made up of four parts: 
+    content, padding, border, and margin.
+
+    - Content:
+        the innermost area containing text, images, or other content.
+
+    - Padding:
+        space between content and border, used to improve readability.
+
+        padding: 15px 5px 2px 8px; /* top, right, bottom, left */
+
+    - Border:
+        the element’s outline, customizable in width, style, and color.
+
+        border: 5px solid blue;
+        border-width: 2px 4px 7px 12px;
+        border-style: dashed solid solid dashed;
+        border-color: blue red green black;
+
+        Values are applied clockwise from the top. A single value applies to all sides.
+    
+    - Margin:
+        space outside the border, controlling distance from other elements.
+
+        margin: 3px 12px 9px 7px; /* top, right, bottom, left */
+
+    These components determine an element’s total width and height. 
+    Understanding the box model is essential for controlling layout, spacing, 
+    and appearance in web design.
+
+4) What Is Margin Collapsing, and How Does It Work?
+
+    Margin collapsing in CSS occurs when vertical margins of adjacent elements 
+    overlap, producing a single margin equal to the larger of the two, rather 
+    than adding together. This behavior applies only to top and bottom margins, 
+    not horizontal margins.
+
+    examples:
+
+    - adjacent siblings:
+
+        .box1 { margin-bottom: 20px; }
+        .box2 { margin-top: 30px; }
+
+        Space between .box1 and .box2 = 30px (larger margin wins).
+
+    - parent and first/last child:
+
+        .parent { margin-top: 40px; }
+        .child { margin-top: 30px; }
+
+        Margins collapse, total top space = 40px.
+    
+    - Empty elements
+
+        .empty-block { margin-top: 20px; margin-bottom: 10px; height: 0; }
+
+        Top and bottom margins collapse → 30px total margin.
+
+    - Preventing collapse with padding:
+
+        .parent { margin-top: 40px; padding-top: 1px; }
+        .child { margin-top: 30px; }
+
+        Padding prevents collapsing → total top space = 71px.
+
+    Key points:
+        - Only vertical margins collapse.
+        - Adjacent siblings, parent/child, and empty elements are common cases.
+        - Padding, borders, or inline content can prevent collapse.
+
+    Understanding margin collapsing allows precise control of spacing and 
+    ensures more predictable, maintainable layouts.
+
+5) What Is the Difference Between content-box and border-box?
+
+    The CSS box-sizing property controls how an element’s width and height are 
+    calculated. It has two main values:
+
+    i) content-box (default):
+        - Width and height only apply to the content area, excluding padding, 
+        border, and margin.
+        - Total dimensions must include padding and border manually:
+            total width = content width + padding left + padding right 
+                + border left + border right
+            total height = content height + padding top + padding bottom 
+                + border top + border bottom
+        - eg,
+            div {
+                width: 300px;
+                height: 200px;
+                padding: 20px;
+                border: 4px solid black;
+            }
+
+            Total width = 300 + 40 + 8 = 348px
+            total height = 200 + 40 + 8 = 248px
+    
+    ii) border-box:
+        - Width and height include content, padding, and border, but not margin.
+        - Padding and border are inside the box, so the content area shrinks 
+            automatically to fit the given width/height.
+        - Using the same example above with border-box 
+        → width = 300px, height = 200px (including padding and border).
+
+    Difference is that content-box adds padding/border to total size, whereas
+    border-box keeps the overall size fixed.
+
+    Takeaway:
+        - content-box: precise control over content area.
+        - border-box: simpler sizing and easier responsive design.
+    
+    Understanding both helps create flexible and predictable layouts.
+
+6) What Is a CSS Reset, and What Are Some Common Examples?
+
+    A CSS reset is a stylesheet that removes some or all default browser styles 
+    from HTML elements to create a consistent baseline across different 
+    browsers and devices. Browsers apply default styles (e.g., margins on 
+    paragraphs or headings), which can vary between browsers like Chrome, 
+    Firefox, or Edge, causing inconsistencies.
+
+    two main approaches:
+    i) custom css resets:
+        - You create your own reset stylesheet tailored to your project.
+        -Example resetting all margins and padding:
+            * {
+                margin: 0;
+                padding: 0;
+            }
+        - Provides flexibility but requires time to maintain.
+
+    ii) Third-party CSS resets:
+        - Pre-built stylesheets that normalize or reset styles.
+        - Normalize.css: Keeps useful defaults for accessibility, corrects  
+            bugs, and ensures consistency.
+        - Sanitize.css: Works alongside Normalize.css and offers targeted   
+            normalization for forms, typography, etc.
+        - Saves time and effort, can be combined with custom resets for     
+            specific needs.
+
+    Some considerations:
+        - Avoid removing styles needed for accessibility (screen readers, 
+            assistive tech).
+        - Extra stylesheets can affect performance since they load before   
+            custom styles.
+
+    Takeaway:
+        CSS resets provide a blank starting point, giving you control over 
+        styling and ensuring a uniform, predictable user experience across 
+        browsers and devices.
+    
+7) What Is the CSS Filter Property, and What Are Common Examples?
+
+    The CSS filter property allows you to apply graphical effects—like 
+    blurring, color shifting, or adjusting brightness—to web elements such as 
+    images, backgrounds, and text, without changing the original file.
+
+    basic syntax:
+        selector {
+            filter: function(amount);
+        }
+
+    here function is the filter effect and amount determines its intensity
+
+    common filter examples:
+        - blur
+
+        img {
+            filter: blur(2px);
+        }
+
+        this applies a Gaussian blur with the radius in pixels. For instance, a 
+        blur(5px) softens all images—useful for depth or hiding details.
+    
+        - brightness
+
+        img {
+            filter: brightness(150%);
+        }
+
+        A value of 0% makes an image black, and values over 100% make it 
+        brighter. This example increases brightness by 50%, making images more 
+        vivid or washed-out.
+
+        - grayscale
+
+        img {
+            filter: grayscale(100%)
+        }
+
+        Converts the image to black and white. At 100%, it’s fully grayscale, 
+        great for vintage or subdued looks.
+
+        - sepia
+
+        img {
+            filter: sepia(80%)
+        }
+
+        Adds an 80% sepia tone, creating a warm, antique photo effect.
+
+        - hue rotation 
+
+        img {
+            filter: hue-rotate(90deg);
+        }
+
+        otates colors 90 degrees around the color wheel, producing psychedelic or color-shifted effects.
+
+        - combining filters
+
+        img {
+             filter: contrast(150%) brightness(110%) sepia(30%);  
+        }
+
+        applies multiple effects - first increases contrast, then brightness and then a touch of sepia
+
+    The CSS filter property is a versatile tool for enhancing web design with 
+    creative visual effects. Beyond these examples, you can also use filters 
+    like contrast, invert, and saturate. Used thoughtfully, filters can improve 
+    aesthetics without harming usability or accessibility.
