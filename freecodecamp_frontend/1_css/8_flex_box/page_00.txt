@@ -1,0 +1,272 @@
+1) What is CSS Flexbox, and when should you use it?
+
+    CSS Flexbox is a one-dimensional layout model used to arrange elements in 
+    rows or columns within a container, making web layouts responsive to 
+    different screen sizes. It organizes elements along a single axis—either 
+    horizontal (main axis) or vertical (cross axis)—and allows control over 
+    their order, alignment, and size.
+
+    2 main concepts:
+    
+    - flex container:
+    The parent element where the flex layout is applied using display: flex;
+    
+    - flex items:
+    The direct children of a flex container that can expand or shrink to fit 
+    space
+
+    # example without flex,
+    
+    html:
+    <main>
+        <div id="first-div"></div>
+        <div id="second-div"></div>
+        <div id="third-div"></div>
+    </main>
+    css:
+    div {
+        width: 80px;
+        height: 50px;
+    }
+    #first-div { background-color: #4d70b2; }
+    #second-div { background-color: #5c4db2; }
+    #third-div { background-color: #4da3b2; }
+
+    Without display: flex, the divs stack in separate rows.
+
+    # example with flex:
+    
+    add this css,
+    main { display: flex;}
+
+    This arranges the divs in one row; they shrink if needed. The flex 
+    container is block-level by default.
+
+    Now Key flex properties:
+        Flex properties determine how items are arranged, resized, and spaced:
+        - flex-direction
+        - justify-content
+        - align-items
+        - flex-wrap
+
+    Flex model axes:
+        Each flex container has:
+        - main axis:
+        The direction of item layout.
+        - cross axis:
+        Perpendicular to the main axis.
+
+    note, by default flex-direction is row, but u can change or reverse that.
+
+    eg (1)
+    flex-direction: row;
+
+    eg(2)
+
+    <main>
+        <div id="first-div"></div>
+        <div id="second-div"></div>
+        <div id="third-div"></div>
+    </main>
+
+    main {
+        display: flex;
+        flex-direction: row-reverse; 
+    }
+    div { width: 80px; height: 50px; }
+    #first-div { background-color: #4d70b2; }
+    #second-div { background-color: #5c4db2; }
+    #third-div { background-color: #4da3b2; }
+
+    this reverses item order horizontally.
+
+    eg (3)
+
+    main {
+        display: flex;
+        flex-direction: column; 
+    }
+
+    now items stack vertically like a column
+
+    e(4)
+
+    main{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    Just note, Flexbox provides a flexible and efficient way to align and 
+    distribute elements within a container. Understanding flex containers, flex 
+    items, and flex properties allows developers to build dynamic, responsive 
+    layouts that adapt seamlessly across different devices and orientations.
+
+2) What Are Some Common Flex Properties, and How Do They Work?
+
+    Flex Properties are applied to flex containers to control how their child
+    elements are distributed. The most commonly used properties are flex-wrap, 
+    justify-content and align-items
+
+    i) flex-wrap
+
+    This property controls whether flex items wrap onto multiple lines when they exceed the container's space. It has three values:
+        - nowrap (default):
+            items stay on one line, shrinking if needed
+        - wrap: 
+            items move to the next line when necessary
+        - wrap-reverse:
+            items wrap onto new lines in reverse order.
+
+    # example, items exceed container width (shrink by default)
+
+        <main>
+            <div id="first-div"></div>
+            <div id="second-div"></div>
+            <div id="third-div"></div>
+        </main>
+        
+        main {
+            width: 200px;
+            display: flex;
+            border: 2px solid red;
+        }
+        div {
+            width: 80px;
+            height: 50px;
+        }
+        #first-div { background-color: #4d70b2; }
+        #second-div { background-color: #5c4db2; }
+        #third-div { background-color: #4da3b2; }   
+
+    Here, the three divs (total width 240px) shrink to fit the 200px container
+
+    # example wrap items when exceeding width:
+
+        main {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid red;
+        }
+    
+    now the div will wrap onto a new row if needed
+
+
+    #example - wrap in reverse and column direction 
+        (using flex-flow shorthand)
+
+        main {
+            width: 200px;
+            display: flex;
+            flex-flow: column wrap-reverse;
+            border: 2px solid red;
+        }
+
+    This sets flex-direction: column and flex-wrap: wrap-reverse at once.
+
+    ii) justify-content
+    
+    The justify-content property aligns flex items along the main axis 
+    (horizontal by default, vertical if column).
+
+        - flex-start:
+        aligns items to the start of the main axis
+
+            main {
+                display: flex;
+                justify-content: flex-start;
+                border: 2px solid red;
+                }
+
+        - flex-end:
+        aligns items to the end of the main axis
+
+            main {
+                display: flex;
+                justify-content: flex-end;
+                border: 2px solid red;
+                }
+
+        This allows you to control whether items cluster at the start, end, or wrap across lines when the container cannot fit them all.
+
+        - center:
+        items centered
+
+        main { display: flex; justify-content: center; border: 2px solid red; }
+
+        - space-between:
+        items evenly spaced; first and last items touch the border edges
+
+        main { display: flex; justify-content: space-between; border: 2px solid 
+            red; }
+        
+        - space-around:
+        space between items and half space at edges, space equal between items
+
+        main { display: flex; justify-content: space-around; border: 2px solid 
+            red; }
+
+        - space-evenly:
+        equal space between all items and edges:
+
+        main { display: flex; justify-content: space-evenly; border: 2px solid red; }
+
+    iii) align-items
+    Controls alignment along the cross axis(perpendicular to main axis)
+        cross axis is basically like if u have items put in a column, 
+            and u center align, then the items are in the center of the column 
+            space and if u do left its left align like word text basically.
+
+        - center
+        centers along cross axis
+        
+        main { height: 300px; display: flex; align-items: center; border: 2px 
+            solid red; }
+
+        - flex-start
+        align to the start
+
+        main { height: 300px; display: flex; align-items: flex-start; border: 2px solid red; }
+
+        - flex-end
+        align to end:
+
+        main { height: 300px; display: flex; align-items: flex-end; border: 2px 
+        solid red; }
+
+        - stretch: 
+        items stretch to fill cross axis (useful for auto-sized items)
+
+            .container {
+                display: flex;
+                align-items: stretch;
+                height: 200px;
+                border: 2px solid #444;
+                }
+
+
+    iv) align-self
+
+    Overrides align-items for a single flex item.
+
+        stretch → fills cross axis for that item.
+        center → centers only that item.
+        flex-start → aligns only that item to the start.
+        flex-end → aligns only that item to the end.
+
+
+    basically like give the one item class or id like "special" for example
+
+    .special { align-self: stretch; background-color: lightcoral; }
+
+   # Summary:
+        - flex-wrap → control wrapping.
+        
+        - justify-content → main axis distribution.
+        
+        - align-items → cross axis alignment for all items.
+        
+        - align-self → cross axis alignment for individual items.
+
+    These properties, combined with flex-direction and flex-flow, give full 
+    control over responsive layouts and spacing for both axes.
