@@ -6,7 +6,7 @@
 
 
 body {
-    font-family: sans-serif;
+    font-family: Georgia, serif;
     background-color: #0a0a23;
     color: #fff;
     display: flex;
@@ -46,10 +46,11 @@ body {
 
 .left {
     align-self: flex-start;
+    font-size: 24px;
 }
 
 .middle {
-    font-size: 36px;
+    font-size: 42px;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -57,9 +58,15 @@ body {
     gap: 4px;
 }
 
+.middle div:last-child {
+  transform: rotate(180deg);
+}
+
 .right {
     align-self: flex-end;
     text-align: right;
+    transform: rotate(180deg);
+    font-size: 24px; 
 }
 
 .card:nth-child(1) {
