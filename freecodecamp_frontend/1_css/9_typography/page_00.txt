@@ -1,0 +1,424 @@
+1) What Are the Fundamentals of Typography?
+
+    Typography is basically the art of arranging text so that its not 
+    only readable but also visually appealing and expressive. Think of it 
+    as designing with words. The shapes, sizes, and arrangements of 
+    letters all help communicate mood, hierarchy, and identity.
+
+    Choosing the right type isn't just visual decoration. It can even 
+    help evoke emotion, guide the reader's eyes, and express a brand's 
+    personality.
+
+    # Typefaces vs Fonts: Blueprints and building blocks
+        A typeface is like a blueprint.
+        It is the general design of a whole family of characters, numbers,
+        and symbols.
+
+        A font is one specific member of that family.
+        For instance, a certain size, weight or style (italic, bold)
+
+    eg: typface is times new roman,
+        and fonts within it, times new roman bold, times new roman italic
+
+    Each font variation changes its weight (how thick the strokes are), 
+    style (whether it’s slanted like italics), and width (how stretched 
+    or condensed it looks).
+    
+    2 important examples of typefaces are Serif and Sans Serif. The Serif 
+    typeface has a classical style with small lines at the end of 
+    caracters.
+    Serif is usually used for printed materials, like books...
+
+    Whilst Sans Serif is more modern looking, without those small lines.
+    - its mostly used for digital design because they are easy to read 
+    read on screen.
+
+    Typefaces are like blueprints for fonts, but they can also be grouped
+    if they share a similar design.
+     Variations within the same font family typically include:
+     - weight: 
+     the thickness of characters, light, regular, bold, and black
+     - style:
+     the slant and orientation of characters like italic or oblique
+     - width:
+     the horizontal space occupied by characters, condensed and expanded
+
+    There are more fundamental elements of typography..
+
+    - Cap height: the height of uppercase letters.
+    - X-height: how tall lowercase letters are (like the body of an “x”).
+    - Ascenders: parts that stick above the x-height (like in “b” or “h”).
+    - Descenders: parts that drop below the baseline (like in “y” or “g”).
+
+    Understanding these parts helps designers align text precisely and balance its proportions.
+
+    # Typography isn’t only about letters. It’s about the space between them:
+        - Kerning adjusts space between specific pairs of letters for a 
+        smoother look (for example, bringing A and V closer so they don’t 
+        look awkwardly spaced).
+
+        - Tracking adjusts the overall spacing across all letters in a 
+        word or paragraph, making text look tighter or more open.
+
+        - Leading (rhymes with “heading”) controls the vertical space 
+        between lines — measured baseline to baseline. More leading means 
+        more breathing room between lines.
+
+    These subtle tweaks make text more readable and visually balanced.
+
+    #Line Length and Readability...
+    Even the width of your text block affects comfort:
+    
+    - If lines are too short, the reader’s eyes jump too often = tiring.
+    - If lines are too long, the eyes lose their place — also tiring.
+
+    The best line length feels natural, allowing smooth scanning without 
+    mental effort.
+
+    # Hierarchy and Emphasis
+
+    Typography can guide attention just like visual cues in a painting.
+    - Big fonts signal importance (like headlines).
+    - Bold text adds emphasis.
+    - Italics or underlining highlight key ideas.
+    - Spacing and color contrast draw the eye to what matters most.
+
+    Typography is more than choosing a “pretty font.” It’s a design 
+    language that shapes how people experience information.
+
+    Knowing how to manage typefaces, spacing, and hierarchy lets you 
+    build designs that are not just readable — but memorable, emotionally 
+    resonant, and true to your brand’s identity.
+
+2) What are some best practices for working with typography in ur designs?
+
+    Typography is the art and technique of arranging text type to 
+    communicate effectively. It involves choosing fonts and formatting 
+    text to make it readable, structured, and accessible.
+
+    "Readability" is key. Choose clear, simple fonts so users can easily 
+    engage with your content. Popular web fonts include Roboto, Open 
+    Sans, Poppins, Lato, and Barlow. Make sure text is large enough and 
+    lines aren’t too long — shorter lines are easier to read.
+
+    "Hierarchy" helps users navigate content. Use font size to 
+    distinguish headings, subheadings, and paragraphs. For example, main 
+    headings should be the largest, followed by smaller subheadings, 
+    guiding the reader visually through the structure.
+
+    "Consistency" matters. Stick to two or three fonts across your design 
+    to maintain visual cohesion and reinforce your brand. Overusing fonts 
+    can confuse readers and slow down your website. Use whitespace to 
+    balance text and improve readability.
+
+    "Accessibility" ensures everyone can read your content. Follow the 
+    Web Content Accessibility Guidelines for sufficient contrast ratios, 
+    allow font size adjustments, and avoid overly complex fonts. Ensure 
+    your typography displays correctly on all screen sizes and devices.
+
+    Typography is more than aesthetics — it’s a tool to enhance 
+    engagement, readability, and user experience. Using these best 
+    practices, you can create designs that are both beautiful and 
+    functional.
+
+3) What Are Font Families and How Do They Work?
+
+    A font family is a group of fonts that share a common design, like 
+    siblings with similar traits but different styles, weights, or widths.
+
+    Example: Arial includes Arial Bold, Arial Italic, etc.
+
+    > In CSS, you set the font family with the font-family property:
+        #example {
+            font-family: Arial;
+        }
+
+    > Fallback Fonts
+    If the first font isn’t available, you can provide alternative fonts 
+    in order of priority:
+        #example {
+            font-family: Arial, Lato;
+        }
+        The browser first tries each character for one font, and if its not there then it switches to backup font
+
+    > Generic Font Families
+    fonts browsers use if none of the specified fonts are found.
+    This ensures that the text is readable atleast.
+
+        serif – traditional, with small finishing strokes
+        sans-serif – clean and modern, no finishing strokes
+        monospace – every character takes the same width
+        cursive – decorative, like handwriting
+        fantasy – playful or ornamental
+    
+    example with general fallback....
+        #example {
+            font-family: Arial, Lato, sans-serif;
+        }
+
+    Good practices:
+        - Always include a generic font family at the end.
+        - Use web-safe fonts when possible — these are commonly installed 
+        across devices.
+        - Check how fallback fonts look across browsers; they may not match your original design perfectly.
+
+    Takeaway: Using font-family strategically lets you control the look 
+    of your text while keeping it readable, even if a user doesn’t have 
+    your preferred font installed.
+
+4) What Are Web Safe Fonts?
+
+    Web-safe fonts are fonts that are very likely to be installed on most 
+    computers and devices. Using them ensures your text is rendered 
+    consistently across different operating systems and browsers.
+
+    How do browsers handle fonts?
+    - When a browser tries to display a font, it first looks for the font 
+    on the user’s system.
+    - If the font isn’t available, the browser falls back to a default 
+    system font.
+    - Fallback fonts may look very different, which can affect design and user experience.
+
+    Why Web-Safe Fonts Matter?
+    - They guarantee consistent appearance across devices.
+    - They enhance readability and accessibility.
+    - They can reduce page load time, since no external font files need 
+    to be downloaded.
+
+    Using Web-Safe Fonts
+    - Use them as primary fonts for simplicity.
+    - Or combine with custom fonts, providing a web-safe font as a 
+    fallback.
+
+    Eg of websafe fonts,
+        - sans serif fonts  
+            = arial, verdana, trebuchet ms
+        - serif fonts   
+            = times new roman, georgia
+
+    So if you use web-safe fonts like these, your website will:
+    - Look consistent on different devices
+    - Be readable and accessible
+    - Load faster, because these fonts are usually already installed
+
+5) What Is the @font-face At-Rule, and How Does It Work?
+
+    First, what is an At-Rule?
+    - At-Rules in CSS are special statements that give instructions to 
+    the browser.
+    - eg: @media, @keyframes, and @font-face
+
+    What does the @font-face do?
+    - It lets u define custom fonts that are not necessarily installed
+    on the users devices
+    - It lets u specify, font name (font-family), font files (src) and  
+    optional descriptions like weight, style, format, and technology.
+
+    Example:
+        @font-face {
+            font-family: "MyCustomFont";
+            src: url("path/to/font.woff2"),
+                url("path/to/font.woff"),
+                url("path/to/font.otf");
+        }
+    font-family – The name you’ll use in your CSS to apply the font. 
+    Example:
+        body {
+            font-family: "MyCustomFont";
+        }
+
+    src – The list of font resources. The browser will try them in order 
+    until it finds one that works.
+
+    Some optional features,
+        i) specifying format
+        helps the browser understand the font type.
+        eg:
+                @font-face {
+                    font-family: "MyCustomFont"; 
+                    src: url("path/to/font.woff2") format("woff2"),
+                        url("path/to/font.otf") format("opentype"),
+                        url("path/to/font.woff") format("woff");
+                }
+
+            woff = web open font format
+            woff2 = a more compressed version
+            opentype = scalable font format with extra features
+
+        ii) specifying technology
+        optional hints about the font
+        eg: tech(color-COLRv1).
+
+
+    How does this all work?
+    - browser downloads the font fles u specify in order and uses the 
+    first one that works
+    - if a font is missing a character, the browser may fall back to 
+    another font in the src list.
+
+    Why it matters?
+    - Using @font-face allows for unique, branded typography beyond 
+    web-safe fonts.
+    - Gives control over how text looks on all devices
+    - Supports multiple formats so fonts render correctly across browsers
+
+    In short: @font-face is your tool to bring any font into your website 
+    safely and reliably, even if users don’t have it installed.
+
+6) How Do You Work with External Fonts Like Font Squirrel and Google 
+    Fonts?
+
+    external fonts are fonts not included in ur project; but one thats 
+    hosted on a seperate server.
+
+    - it allows use of custom fonts even if users dont have them installed
+    - Popular sources: font squirrel, google fonts
+
+    Note, using too many external fonts can slow down ur switches
+
+    * google fonts:
+    - free fonts designed for web projects
+    - interface overview:
+        - fonts section: browse, filter, preview text, adjust font size
+        - noto fonts: supports 1000+ languages and 150+ writing systems
+        - free icons for web projects
+        - help/faq section: to learn about font best practices and liscece
+
+    - using fonts:
+        - preview ur text with the font
+        - select the font -> click "get font"
+        - choose download(local) or get embed code(external)
+
+    - embedding in a project example:
+    i) link element (html head)
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    ii)  css example (roboto weights)
+
+    .roboto-regular {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+    }
+    .roboto-bold {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+    }
+    .roboto-thin-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    iii) @import option:
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+    Note, Only include the font styles you need to reduce load time.
+
+
+    Font Quirrel.
+        - find and download free custom fonts
+
+    steps to use:
+     - search then select font then view specimens, test drive, glyphs.
+     - go to webfont kit, then check liscence, susbet, format
+     - click download @font-face kit then unzip then find
+        - web fonts folder (font files)
+        - html file (instructions)
+        - license file
+     - follow the html instructions, then include fonts with @font-face in css or host externally
+
+    key points....
+        - external fonts customize design but can affect performance
+        - google fonts = easy embed
+        - font squirrel = downloadable for local or external hosting
+        - always choose only styles u need for efficiency
+
+    eg of all roboto styles:
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <p class="roboto-thin">roboto-thin</p>
+    <p class="roboto-light">roboto-light</p>
+    <p class="roboto-regular">roboto-regular</p>
+    <p class="roboto-medium">roboto-medium</p>
+    <p class="roboto-bold">roboto-bold</p>
+    <p class="roboto-black">roboto-black</p>
+
+    <p class="roboto-thin-italic">roboto-thin-italic</p>
+    <p class="roboto-light-italic">roboto-light-italic</p>
+    <p class="roboto-regular-italic">roboto-regular-italic</p>
+    <p class="roboto-medium-italic">roboto-medium-italic</p>
+    <p class="roboto-bold-italic">roboto-bold-italic</p>
+    <p class="roboto-black-italic">roboto-black-italic</p>
+
+7) What Is the text-shadow Property, and How Does It Work?
+
+    Text shadows in css by default isnt applied to texts at all
+    In order to add them, use the text-shadow property.
+
+    syntax:
+      text-shadow: [color] x-offset y-offset [blur-radius];
+
+    - x offset (required): hotizontal distance of the shadow
+    - y offset (required): vertical distance of the shadow
+    - blur radius (optional):
+    controls how soft or sharp the shadow appears (default = 0)
+    - color (optional):
+    any valid css color value (hex, rgb, hsl, etc...)
+
+    basic example:
+
+    <p> Hello, World!</p>
+
+    css
+    p {
+        text-shadow: 3px 2px;
+    }
+
+    Shadow appears 3px right and 2px down from the text.
+
+    # U can specify color after or before the offsets- both are valid
+
+        /* Color after offset */
+        p {
+            text-shadow: 3px 2px #00ffc3;
+        }
+
+        /* Color before offset */
+        p {
+            text-shadow: #00ffc3 3px 2px;
+        }
+    The text now has a cyan-colored shadow.
+
+    # Negative values move the shadow left (X) and up (Y):
+
+    p {
+        text-shadow: -3px -2px #00ffc3;
+    }
+
+    # adding blur radius:
+        text-shadow: 3px 2px 3px #00ffc3;
+
+
+    # You can stack multiple shadows using commas — they’ll layer front 
+    to back (first = topmost).
+
+    p {
+        text-shadow: 
+            3px 2px 3px #00ffc3, 
+            -3px -2px 3px #0077ff, 
+            5px 4px 3px #dee7e5;
+    }
+    Creates a multi-layered shadow effect with three colors.
+
+    text-shadow enhances readability and adds visual depth.
+    Format: color x y blur.
+
+    
