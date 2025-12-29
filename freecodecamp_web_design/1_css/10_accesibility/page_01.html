@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="page_01_styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="accesibility test" />
+    <title>Accessibility Workshop</title>
+  </head>
+  <body>
+    <header>
+      <image
+        id="logo"
+        alt="freeCodeCamp"
+        src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+      >
+      </image>
+      <h1>HTML/CSS Quiz</h1>
+      <nav>
+        <ul>
+          <li><a href="#student-info">INFO</a></li>
+          <li><a href="#html-questions">HTML</a></li>
+          <li><a href="#css-questions">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form
+        method="post"
+        action="https://freecodecamp.org/practice-project/accessibility-quiz"
+      >
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Student Info</h2>
+          <div class="info">
+            <label for="student-name">Name</label>
+            <input id="student-name" type="text" name="s_name" />
+          </div>
+          <div class="info">
+            <label for="student-email">Email</label>
+            <input
+              id="student-email"
+              type="email"
+              placeholder="e.g. test@example.com"
+              name="s_email"
+            />
+          </div>
+          <div class="info">
+            <label for="birth-date">Date of Birth</label>
+            <input id="birth-date" type="date" name="s_b_date" />
+          </div>
+        </section>
+        <section role="region" aria-labelledby="html-questions">
+          <h2 id="html-questions">HTML Questions</h2>
+          <div class="question-block">
+            <h3><span class="sr-only">Question </span>1</h3>
+            <fieldset class="question" name="html-question-one">
+              <legend>The fieldset element groups related form controls</legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q1-a1">
+                    <input
+                      type="radio"
+                      id="q1-a1"
+                      value="true"
+                      name="html-question-one"
+                    />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input
+                      type="radio"
+                      id="q1-a2"
+                      value="false"
+                      name="html-question-one"
+                    />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          <div class="question-block">
+            <h3><span class="sr-only">Question</span>2</h3>
+            <fieldset class="question" name="html-question-two">
+              <legend>
+                A label element nesting an input element is required to have a
+                for attribute with the same value as the input's id
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q2-a1">
+                    <input
+                      type="radio"
+                      id="q2-a1"
+                      value="true"
+                      name="html-question-two"
+                    />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input
+                      type="radio"
+                      id="q2-a2"
+                      value="false"
+                      name="html-question-two"
+                    />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+        <section role="region" aria-labelledby="css-questions">
+          <h2 id="css-questions">CSS Questions</h2>
+          <div class="formrow">
+            <div class="question-block"></div>
+            <div class="answer"></div>
+            <div class="question-block"></div>
+            <div class="answer"></div>
+          </div>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
