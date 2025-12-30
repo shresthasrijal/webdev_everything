@@ -29,6 +29,7 @@
         method="post"
         action="https://freecodecamp.org/practice-project/accessibility-quiz"
       >
+        <!-- about you -->
         <section role="region" aria-labelledby="student-info">
           <h2 id="student-info">Student Info</h2>
           <div class="info">
@@ -49,6 +50,7 @@
             <input id="birth-date" type="date" name="s_b_date" />
           </div>
         </section>
+        <!-- html -->
         <section role="region" aria-labelledby="html-questions">
           <h2 id="html-questions">HTML Questions</h2>
           <div class="question-block">
@@ -115,16 +117,47 @@
             </fieldset>
           </div>
         </section>
+        <!-- css -->
         <section role="region" aria-labelledby="css-questions">
           <h2 id="css-questions">CSS Questions</h2>
           <div class="formrow">
-            <div class="question-block"></div>
-            <div class="answer"></div>
-            <div class="question-block"></div>
-            <div class="answer"></div>
+            <div class="question-block">
+              <label for="css-question-one"
+                >Can the CSS margin property accept negative values?</label
+              >
+            </div>
+            <div class="answer">
+              <select id="css-question-one" name="css-question-one" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="question-block">
+              <label for="css-question-two">Do you have any questions:</label>
+            </div>
+            <div class="answer">
+              <textarea
+                rows="5"
+                cols="24"
+                id="css-question-two"
+                name="css-question-two"
+                placeholder="..."
+              ></textarea>
+            </div>
           </div>
         </section>
+        <button type="submit">Send</button>
       </form>
     </main>
+    <footer>
+      <p>Copyright &copy; 2025 right before december.</p>
+      <address>
+        <a href="https://www.staggeringbeauty.com/">639 38th St</a><br />
+        Rock Island<br />
+        IL 61201<br />
+        USA
+      </address>
+    </footer>
   </body>
 </html>
