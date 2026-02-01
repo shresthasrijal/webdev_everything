@@ -74,3 +74,49 @@ i) What are common use cases for using floats, how do they work?
 
 ii) What is relative positioning, and how does this differ from default static positioning?
 
+    In CSS positioning allows us to control how elements are laid out on a page. Two common types of positioning:
+    
+    - Static positioning 
+    Defauly for all elements and does not need any special declaration CSS. U wont notice anything different when using static position bc it just keeps elements where they natuarally occur. 
+    
+    eg: 
+    <p> right here man </p>
+
+    - Relative positioning
+    Allows an element to shifted from its normal position without disrupting the flow of the document. It is like moving the moment from its default static position by giving it new coordinates.
+
+    eg:
+    <p class="relative">This paragraph is positioned relatively.</p>
+
+    body {
+        border: solid 1px black;
+        }
+
+    .relative {
+        position: relative;
+        top: 30px;
+        left: 30px;
+        }
+
+
+    In this example, the paragraph will appear 30px down and 30px right of where it is. Basially say element is moving 30px away from top of its original position making it 30px down.
+
+iii) What Is Absolute Positioning, and How Does It Work?
+
+    Absolute positioning allows an element to be removed from the normal document flow, letting it behave independently of other elements. It is useful for floating UI features like modals, tooltips, or dropdown menus. WHich could possibly overlap other content.
+
+    By default, an absolute positioned element is placed relative to its closest positioned ancestor. IF no such ancestor exists, it positions relative yo the initial containing blocl, usually the browser viewport. U can control its placement with the top, bottom, left and right properties.
+
+    Example: Setting top: 30px and left: 30px moves the element 30px away from the top and left edges of its containing block:
+
+    p {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        }
+
+    remove the element and place it freely on top.
+
+iv) What Is Fixed and Sticky Positioning, and How Does It Differ from Absolute Positioning?
+
+    
