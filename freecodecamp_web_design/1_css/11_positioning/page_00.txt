@@ -1,0 +1,76 @@
+Understanding how to work with floats and positioning in css!
+
+i) What are common use cases for using floats, how do they work?
+    
+    Floats in CSS was originally made to allow text to wrap around and element, like an image. But people found more ways to use it...
+    In the past there didnt exist flexbox or grid so floats was used for the same effect. Still imp bc its a cool old party trick and working with legacy code.
+
+    When an element is floated, it moves to the left or right of the container. THe content that follows wraps around the floated element, filling the remaining space. 
+    One classic use is wrapping text around mages, where an image is on one side and the text wraps around it.
+
+    eg:
+
+        <div class="container">
+        <img src="https://placehold.co/150x150" alt="Placeholder Image">
+        </div>
+
+        .container {
+            border: 1px solid black;
+            padding: 10px;
+            }
+
+        img {
+            float: left;
+            margin-right: 20px;
+            }
+
+    In this example, the container doesnt wrap around the floated image. THe image is out of normal document flow, and the container collapsed to height zero bc it didnt see the floated children elements.. but the image still shows up, out of the container which became inviisble due to 0 height.
+
+    Also, floats were also popular for creating multi-column layouts before Flexbox and Grid became widespread. When u float elements next to eachother, developers could create columns that aligned horizontally. 
+
+    But, when using floats, it imp to handle the problem collapsing paresnts elments when their child elemnts are floated.
+
+    The clearfix solution for the div disappeared is done via clear fix on the class container in div.
+    
+    eg:
+    <link rel="stylesheet" href="styles.css">
+    <div class="container">
+    <img src="https://placehold.co/150x150" alt="Placeholder Image">
+    <p> This is an example of text flowing around a floated image.</p>
+    </div>
+
+
+    .container {
+    border: 1px solid black;
+    }
+
+    /* Clearfix CSS */
+    .container::after {
+        content: "";  
+        display: block;
+        clear: both;
+    }
+
+    img {
+        float: left;
+        margin-right: 20px;
+    }
+
+
+    - the fixes are basically:
+        - ::after is a pseudo-element that adds an invisible block  
+            after the content of the container.
+        - content: "" ensures the pseudo-element is present but doesn’t 
+            display any content.
+        - display: block makes the pseudo-element a block-level element.
+        - clear: both ensures the pseudo-element clears both sides of 
+            any floated elements above it.
+
+    
+    In the above example of the fix, the collapse is made more noticible via the <p> element.  Bc the aragraph remains in the normal document flow, the container explands just enought to wrap arodnt it. Then we need to appy the clearfix technique to fix the collapse and make the container's border display correctly. Yo  can try tremvoing the clearfix reule to see the conairer collapse again. 
+
+    While floats are no longer the go-to method for complex layouts due to more modern techniques like Flexbox and Grid, they still play an essential role in certain scenarios.
+    Like text wrapping around images or reworking legacy projects.
+
+ii) What is relative positioning, and how does this differ from default static positioning?
+
