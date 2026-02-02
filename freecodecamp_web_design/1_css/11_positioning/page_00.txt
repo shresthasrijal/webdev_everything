@@ -117,6 +117,157 @@ iii) What Is Absolute Positioning, and How Does It Work?
 
     remove the element and place it freely on top.
 
-iv) What Is Fixed and Sticky Positioning, and How Does It Differ from Absolute Positioning?
+iv) What Is Fixed and Sticky Positioning, and How Does It Differ from 
+    Absolute Positioning?
+
+    Fixed and sticky positioning are two important css positioning 
+    strategies.They offer distinct behaviors compared to absolute 
+    positioning.
+
+    When an element has position: fixed. It is removed from the normal
+    document flow and is placed relative to the viewport
+    (like headers or navigation bars *always visible*)
+
+    eg:
+    For heading to stay at top of the page do this:
+
+    <h1>Fixed Header</h1>
+    <p>Lorem ipsum dolor sit amet, cursus ante dapibus diam.</p>
+    <p>Sed nisi. Nulla quis sem at</p>
+    <p>Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    <p>Class aptent taciti sociosq.</p>
+
+    body {
+        margin: 0;
+        padding-top: 60px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        }
+
+    h1 {
+        position: fixed;
+        top: 0;
+        width: 500px;
+        background: white;
+        padding: 10px;
+        border-bottom: 2px solid #ccc;
+        }
+
+    p {
+        max-width: 600px;
+        margin: 20px auto;
+        }
+
+    The position: sticky behaves as a hybrid relative and fixed 
+    positioning. Initially, the element behaves as though its 
+    positioned relatvely, staying with the flow of the document. 
+    however, once the user scrolls the element past a certain point.
+    It sticks to the viewport (usually top) and behaves as though its
+    fixed.
+
+    This is great for creating elements like sticky nav bars, which only become fixed once the user scrolls to a certain position.
+
+    eg:
+    
+    <h1>Fixed Header</h1>
+    
+    <p>Lorem ipsum dolor sit amet, cursus ante dapibus diam.</p>
+    <p>Sed nisi. Nulla quis sem at</p>
+    <p>Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    <p>Class aptent taciti sociosq.</p>
+
+    h1 {
+        position: sticky;
+        top: 30px;
+        left: 30px;
+        }
+
+    In this example, the h1 element will behave normally until the user 
+    scrolls it 30px away from the top, at which point it will "stick" 
+    to the top of the viewport.
+
+    ----
+    Here are some key differences between absolute, fixed and sticky positioning:
+
+    - Absolute positioning removes an element from the document flow 
+    and positions it relative to the nearest positioned ancestor, or 
+    the initial containing block if none exists. The element stays in 
+    that position regardless of scrolling.
+    - Fixed positioning also removes the element from the document flow 
+    but fixes it relative to the viewport, meaning it will stay visible 
+    in the same spot even as the page is scrolled.
+    - Sticky positioning keeps the element in the normal flow initially 
+    but allows it to stick in place after scrolling past a defined 
+    threshold.
+
+v) What Is the Z-Index Property, and How Does It Work to Control the 
+    Stacking of Positioned Elements?
+
+    The z index property in CSS is used to control the vertical 
+    stacking order of positioned elements that overlap the page
+    When multiple elements are stacked on top of eachother, the z-index 
+    value determines which element appears on top.
+
+    The higher the z-index value, the closer the element is to the 
+    viewer, while lower values place the element farther back in the 
+    stack.
+
+    However, the z-index only works on elements that are positioned, which means the element must have a position value other than static, such as relative, absolute, or fixed. The defeauly z-index value is auto, which places the element in the defauly stacking order. Let's take a look at an example with 3 boxes:
+
+
+    eg:
+    <div class="container">
+        <div class="box1">Box 1</div>
+        <div class="box2">Box 2</div>
+        <div class="box3">Box 3</div>
+    </div
+
+    .container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        }
+
+    .box1 {
+        position: absolute;
+        z-index: 1;
+        background: lightcoral;
+        top: 20px;
+        left: 20px;
+        width: 100px;
+        height: 100px;
+        }
+
+    .box2 {
+        position: absolute;
+        z-index: 3;
+        background: gold;
+        top: 40px;
+        left: 40px;
+        width: 100px;
+        height: 100px;
+        }
+
+    .box3 {
+        position: absolute;
+        z-index: 2;
+        background: lightgreen;
+        top: 60px;
+        left: 60px;
+        width: 100px;
+        height: 100px;
+        }
+
+    For the container, the positioning will be set to relative and all 
+    the boxes nested inside will be set to absolute positioning.
+    Each box has a different value for the z-index which results in the 
+    boxes being layered on top of eachother.
+
+    U can think of z-index as a way to create layers on a webpage,
+    and elements with higher z-index values will be placed above those
+    with lower values. This is especially useful for controlling how
+    overlapping elements behave in complex layouts, such as modals,
+    popups or tooltips!
 
     
