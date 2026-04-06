@@ -48,6 +48,11 @@
             font-weight: bold;
             text-decoration: none;
         }
+        ----or---
+        a.title{
+            font-weight: bold;
+            text-decoration: none;
+        }
 
     This rule applies bold text and removes the underline from any link 
     with a title attribute. It's a great way to visually differentiate 

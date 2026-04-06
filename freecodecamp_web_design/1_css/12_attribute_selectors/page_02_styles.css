@@ -1,0 +1,100 @@
+body {
+  margin: 1em;
+  padding: 12px;
+}
+
+tr[class="read"] {
+  background-image: linear-gradient(to right, #00a000, #99ff99);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(to right, #ffd700, #ffff99 75%);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(to right, #ff4d4d, #ff9999 85%);
+}
+
+table {
+  width: 100%;
+}
+
+tr[class="to-read"] span[class="status"] {
+  border: 2px solid rgb(151, 151, 151);
+  background-image: linear-gradient(to bottom, white, red, white);
+}
+
+tr[class="read"] span[class="status"] {
+  border: 2px solid rgb(151, 151, 151);
+  background-image: linear-gradient(to bottom, white, green, white);
+}
+
+tr[class="in-progress"] span[class="status"] {
+  border: 2px solid rgb(151, 151, 151);
+  background-image: linear-gradient(to bottom, white, rgb(255, 217, 0), white);
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td:not(:has(span)) {
+  text-align: left;
+  left: 2em;
+}
+
+span {
+  display: inline-block;
+}
+
+span[class="status"],
+span[class^="rate"] {
+  width: auto;
+  height: auto;
+  gap: 4px;
+  padding: 2px;
+}
+
+span.status {
+  padding: 8px;
+  border-radius: 35%;
+}
+
+span[class^="rate"] > span {
+  border: 2px solid grey;
+  border-radius: 100%;
+  margin: 0;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+}
+
+span[class~="one"] span:first-child {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(128, 74, 0),
+    rgb(205, 127, 50),
+    rgb(255, 190, 150)
+  );
+}
+
+span[class~="two"] span:nth-child(-n + 2) {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(160, 160, 160),
+    rgb(192, 192, 192),
+    rgb(255, 255, 255)
+  );
+}
+
+span[class~="three"] span {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(184, 134, 11),
+    rgb(255, 215, 0),
+    rgb(255, 245, 150)
+  );
+}
