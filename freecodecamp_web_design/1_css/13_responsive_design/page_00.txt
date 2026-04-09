@@ -90,8 +90,212 @@
     responsive web design is an approach that aims to create websites that 
     work well on any device.
 
-    2) How Do Media Queries Work, and What Are Some Common Media Types and 
-    Features?
+2) How Do Media Queries Work, and What Are Some Common Media Types and Features?
 
     Answer:
+    Media queries are the backbone of responsive web design. They allow u to 
+    apply specific CSS styles based on the device's charactersitsic (eg: screen 
+    size or resolution) without changing the actual HTML content itself.
+
+    How they work?
+    - Basically media query checks if a specific condition is met. If condition 
+    is true, the brower applies the CSS rules inside that query.
+
+    syntax:
+        @media mediatype and (feature: value) {
+            /* CSS rules go here */
+        }
+
+    Common Media Types:
+    Media types categorize the device being used. While many older types (like tv or handheld) are not depreciated, these 3 remain standard:
+
+        - all: The default; works for every device.
+        - print: Used specifically for printed material or print previews
+        - screen: used for computer screens, tablets, and smartphones.
+
+    Key media features:
+    Features allow u to target specific details about the user's environment.
+
+    # Feature - Description - Simple example:
+    - Width/Height
+        Viewport dimensions (often used with min- or max-)
+        @media (min-width: 768px) {...}
+    - Orientation
+        Whether the screen is horizontal or vertical
+        @media (orientation: landscape) {...}
+    - Aspect-Ratio
+        The ratio of width to height
+        @media (aspect-ratio: 16/9) {...}
+    - Resolution
+        Pixel density (measured in dpi)
+        @media (min-resolution: 300dpi) {...}
+    - Hover
+        Checks if the user has a mouse or a pointer.
+        @media (hover: hover) { ... }
+    - Color Scheme
+    	Detects if the user prefers Light or Dark mode.	
+        @media (prefers-color-scheme: dark) { ... }
+
+    # Logic and Operators
+    U can combine or filter queries to be more precise:
+    - and: Both conditions must be true (eg. screen and landscape)
+    - not/only: Used to negate a query or provide support for older browsers.
+    - comma(,): Acts like an 'or'. The styles will apply if either condition true.
+
+    # Practial Use: Mobile-first design.
+
+    In modern web development, it is common practice to write "mobile-first" 
+    code. You define the basic styles for small screens first, then use media 
+    queries to expand the layout for larger devices.
+
+    eg:
+        /* 1. Default (Mobile) */
+        .container { width: 100%; }
+
+        /* 2. Tablet (768px and up) */
+        @media screen and (min-width: 768px) {
+            .container { width: 750px; }
+        }        
+
+        /* 3. Desktop (1024px and up) */
+        @media screen and (min-width: 1024px) {
+            .container { width: 960px; }
+        }
+
+
+3) What Are Media Breakpoints, and What Are Common Breakpoints in Modern Design?
+
+    Answer:
+    Media breakpoints are specific viewport widths where a website layout 
+    shifts to fit the screen. THey ensure a site remains functional and readable
+    whether its being viewd on a tiny phone or a massive monitor!
+
+    # How Breakpoints Work
+    Breakpoints are defined in CSS via media queries. When a device's width hits
+    a certain pixel value, the browser triggers a new set of styles.
+
+    eg:
+        /* Standard font for mobile */
+        body { font-size: 1rem; }
+
+        /* Breakpoint: If screen is 768px or wider, increase font */
+        @media screen and (min-width: 768px) {
+            body { font-size: 1.125rem; }
+        }
+
+    # Common Breakpoint Standards
+    While there is no "perfect" set of numbers, most devs use these industry
+    standard ranges to target different device categories.
+
+    +i+ The simple set (category-based)
+        - Small = phones = up to 640px
+        - Medium = Tablets = between 641px and 1024px
+        - Large = Desktop/Computers/Others = 1025px and more...
+
+    +ii+ The granular set (bootstrap style)
+        This is a more precise approach used by many modern frameworks:
+
+        (format): Device size = Range/Threshold
+        - Extra Small = Under 576px
+        - Small = ≥ 576px
+        - Medium = ≥ 768px
+        - Large = ≥ 992px
+        - Extra Large = ≥ 1200px
+        - XX-Large = ≥ 1400px
+
+    Best Practices:
+    - Content-First:
+    Dont just design for specific iPhones or Pixels. Add breakpoints where ur 
+    design will break or starts looking awkward
+
+    - Mobile-first:
+    Start with styles for the smallest screens and use min-width queries to add 
+    complexity as screen gets larger...
+
+    - Fluidity:
+    Modern design favors "fluid" layouts that stretch and shrink naturally, 
+    using breakpoints only for major structural changes.
+
+4) What Is the Mobile First Approach in Responsive Web Design?
+
+    Answer:
+    The mobile-first approach is a design philosophy and development strategy in
+    responsive web design that prioritizes designing website for mobile devices
+    before larger screens.
+
+    Core concept:
+        - Design starts with mobile versions as the foundation
+        - Larger screens are progressively enhanced with additional features 
+            and layout improvements.
+        - Contrasts with the traditional desktop-first approach, where sites    
+            are scaled down for smaller devices.
     
+    Principles:
+        +i+ Essential content first
+        - Focus on core content and functionality for small screens
+        - Encourages a streamlined, efficient user experience across all devices
+
+        +ii+ Performance Optimization
+        - Mobile devices have limited processing power and slower network 
+            connections.
+        - Designing for mobile first ensures efficiency from the outset, 
+            benefiting all devices.
+
+        +iii+ Content Prioritization
+        - Small screens force careful decisions about what content is essential.
+        - Leads to a focused and user-friendly experience that scales up for 
+            larger devices.
+
+    Why mobile-first matters:
+    - Shift in user behavior: Over 50% of global web traffic comes from mobile
+    - SEO advantages: Google uses mobile-first indexing, prioritizing the mobile
+        version for ranking
+    - Improved accessibility: Ensures the largest userbase has a smooth     
+        experience.
+    
+    eg:
+        /* Base styles for mobile */
+        .container {
+            width: 100%;
+            padding: 10px;
+        }
+
+        /* Styles for tablets and larger screens */
+        @media screen and (min-width: 768px) {
+            body {
+                font-size: 1.2rem;
+            }
+            .container {
+                width: 750px;
+                margin: 0 auto;
+                padding: 20px;
+            }   
+        }
+
+        /* Styles for desktops and larger */
+        @media screen and (min-width: 1024px) {
+            .container {
+                width: 960px;
+            }
+        }
+
+    Benefits:
+        - Efficiency:
+         Focused design avoids unnecessary features on mobile.
+        - User-centric:
+         Core content is accessible to everyone.
+        - SEO-friendly:
+         Mobile-first indexing improves search visibility.
+        - Future-proof:
+         Adapts to growing mobile internet usage trends.
+
+    Challenges:
+        - Creativity constraints:
+         Designing for small screens first may limit complex ideas.
+        - Stakeholder buy-in:
+         Some may prefer seeing desktop designs initially.
+
+    The mobile-first approach is now a cornerstone of modern web design. It 
+    emphasizes efficiency, user experience, and accessibility while ensuring 
+    websites perform well on all devices. With mobile traffic continuing to 
+    grow, prioritizing mobile design is essential for effective web development.
