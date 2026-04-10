@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="page_02_styles.css" />
+  </head>
+
+  <body>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>
+          JavaScript is a lightweight, cross-platform scripting language used to
+          control behavior in web environments.
+        </p>
+        <p>
+          It includes built-in objects like Array, Date, and Math, along with
+          core features such as operators and control structures.
+        </p>
+        <ul>
+          <li>
+            Client-side JavaScript interacts with the browser and DOM, handling
+            user actions like clicks and form input.
+          </li>
+          <li>
+            Server-side JavaScript works with databases, files, and server
+            processes.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="What_you_should_already_know">
+        <header>What you should already know</header>
+        <p>This guide assumes basic knowledge of:</p>
+        <ul>
+          <li>The Internet and how the web works</li>
+          <li>HTML fundamentals</li>
+          <li>Basic programming concepts</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="JavaScript_and_Java">
+        <header>JavaScript and Java</header>
+        <p>
+          JavaScript and Java share similar syntax but are very different
+          languages.
+        </p>
+        <p>
+          JavaScript uses dynamic typing and a prototype-based model, unlike
+          Java’s class-based system.
+        </p>
+        <p>
+          It is flexible and does not require strict declarations for variables
+          or functions.
+        </p>
+      </section>
+
+      <section class="main-section" id="Hello_world">
+        <header>Hello world</header>
+        <p>Write your first JavaScript function below:</p>
+        <code>function greetMe(yourName) { alert("Hello " + yourName); }</code>
+        <code>greetMe("World");</code>
+        <p>Run the code to see the result in your browser.</p>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>Variables</header>
+        <p>
+          You use variables as symbolic names for values in your application.
+          The names of variables, called identifiers, conform to certain rules.
+        </p>
+        <p>
+          A JavaScript identifier must start with a letter, underscore (_), or
+          dollar sign ($); Also case sensitive!
+        </p>
+        <p>
+          You can use ISO 8859-1 or Unicode letters such as å and ü in
+          identifiers. You can also use the Unicode escape sequences as
+          characters in identifiers.
+        </p>
+      </section>
+      <section class="main-section" id="Declaring_variables">
+        <header>Declaring variables</header>
+        <p>You can declare a variable in three ways:</p>
+        <p>With the keyword var. For example,</p>
+        <code>var x = 42.</code>
+        <p>
+          This syntax can be used to declare both local and global variables.
+        </p>
+        <p>By simply assigning it a value. For example,</p>
+        <code>x = 42.</code>
+        <p>
+          This always declares a global variable. It generates a strict
+          JavaScript warning. You shouldn't use this variant.
+        </p>
+        <p>With the keyword let. For example,</p>
+        <code>let y = 13.</code>
+        <p>
+          This syntax can be used to declare a block scope local variable. See
+          Variable scope below.
+        </p>
+      </section>
+    </main>
+    <nav id="navbar">
+      <header>Basic JS Documentation</header>
+
+      <a class="nav-link" href="#Introduction">Introduction</a>
+      <a class="nav-link" href="#What_you_should_already_know"
+        >What you should already know</a
+      >
+      <a class="nav-link" href="#JavaScript_and_Java">JavaScript and Java</a>
+      <a class="nav-link" href="#Hello_world">Hello world</a>
+      <a class="nav-link" href="#Variables">Variables</a>
+      <a class="nav-link" href="#Declaring_variables">Declaring variables</a>
+    </nav>
+  </body>
+</html>
+
+<!-- <section class="main-section" id="">
+  <header></header>
+  <p></p>
+  <p></p>
+  <code></code>
+  <code></code>
+</section> -->

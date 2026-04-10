@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  margin: 0;
+  flex-direction: row-reverse;
+}
+
+#navbar {
+  width: 200px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  border-left: 2px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: orangered;
+}
+
+#main-doc {
+  flex: 1;
+  padding: 20px;
+}
+
+header {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column-reverse;
+  }
+
+  #navbar {
+    position: sticky;
+    width: 100%;
+    height: auto;
+    border-right: none;
+  }
+
+  #main-doc {
+    margin-left: 0;
+  }
+}
