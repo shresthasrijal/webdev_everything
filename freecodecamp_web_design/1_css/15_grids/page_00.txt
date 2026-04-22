@@ -194,5 +194,68 @@
     - If only one value is given → applies to both
     - Supports px, em, %, calc() (not fr)
 
-    row-gap, column-gap, and gap give you flexible control over spacing in grid 
-    layouts, helping you create clean and well-structured designs.
+    row-gap, column-gap, and gap give you flexible control over spacing in 
+    grid layouts, helping you create clean and well-structured designs.
+
+4) How can you repeat track listings in a grid layout?
+
+    ans:
+    Previously we used grid-template-columns property and setting the value 
+    to a few fractional units.
+    This is completely valid, but there is an easier way to repeat a section 
+    or all ur track listings!
+
+    The repeat() function is used to repeat a section or all of the tracks 
+    for columns or rows. This function takes in a repeat count and the tracks 
+    you wish to repeat.
+
+    (eg)
+        <link rel="stylesheet" href="styles.css">
+        <div class="grid-container">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 10px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: darkblue;
+        }
+
+    Same as grid-template-columns: 1fr 1fr 1fr 1fr; 
+
+    The repeat() function will accept any valid pattern that you can use for 
+    rows or columns.
+    example using the repeat() function to set the first and third columns to 
+    20 pixels and the second and fourth columns to one fractional unit.
+
+        <div class="grid-container">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 20px 1fr);
+            column-gap: 10px;
+        }
+
+        .grid-container div {
+            height: 100px;
+            background-color: darkblue;
+        }
+
+    Sometimes, you might opt to write out each individual value instead of 
+    using the repeat() function. But there are times when this function comes 
+    in handy, especially when you want to repeat a particular pattern for a 
+    track listing.
