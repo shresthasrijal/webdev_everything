@@ -308,3 +308,246 @@
         fixed, predictable, requires planning.
     - Implicit grid:
         flexible, adapts automatically, useful for dynamic or unknown content.
+
+6) What Is the minmax() Function and How Does It Work?
+
+    ans:
+    The minmax() function defines the range for the size of a grid 
+    track, specifying how much space a row or column can occupy.
+
+    Remember you can set the track size with units like px(pixels), 
+    rem, or even em, and with fractional units (fr).
+    The minmax() function takes things a bit further by allowing you to 
+    set a minimum size and a maximum size for the grid track.
+
+    syntax:
+        minmax(min, max)
+
+    min is the minimum size of the grid track, max is the maximum size
+
+    The 2 values work together this way:
+     -  The min value ensures the grid track will never shrink below a  
+        set size.
+     - The max value limits how large the grid track can grow.
+
+    The grid track size adjusts dynamically between the min and max 
+    values based on content and container size.
+
+    (eg)
+        <div class="grid-container">
+            <div>
+                <h2>Item 1</h2>
+            </div>
+            <div>
+                <h2>Item 2</h2> 
+            </div>
+        </div>
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: minmax(150px, 300px) 1fr;
+            gap: 20px;
+        }
+
+        .grid-container > div {
+            background: crimson;
+            padding: 20px;
+            text-align: center;
+        }
+
+    Here, The first column, minmax(150px, 300px), will always be 
+    atleast 150px and at most 300px, depending on the available space.
+    On the other hand, the second column, 1fr, will take up any 
+    available remaining space in the grid container since there are no 
+    additional columns to share the space with.
+
+    The advantage of the minmax() function over fixed sizes and even fr 
+    units is that it is more flexible, making it ideal for adaptability 
+    and responsiveness.
+
+7) How Do the grid-column and grid-row Properties Work?
+
+    ans:
+    The grid-column and grid-row properties control where grid items 
+    are placed inside a CSS Grid by using grid lines (the numbered 
+    boundaries between rows and columns defined by grid-template-rows 
+    and grid-template-columns).
+
+    Both use this syntax:
+     - grid-column: <start-line> / <end-line>;
+     - grid-row: <start-line> / <end-line>;
+
+    # Basic Example (old)
+        <div class="grid">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+            <div class="item8">8</div>
+            <div class="item9">9</div>
+            <div class="item10">10</div>
+            <div class="item11">11</div>
+            <div class="item12">12</div>
+        </div>
+
+        .grid {
+            display: grid;
+            /* 4 equal columns */
+            grid-template-columns: repeat(4, 1fr); 
+            /* 3 equal rows */
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+        }
+
+        .grid > div {
+            display: grid;
+            place-items: center;
+            background: crimson;
+            color: white;
+            font-size: 4rem;
+        }
+
+    This creates a grid where rows and columns are divided into 
+    numbered lines that can be targeted for placement.
+
+    
+    # Example: make an item span multiple columns
+
+        .item1 {
+            grid-column: 1 / 3;
+        }
+
+    This places item 1 from column line 1 to 3, meaning it spans two 
+    columns. Other items shift to fit around it.
+
+    Note: 1 / 3 means Start at grid line 1, end at grid line 3.
+    
+    # Example: span both columns and rows
+
+        .item1 {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+    
+    item1 spans 2 columns and 2 rows now!
+
+    # Using span instead of end lines
+
+        .item1 {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+        }
+
+    This means start at line 1 and span across 2 columns/rows.
+
+    (eg)
+        <div class="grid">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+        </div>
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+            grid-template-rows: repeat(4, 100px); /* 4 equal rows */
+            gap: 10px;
+        }
+
+        .grid > div {
+            display: grid;
+            place-items: center;
+            background: crimson;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .item1 {
+            grid-column: 1 / span 2;
+        }
+
+        .item4 {
+            grid-column: 1 / span 3;
+        }
+
+        .item6 {
+            grid-column: 1 / span 2;
+        }
+
+        .item7 {
+            grid-column: 3 / span 2;
+        }
+
+    This shows how different items can span different widths to create 
+    a masonry-style layout.
+
+8) How Can You Position Items on the Grid Using the grid-template-areas 
+    Property?
+
+    ans:
+    The "grid-template-areas" property in CSS Grid lets u design 
+    layouts visually using the named labels (called grid areas). 
+    U then assign those labels to elements usng the grid-area property.
+
+    Key ideas:
+     - Named values like header, main, etc area grid area names
+     - Each String represents a row
+     - Each space-seperated value in a string repsents a column
+     
+     (eg) basic syntax of the grid-template-areas property:
+        grid-template-areas:
+            'header header header'
+            'left-sidebar main right-sidebar'
+            'footer footer footer';
+
+        After defining the layout, use grid-area to place elements into 
+        those named areas.
+
+     (eg)
+        <div class="grid-container">
+            <div class="header">
+                <h2>Header</h2>
+            </div>
+            <div class="sidebar-left">
+                <h2>Left Sidebar</h2>
+            </div>
+            <div class="main">
+                <h2>Main Content</h2></div>
+            <div class="sidebar-right">
+                <h2>Right Sidebar</h2>
+            </div>
+            <div class="footer">
+                <h2>Footer</h2>
+            </div>
+        </div>
+     
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header'
+                'sidebar-left main sidebar-right'
+                'footer footer footer';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .header { grid-area: header; }
+        .sidebar-left { grid-area: sidebar-left; }
+        .main { grid-area: main; }
+        .sidebar-right { grid-area: sidebar-right; }
+        .footer { grid-area: footer; }
+
+    grid-template-areas defines the layout structure.
+
+    grid-area places individual items, either by named areas or by row/
+    column positions.
+
+    They can be used together or independently.
