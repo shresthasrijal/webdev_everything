@@ -1,0 +1,71 @@
+.title {
+  grid-area: title;
+}
+
+.text {
+  font-family: Raleway, serif;
+}
+
+.feature-article {
+  grid-area: feature-article;
+}
+
+.secondary-article {
+  grid-area: secondary-article;
+}
+
+.cover-image {
+  grid-area: cover-image;
+}
+
+.cover-image img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.small-article1 {
+  grid-area: small-article1;
+}
+
+.small-article2 {
+  grid-area: small-article2;
+}
+
+.small-article3 {
+  grid-area: small-article3;
+}
+
+.newspaper-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr 1fr 1fr;
+  grid-template-areas:
+    "title title title"
+    "feature-article feature-article cover-image"
+    "secondary-article secondary-article cover-image"
+    "small-article1 small-article2 small-article3";
+  gap: 1rem;
+}
+
+.block {
+  background-color: #d3d3d3;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.small-article1,
+.small-article2,
+.small-article3 {
+  background-color: #e5e5e5;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.title {
+  background-color: darkblue;
+  font-size: 1.5rem;
+  font-family: Anton, sans-serif;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
