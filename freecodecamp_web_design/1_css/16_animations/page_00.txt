@@ -1,0 +1,135 @@
+1) What Are CSS Animations, and How Do They Work?
+    ans:
+    CSS animations let u create smooth visual effects without the use of 
+    JS. They mainly have 2 parts:
+    - @keyframes
+        defines the animation steps/styles
+    - animation
+        apples the animation to an element....
+
+    eg:
+        @keyframes slide-in {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .sliding-element {
+            animation: slide-in 2s ease-out infinite;
+        }
+
+    This moves an element from off-screen left into position over 2 
+    seconds. translateX() controls horizontal movement.
+
+    The animation shorthand for the class combines several properties...
+     - animation-name → which keyframes to use
+     - animation-duration → how long it runs
+     - animation-timing-function → speed curve (ease, linear, etc.)
+     - animation-delay → wait time before starting
+     - animation-iteration-count → number of repeats
+     - animation-direction → forward, reverse, alternate
+     - animation-fill-mode → styles before/after animation
+     - animation-play-state → pause/resume
+
+    U can also write the properties seperately for more control....
+
+        .complex-animation {
+            animation-name: color-change;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes color-change {
+            0% { background: red; }
+            50% { background: blue; }
+            100% { background: green; }
+        }
+    This continuosly.. changes background color betn red, blue and green.
+
+    For simple effects, CSS transitions are enough often..
+
+        .button {
+            background: blue;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background: red;
+        }
+
+    CSS animations can make websites more interactive and engaging while 
+    remaining performant. However, excessive motion can hurt performance 
+    or accessibility, so animations should be used thoughtfully and users 
+    should ideally have an option to reduce motion.
+
+2) What Are Accessibility Concerns Around Using Animations, and How Can 
+    prefers-reduced-motion Help?
+    ans:
+    Animations can improve a website's look and usability. BUT!!!!!
+    note: They can also create accessibility problems for some users!
+
+    Common accessibility issues with animations:
+     - Users with vestibular disorders or motion sensitivity may        
+       experience dizziness, nausea, or headaches from excessive movement.
+     - Users with cognitive disabilities or attention disorders may find 
+       animations distracting.
+     - Flashing or strobing effects can trigger seizures in people with  
+       photosensitive epilepsy. Avoid flashing more than 3 times/second.
+     - Moving text or shifting layouts can make reading difficult for 
+       users with low vision or reading challenges.
+
+    To help with this, CSS provides the prefers-reduced-motion media 
+    query, which detects if a user wants fewer animations at the system 
+    level.
+
+    eg:
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+    What this does:
+     - Detects users who prefer reduced motion
+     - Minimizes animation and transition durations
+     - Stops looping animations after one run
+     - Disables smooth scrolling
+     - Uses !important to override existing animation styles
+
+    This approach reduces most motion globally while still allowing 
+    animations to technically complete if needed for functionality
+
+    For more precise control, target specific elements instead:
+        .animated-element {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animated-element {
+                transition: none;
+            }
+        }
+
+    here a specific transition only is disabled when reduced motion is 
+    preferred, more control.
+
+    The goal isn’t to remove all animation, but to make motion optional 
+    and comfortable for everyone. Good practices include:
+     - Use animations purposefully, not just decoratively
+     - Avoid large or unexpected movement
+     - Avoid rapid flashing
+     - Provide pause/stop controls when possible
+     - Offer reduced-motion alternatives using prefers-reduced-motion
+
+    By designing animations with accessibility in mind, you can create 
+    engaging experiences that remain inclusive and usable for all users.
+
