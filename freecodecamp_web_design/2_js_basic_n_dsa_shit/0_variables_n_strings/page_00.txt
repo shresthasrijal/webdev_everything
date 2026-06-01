@@ -1,0 +1,60 @@
+- a data type is the kind of value you store like a number or piece of text.
+- A variable is a named container that stores a value of a specific data type, allowing you to reference and        
+    manipulate it throughout your code.
+
+- A "Number" datatype represents both integers and floating-point values.\
+- console.log() is a function that outputs information to the console
+- // is used for comments in js like <!-- --> in html and # in css
+
+- A "String" datatype is a sequence of characters, or text, enclosed in quotes. U can use either single or double..
+console.log("I love to code!");
+
+- A "Boolean" datatype represents one of two values: true or false. The values are "true", "false"
+
+- "undefined" means a variable has been declared but hasn't been given a value yet. 
+- "null" means the variable has been intentionally set to "nothing" and does not hold any value.
+
+- "Object"  is a collection of key-value pairs. Like maps or dictionary
+        {
+            name: "Alice",
+            age: 30
+        };
+
+- A Symbol is a special type of value in JavaScript that is always unique and cannot be changed. It's often used to create unique labels or identifiers for properties:
+    Symbol('mySymbol');
+
+- BigInt is used for very large numbers that exceed the limit of the Number type:
+    1234567890123456789012345678901234567890n;
+
+# variables
+let age;
+console.log(age); // undefined
+
+let age = 25;
+console.log(age); // 25
+
+// Valid variable names
+let age;
+let _score;
+let $total;
+
+// Invalid variable names
+let 1stPlace; // starts with a number
+
+- Variable names are case-sensitive, meaning the word age in all lowercase and the word Age with a capital A are 
+    considered different variables.
+
+let thisIsCamelCase;
+let anotherExampleVariable;
+let freeCodeCampStudents;
+
+There are certain keywords in JavaScript that you cannot use as variable names, such as let, const, function, or return, as they are reserved for the language itself.
+
+You should also avoid using special characters like exclamation points (!) or at (@) symbols, in your variable names
+
+In JavaScript, variables are used to store data, and the main modern ways to declare them are let and const.
+
+let is used when the value of a variable can change over time. You can declare it, assign a value, and later update it. You can also declare it first and assign later.
+const is used for values that should not change after they are assigned. It must be given a value when declared, and any attempt to reassign it will cause an error.
+
+In short: use let for changing values and const for fixed values. The older var keyword is less recommended because it has broader scope behavior that can lead to issues.

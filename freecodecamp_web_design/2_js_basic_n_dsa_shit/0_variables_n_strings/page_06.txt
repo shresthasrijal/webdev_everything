@@ -1,0 +1,47 @@
+# WORKING WITH DATA TYPES
+
+q1) What Is Dynamic Typing in JavaScript, and How Does It 
+    Differ from Statically Typed Languages?
+
+    JavaScript is dynamically typed, so a variable's type is 
+    determined by its current value and can change during 
+    execution.
+
+        let data = 100;      // number
+        data = "New data";   // now a string
+    
+    JS variables are not locked to a single type.... unlike java or other langues for eg: C# or Dart where variable type is fixed .....
+    
+            int data = 42;
+            data = "Hello";
+
+    This flexibility makes JavaScript easy to use and 
+    convenient for rapid development, but it can also lead 
+    to runtime errors that are harder to detect. In 
+    contrast, statically typed languages such as C#, Java, 
+    and C++ require variables to have a fixed data type that 
+    must be declared when the variable is created. This 
+    restriction helps catch type-related errors before the 
+    program runs, providing greater safety and reliability 
+    at the cost of reduced flexibility.
+
+    u can check a variabl's current type using typeof in js
+
+        let value = "Hello";
+        console.log(typeof value); // "string"
+
+        value = 42;
+        console.log(typeof value); // "number"
+
+q2) How Does the typeof Operator Work, and What Is the 
+    typeof null Bug in JavaScript?
+
+    The typeof operator is used to determine the datatype of 
+    a variable or value and returns the type as string.
+
+    eg: "number" is returned for numeric and "boolean" for true/false values.
+
+    There is a known quirk where typeof null incorrectly 
+    returns "object" due to a legacy bug... despite that 
+    inconcistency... typeof remains a useful tool to check 
+    data types...

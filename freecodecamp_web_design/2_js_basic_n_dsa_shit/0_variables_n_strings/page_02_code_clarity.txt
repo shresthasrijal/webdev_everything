@@ -1,0 +1,26 @@
+q1) What Is the Role of Semicolons in JavaScript, and 
+    Programming in General?
+
+    Semicolons in JavaScript (and many other languages) mark 
+    the end of a statement, helping the interpreter clearly 
+    separate instructions.
+
+    Key points:
+
+    They improve code readability and structure, similar to 
+    periods in sentences.
+    They help prevent ambiguity in how code is interpreted.
+    JavaScript can sometimes insert semicolons automatically 
+    (ASI), but relying on this can cause unexpected bugs.
+    Many other languages like C, C++, and Java also use 
+    semicolons for the same purpose.
+
+    Overall, using semicolons explicitly makes code clearer, 
+    more reliable, and easier to maintain.
+
+q2) COmments in js
+
+ // == single line comments
+ /*  ... */ == multiline commments
+
+ 
