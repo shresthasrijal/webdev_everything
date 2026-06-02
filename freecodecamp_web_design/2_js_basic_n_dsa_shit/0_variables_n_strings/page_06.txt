@@ -39,9 +39,161 @@ q2) How Does the typeof Operator Work, and What Is the
     The typeof operator is used to determine the datatype of 
     a variable or value and returns the type as string.
 
-    eg: "number" is returned for numeric and "boolean" for true/false values.
+    eg: "number" is returned for numeric and "boolean" for true/false 
+    values.
 
     There is a known quirk where typeof null incorrectly 
     returns "object" due to a legacy bug... despite that 
     inconcistency... typeof remains a useful tool to check 
     data types...
+
+q3) What is a bracket notation, how do u access characters from a   
+    string?
+
+    In JS strings are a sequence of characters, and u access individual characters via bracket notation []
+
+    indexes are zero-based...
+    - first character... index 0
+    - second character... index 1
+    - and so on
+
+    eg..
+        let greeting = "hello";
+        console.log(greeting[1]); // "e"
+
+    To get the last character, use the string's length minus 1:
+
+        let greeting = "hello";
+        console.log(greeting[greeting.length - 1]); // "o"
+    
+    You can also combine multiple characters:
+        let greeting = "hello";
+        let firstTwo = greeting[0] + greeting[1];
+        console.log(firstTwo); // "he"
+
+    Bracket notation is helpful for accessing specific letters in a 
+    string, such as extracting initials, validating input, or checking 
+    characters at certain positions.
+
+q4) How Do You Create a Newline in Strings and Escape Strings?
+
+    In JS you may need to use escape sequences to handle special 
+    characters correctly.
+
+    Newlines can be added using \n, which inserts a line break inside 
+    a string. This displays the text on multiple lines.
+
+        let poem = "Roses are red,\nViolets are blue.";
+    
+    Escaping characters is necessary when you want to include 
+    characters that JavaScript normally treats specially, such as 
+    quotation marks.
+        let statement = "She said, \"Hello!\"";
+
+    Here the backslash (\)  tells JS that the quotes are part of 
+    string instead of the end of string
+
+    \\ in order to escape a \
+    and \' to escape a single quotes
+
+    Using escape sequences helps format text properly, include special 
+    characters, and avoid syntax errors in JavaScript strings.
+
+q5) What Are Template Literals, and What Is String Interpolation?
+
+    Template literals is a new way to make strings in JS. U define it 
+    using backticks (`) instead of ' or " 
+
+    It allows for easier string manipulation, including embedding 
+    variables directly inside string... using ${}
+
+        const name = "Alice";
+        const greeting = `Hello, ${name}!`;
+
+    Multiline strings: Write strings across multiple lines without 
+    using \n.
+        const poem = `Roses are red,
+        Violets are blue,
+        JavaScript is fun.`;
+
+    Embedded expressions: Include JavaScript expressions directly 
+    inside strings.
+        const output = `Score: ${(9.5 / 10) * 100}%`;
+
+    Compared to traditional string concatenation, template literals 
+    make code shorter, easier to read, and easier to maintain, 
+    especially when working with variables, expressions, or multiline 
+    text.
+
+q6) How Can You Find the Position of a Substring in a String?
+
+    The indexOf() method in JavaScript is used to find the position of 
+    a substring within a larger string.
+
+    -It returns the index of the first occurance of substring if found.
+    - returns -1 if the substring not found
+    - takes upto 2 arguments:
+        - the substring to search for
+        - an optional starting position for search
+
+    i. find a substring
+        let sentence = "JavaScript is awesome!";
+        console.log(sentence.indexOf("awesome!")); // 14
+
+    ii. substring not found
+        console.log(sentence.indexOf("fantastic")); // -1
+
+    iii. Start searching from a specific position:
+        let sentence = "JavaScript is awesome, and JavaScript is 
+            powerful!";
+        console.log(sentence.indexOf("JavaScript", 10)); // 27
+
+    NOTE: indexOf() is case-sensitive.
+        console.log("freeCodeCamp".indexOf("F")); // -1
+
+    Use Cases:
+    - Check whether a substring exists in a string.
+    - Find the location of a substring for further string operations.
+    - Search from a specific position within a string.
+
+q7) What Is the prompt() Method, and How Does It Work?
+
+    The JavaScript prompt() method is used to get input from the user through a small pop-up dialog box. It returns whatever the user types as a string.
+
+    2 arguments...
+    - a message shown to the user
+    - an optional default value in the input field
+
+        prompt(message, default);
+    
+    eg:
+        // HTML
+        <button id="prompt-btn">Show Prompt</button>
+        <p id="output"></p>
+        <script src="index.js"></script>
+        
+        // JS
+        const btn = document.getElementById("prompt-btn");
+        const output = document.getElementById("output");
+
+        btn.addEventListener("click", () => {
+            const userName = prompt("What is your name?", "Guest");
+            output.textContent = "Hello, " + userName + "!";
+        });
+
+    when the button is clicked, a prompt appears asking for the user’s 
+    name with "Guest" as the default value.
+
+    - if user clicks ok, then value is userName
+    - if user clicks cancel, then userName becomes null
+
+    The page then displays a greeting using whatever was entered (or 
+        null if canceled).
+
+    The prompt() method pauses script execution until the user 
+    responds, meaning no other JavaScript runs during that time.
+
+    While it’s simple and useful for testing or small projects, 
+    prompt() is generally avoided in modern web development because it 
+    interrupts the user experience and behaves inconsistently across 
+    browsers.
