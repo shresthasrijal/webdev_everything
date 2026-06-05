@@ -1,0 +1,93 @@
+ASCII (American Standard Code for Information Interchange), 
+ - it is a standard that represents characters as numbers so computers can process them.
+ - Each character is assigned a unique numeric value 
+ (for eg: letters, digits, and symbols)
+ - It also introduces JS methods related to character codes...
+    - charCodeAt(): returns the numeric code (ASCII/Unicode value) of a character
+    at a specified position in a string
+
+        let letter = "A";
+        console.log(letter.charCodeAt(0));  // 65
+
+        let symbol = "!";
+        console.log(symbol.charCodeAt(0));  // 33
+
+    ASCII (American Standard Code for Information Interchange),
+    - String.fromCharCode(): crates a character from a numeric code value.
+
+        let char = String.fromCharCode(65);
+        console.log(char);
+
+        let char = String.fromCharCode(97);
+        console.log(char);  // a
+
+ Together, these methods allow programmers to convert characters to numbers and numbers back to characters, helping them understand and manipulate text at a lower level.
+
+q1) How can u test if a string contains a substring?
+
+    Ans:
+    In JS, u can check whether a string contains a smaller part(substring) using the includes() method,
+
+    it returns:
+     - true: if substring found
+     - false: if substring not found
+
+    eg:
+        string.includes(searchValue);
+
+        let phrase = "JavaScript is awesome!";
+        let result = phrase.includes("awesome");
+        console.log(result);  // true
+
+        let phrase = "JavaScript is awesome!";
+        let result = phrase.includes("Awesome");
+        console.log(result);  // false
+
+    It returns false because includes() is case-sensitive (Awesome ≠ awesome).
+
+    eg:
+        let text = "Hello, JavaScript world!";
+        let result = text.includes("JavaScript", 7);
+        console.log(result);  // true
+
+    Here the search starts at index 7, where "JavaScript" appears.
+
+    - includes() only returns true or false
+    - It does not tell position or frequency
+    - For finding positions, use indexOf() instead
+
+q2) How Can You Extract a Substring from a String?
+
+    Ans:
+    The slice() method is used to extract a portion of a string and return it as a new string, without changing the original.
+
+    syntax:
+        string.slice(startIndex, endIndex);
+
+    - startindex - index from where extraction start
+    - endindex - optional, where extraction stops (if null all remaning chars)
+
+    eg:
+        let message = "Hello, world!";
+        let greeting = message.slice(0, 5);
+        console.log(greeting);  // Hello
+
+        let message = "Hello, world!";
+        let world = message.slice(7);
+        console.log(world);  // world!
+
+        let message = "JavaScript is fun!";
+        let lastWord = message.slice(-4);
+        console.log(lastWord); // fun!
+
+    Negative index counts from the end of the string.
+
+        let message = "I love JavaScript!";
+        let language = message.slice(7, 17);
+        console.log(language);  // JavaScript
+
+    Note:
+     - does not modify original string
+     - can use positive or negative indexes
+     - end index is not included
+     - useful for extracting words, phrases, or parts of text
