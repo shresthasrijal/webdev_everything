@@ -1,0 +1,93 @@
+1) How Can You Replace Parts of a String with Another?
+ans:
+    javascript has a replace method..
+    It is used to substitute part of a string with another value.
+    It returns a new string and does not change the original
+
+    Syntax:
+    string.replace(searchValue, newValue);
+        - searchValue = what u want to find
+        - newValue = replace the search
+
+    (eg)
+        let text = "I love JavaScript!";
+        let newText = text.replace("JavaScript", "coding");
+
+        console.log(newText);
+        // "I love coding!"
+
+    Case sensitive behavior
+        let sentence = "I enjoy working with JavaScript.";
+
+        let updated = sentence.replace("javascript", "coding");
+
+        console.log(updated);
+        // "I enjoy working with JavaScript."
+
+    No change happens because "javascript" ≠ "JavaScript".
+
+    nOTE:
+    - METHOD RETURNS A NEW STIRNG
+    - METHOD IS CASE SENSITIVE FOR SEARCH
+    - ONLY REPLACES THE FIRST OCCURRENCE
+    - THERE IS ALSO REGULAR EXPRESSIONS FOR ADVANED MATHCING... thats for later
+
+2) How Can You Repeat a String x Number of Times?
+ans: 
+    The repeat() method lets u duplicate a string multiple times and returns 
+    a new string
+
+    syntax:
+        string.repeat(count);
+    - count: number of times to repeat the string
+    - returns a new stirng
+    - original string is unchanged
+
+    (eg)
+        let word = "Hello!";
+        let result = word.repeat(3);
+
+        console.log(result);
+        // "Hello!Hello!Hello!"
+
+    rules:
+    i) Negative numbers cause an error
+            let word = "Test";
+            console.log(word.repeat(-1));
+
+        This throws range error
+
+    ii) Infinity is not allowed
+            let word = "Test";
+            console.log(word.repeat(Infinity));
+
+        This also causes range error
+
+    iii) Decimal numbers are rounded down...
+            let word = "Test";
+            console.log(word.repeat(2.5));
+        
+        output: "TestTest"
+
+    iv) zero returns an empty string
+            let word = "Test";
+            console.log(word.repeat(0));
+
+        output: ""
+
+    v) u can also use variables
+            let count = 4;
+            let word = "Test";
+            console.log(word.repeat(count));
+
+        output: "TestTestTestTest"
+
+    - This repeats a string n times.. 
+    - returns  a new string
+    - negative or infinite value = error
+    - decimals rounded down
+    - 0 gives empty string
+    - can use variables for dynamic
+
+    An interestign use case is showing 3 dots and repeating
+    
