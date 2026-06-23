@@ -1,0 +1,41 @@
+1) How Can You Change the Casing for a String?
+ans:
+    Javascript provides 2 simple string methods to change text case..
+    i) toUpperCase()
+    - converts all letters in string to upper case and gives back new string
+    - original not changed
+
+    ii) toLowerCase()
+    - convers all letters in string to lower case and gives new string back
+    - original not changed
+
+    Good for:
+        - formatting text (headings or emphasis)
+        - standardizing user input
+        - making case-insensititve comaprisons
+
+    In short, they help you easily control and normalize text in JavaScript.
+    (eg)
+        "Hello".toUpperCase() → "HELLO"
+        "HELLO".toLowerCase() → "hello"
+
+2) How can you trim whitespace from a string?
+ans:
+    JavaScript provides methods to remove unwanted whitespace from strings:
+    - trim()
+    removes whitespace form both beiging and end of string
+    - trimStart()
+    removes whitepsace only from start of string
+    - trinEnd()
+    removes whitespace only from the end
+
+    white space refers to spaces, tabs, or line breaks that are not visible 
+    but can affect comparisions, storage, or display....
+
+    (eg)
+        " Hello! ".trim() → "Hello!"
+        " Hello! ".trimStart() → "Hello! "
+        " Hello! ".trimEnd() → " Hello!"
+
+    These methods help clean and standardize user input while giving control 
+    over which side of the string is trimmed.
