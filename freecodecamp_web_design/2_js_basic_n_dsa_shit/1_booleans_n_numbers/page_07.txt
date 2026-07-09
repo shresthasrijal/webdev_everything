@@ -81,4 +81,147 @@
 
 2) What Are Bitwise Operators, and How Do They Work?
     ans:
+    Bitwise operators work on the binary (0 and 1) representation of 
+    numbers.
+
+    10 in decimal is 1010 in binary
+
+    1010(2) = 1*2^3 + 0 ^2^2 + 1*2^1 + 0x2^0
+            = 8 + 0 + 2 + 0
+            = 10
+
+    i) Bitwise And (&)
+    Returns 1 only if both bits are 1.. bits refer to each position for a number converted to binary for example 5(base 10) = 101 (base 2)
+    And its bits are 1, 0 and then 1. Highest to lowerst order or start to finish order I think.
     
+    Rule:
+    1 & 1 = 1
+    1 & 0 = 0
+    0 & 1 = 0
+    0 & 0 = 0
+
+        let a = 5; // 101
+        let b = 3; // 011
+
+        console.log(a & b); // 1
+
+        let a = 13; //1101
+        let b = 11; //1011
+
+        console.log( a & b);
+
+        a - b
+        1 - 1 = 1
+        1 - 0 = 0
+        0 - 1 = 0
+        1 - 1 = 1
+
+        Result: 1001
+
+    ii) Bitwise Or (|)
+    Returns 1 if atleast one bit is 1.
+
+    Rule:
+    1 | 1 = 1
+    1 | 0 = 1
+    0 | 1 = 1
+    0 | 0 = 0
+
+        let a = 5; //101
+        let b = 3; //011
+
+        console.log(a | b); //7
+
+        1 - 0 = 1
+        0 - 1 = 1
+        1 - 1 = 1
+        111 (base 2) = 7 (base 10)
+
+    iii) Bitwise XOR (^)
+    Returns 1 only when the bits are different
+
+    Rule: 
+    1 ^ 1 = 0
+    1 ^ 0 = 1
+    0 ^ 1 = 1
+    0 ^ 0 = 0
+
+        let a = 5; //101
+        let b = 3; //011
+
+        console.log(a ^ b); //6
+
+        1 - 0 = 1
+        0 - 1 = 0
+        1 - 1 = 0
+
+        100 (base 2) = 6 (base 10)
+
+    iv) Bitwise Not (~)
+    Flips every bit (0 ↔ 1).
+
+    1 -> 0
+    0 -> 1
+
+        let a = 5; //101
+        console.log(~a); // -6
+
+        5 = 00000000 00000000 00000000 00000101
+        ~5 = 11111111 11111111 11111111 11111010 = -6
+
+    formula:    let n = number
+
+                ~n = -1 * (n+1)
+
+    v) Left Shift (<<)
+    Moves bits to the left...
+    Each left shift multiplies by 2.
+
+        let a = 5; //101
+        console.log(a << 1); //10
+
+        5 (base 10) = 101 (base 2)
+
+        5 << 1 = 1010 (base 2)
+        1010 (base 2)= 10 (base 10)
+
+        5 << 2 = 10100 (base2) = 20 (base 10)
+    
+    formula: 
+        let n= 5;
+        n << m;     if (m = 2)       
+        answer = n*(2*m)   n * (2 *2)= n*4 = 5*4 = 20
+
+    vi) Right Shift (>>)
+    Moves bits to the right.
+    Each right shift divides by 2 
+    (rounding down for positive numbers).
+
+        let a = 5; //101
+        console.log(a >> 1); //2
+
+        5 (base 10) = 101 (base 2)
+        5 >> 1 = 10 (base 2)
+        10 (base 2) = 2 (base 10)
+
+    formula = 
+        let n= 20;
+        n >> m;     if (m = 2)       
+        answer = n/(2*m)   n / (2 *2)= n*4 = 20/4 = 5
+
+        let n = 5; m = 1
+        5/2 = 2.5 = 2 (rounded down for +ve)
+
+    For negative numbers round toward negative infinity 
+    (technically still round down)
+
+        let n = -5;  m =1
+        n >> m = -5/2 = -2.5 = -3
+
+        -5 = 11111111 11111111 11111111 11111011
+        
+        >> 1
+
+        11111111 11111111 11111111 11111101 = -3
+
+        
