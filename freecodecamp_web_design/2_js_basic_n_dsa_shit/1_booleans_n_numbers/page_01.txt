@@ -1,0 +1,152 @@
+1) What Is the Number Type in JavaScript, and What Are the Different 
+    Types of Numbers Available?
+    ans:
+    Number type is one of the most common data types. Other languages have seperate types of integer or floating numbers but in js its all under Number type... including whole numbers, decimals, and special values like Infinity and NaN.
+
+        const wholeNumber = 50;
+        const decimalNumber = 4.5;
+        const negativeNumber = -7;
+
+        console.log(typeof wholeNumber); // number
+        console.log(typeof decimalNumber); // number
+        console.log(typeof negativeNumber); // 
+        
+        integers:
+        - whole numbers without a decimal part. +ve, -ve, or 0
+
+        floating-point numbers:
+        numbers with decimal and used for values that require precision..
+            mesaurement or currency
+
+        infinity:
+            value that are beyond maximum numeric limit. Like when dividing number by 0
+            
+
+            const infiniteNumber = 1 / 0;
+
+            console.log(infiniteNumber); // Infinity
+            console.log(typeof infiniteNumber); // number
+
+        NaN (not a number)
+        - when a math operation doesnt produce a valid number, js returns
+        negativeNumber
+
+            const notANumber = 'hello world' / 2;
+
+            console.log(notANumber); // NaN
+            console.log(typeof notANumber); // number
+
+    Number Bases
+
+    Besides the standard decimal (base 10) system, JavaScript also 
+    supports: 
+    - Binary (base 2): Uses only 0 and 1.
+    - Octal (base 8): Uses digits 0 to 7.
+    - Hexadecimal (base 16): Uses digits 0 to 9 and letters a to f (commonly seen in CSS color codes).
+    
+2) What Are the Different Arithmetic Operators in JavaScript?
+    ans:
+    JS provides arithmetic operators to perform mathematical operations on numbers, including addition, subtraction, multiplication, division, remainder, and exponentiation. Can be combined too...
+
+    add = (+)
+
+    subtract = (-)
+
+    multiply = (*)
+
+    divide = (/)
+
+    remainder or mod = (%)
+
+    exponentiation = (**)
+        Basicaly number to the power of...
+
+        const num1 = 2;
+        const exponenet = num1 ** 3;
+        console.log(exponent); // 8
+
+    U can combine too:
+
+        const result = 10 + 5 * 2 - 8 / 4;
+        console.log(result); // 18
+
+    Note: JS evaluates mixed expressions using operator precedence, which 
+    determines the order in which operations are performed.
+
+3) What Happens When You Try to Do Calculations with Numbers and Strings?
+    ans:
+
+    JavaScript can automatically convert one data type into another. This 
+    is called type coercion. It commonly happens when you mix numbers, 
+    strings, booleans, null, or undefined in arithmetic operations.
+
+    Addition (+)
+    The + operator does both adding number and string concatenation
+
+        const result = 5 + '10';
+        console.log(result); // 510
+        console.log(typeof result); // string
+
+    The order doesnt matter
+
+        const result = '10' + 5;
+        console.log(result); // 105
+        console.log(typeof result); // string
+    
+    For subtraction (-), multiplication (*), and division (/), JavaScript tries to convert the string into a number before performing the operation.
+
+        const subtractionResult = '10' - 5;
+        console.log(subtractionResult); // 5
+        console.log(typeof subtractionResult); // number
+
+        const multiplicationResult = '10' * 2;
+        console.log(multiplicationResult); // 20
+        console.log(typeof multiplicationResult); // number
+
+        const divisionResult = '20' / 2;
+        console.log(divisionResult); // 10
+        console.log(typeof divisionResult); // number
+
+    If the string cannot be converted to a valid number, JavaScript returns NaN (Not a Number).
+        const subtractionResult = 'abc' - 5;
+        console.log(subtractionResult); // NaN
+        console.log(typeof subtractionResult); // number
+
+        const multiplicationResult = 'abc' * 2;
+        console.log(multiplicationResult); // NaN
+        console.log(typeof multiplicationResult); // number
+
+        const divisionResult = 'abc' / 2;
+        console.log(divisionResult); // NaN
+        console.log(typeof divisionResult); // number
+
+    Although NaN means "Not a Number," its type is still number.
+
+    In mathematical operations:
+        true becomes 1
+        false becomes 0
+
+        const result1 = true + 1;
+        console.log(result1); // 2
+        console.log(typeof result1); // number
+
+        const result2 = false + 1;
+        console.log(result2); // 1
+        console.log(typeof result2); // number
+
+        const result3 = 'Hello' + true;
+        console.log(result3); // "Hellotrue"
+        console.log(typeof result3); // string
+
+    null and undefined in mathematical operations:
+        null is treated as 0
+        undefined is treated as NaN
+
+        const result1 = null + 5;
+        console.log(result1); // 5
+        console.log(typeof result1); // number
+
+        const result2 = undefined + 5;
+        console.log(result2); // NaN
+        console.log(typeof result2); // number
+    

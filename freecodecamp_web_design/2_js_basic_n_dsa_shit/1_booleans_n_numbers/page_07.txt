@@ -1,0 +1,84 @@
+1) What Are Unary Operators, and How Do They Work?
+    ans:
+    An operator that works on only one operand (value or variable)
+    eg:
+        let x = 5;
+        -x; 
+        // Unary operator (-) acts on one operand: x
+
+    i- Unary Plus (+)
+    Converts a value to a number.
+
+        const str = "42";
+        const num = +str;
+
+        console.log(num);        // 42
+        console.log(typeof num); // "number"
+
+    if its already a number, nothing changes
+        +10; // 10
+
+    ii- Unary Negation (-)
+    Converts the value to a number and makes it negative
+
+        const str = "42";
+        const num = -str;
+
+        console.log(num); // -42
+
+        -5;      // -5
+        -"100";  // -100
+
+    iii- Logical NOT (!)
+    Reverses a boolean value.
+
+        let isOnline = true;
+        console.log(!isOnline); // false
+
+        let isOffline = false;
+        console.log(!isOffline); // true
+
+    It also converts non-boolean values to booleans first.
+
+        console.log(!0);       // true
+        console.log(!1);       // false
+        console.log(!"Hello"); // false
+        console.log(!"");      // true
+
+    iv- Bitwise NOT (~)
+    Flips every bit (0 becomes 1 and 1 becomes 0).
+
+        const num = 5;
+        console.log(~num); // -6
+    
+     Formula is basically: ~n = -(n + 1)
+
+        ~5;  // -6
+        ~10; // -11
+        ~0;  // -1
+    
+    v- void
+    Evaluates an expression but always returns undefined.
+
+        const result = void (2 + 2);
+        console.log(result); // undefined
+
+    Even though 2 + 2 equals 4, void discards the result.
+
+    vi- typeof
+    Returns the data type of a value as a string.
+
+        const value = "Hello";
+        console.log(typeof value); // "string"
+
+    typeof 42;          // "number"
+    typeof true;        // "boolean"
+    typeof undefined;   // "undefined"
+    typeof null;        // "object" (this is a historical JavaScript quirk)
+    typeof {};          // "object"
+    typeof [];          // "object"
+    typeof function(){} // "function"
+
+2) What Are Bitwise Operators, and How Do They Work?
+    ans:
+    

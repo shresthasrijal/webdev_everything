@@ -1,0 +1,143 @@
+1) How Does Operator Precedence Work?
+    ans:
+    Operator precedence determines which operator JavaScript evaluates 
+    first when an expression contains multiple operators.
+    - Operators with higher precedence are evaluated before operators 
+        with lower precedence.
+    - Similar to mathematics (multiplication and division before addition 
+    and subtraction).
+
+    -i- multiplication before add
+        const result = 2 + 3 * 4;
+        console.log(result); // 14
+
+        3 * 4 = 12
+        2 + 12 = 14
+
+    -ii- Parentheses Override Precedence
+    Parentheses () are always evaluated first.
+
+        const result = (2 + 3) * 4;
+        console.log(result); // 20
+
+        2 + 3 = 5
+        5 * 4 = 20
+
+    -iii- Division before Addition
+
+        const result = 2 + 6 / 3;
+        console.log(result); // 4
+
+        6 / 3 = 2
+        2 + 2 = 4
+
+    Precedence order:
+        - parentheses
+        - exponent
+        *, /, % (whicever comes first)
+        +, - (whichever comes first)
+        = 
+
+    When operators have the same precedence, JavaScript uses 
+    associativity to decide the evaluation order.
+    - left to right is for arithmetic operators
+    - right to left is for = and **
+
+        // =
+        let a, b;
+        a = b = 5;
+        console.log(a); // 5
+        console.log(b); // 5
+
+        b = 5
+        a = b
+        
+        // **
+        const result = 2 ** 3 ** 2;
+        console.log(result); //512
+
+        3 ** 2 = 9
+        2 ** 9 = 512
+
+2) How Do the Increment and Decrement Operators Work?
+    ans:
+
+    Increment Operator (++)
+    The increment operator increases a variable's value by 1.
+
+        let x = 5;
+        x = x + 1;
+
+        or
+
+        let x = 5;
+        x++;
+
+    Decrement Operator (--)
+    The decrement operator decreases a variable's value by 1.
+
+        let x = 5;
+        x = x - 1;
+
+        or
+
+        let x = 5;
+        x--;
+
+    Prefix Increment (++x)
+    The variable is incremented first, then its new value is returned.
+
+        let x = 5;
+
+        console.log(++x); // 6
+        console.log(x);   // 6
+
+    Postfix Increment (x++)
+
+    The current value is returned first, then the variable is incremented.
+
+        let y = 5;
+
+        console.log(y++); // 5
+        console.log(y);   // 6
+
+        Steps:
+
+        y = 5
+        Returns 5
+        Then y becomes 6
+
+    Same with decrement... --x and x--
+
+3) What Are Compound Assignment Operators in JavaScript, and How Do They 
+    Work?
+    ans:
+    in js instead of doing x = x+y u can do shit like x += y
+
+        let num = 5;
+        num += 2
+        console.log(num); // 7
+
+    This saves time and reduces clutter in your code
+
+    These are the options:
+        - +=
+        - -=
+        - *=
+        - /=
+
+    x &= y   // x = x & y
+    x |= y   // x = x | y
+
+    Extra options:
+        - Remainder assignment operator (%=)
+        divides a variable by the specified number and assigns the 
+        remainder to the variable.
+        - Exponent assignment operator (**=)
+        raises a variable to the power of the specified number and 
+        reassigns the result to the variable.
+        - Bitwise AND assignment operato
+        performs a bitwise AND operation with the specified number and 
+        reassigns the result to the variable.
+        - Bitwise OR assignment operator
+        performs a bitwise OR operation with the specified number and reassigns the result to the variable.

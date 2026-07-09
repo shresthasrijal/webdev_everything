@@ -1,0 +1,91 @@
+1) What Are Booleans, and How Do They Work with Equality and Inequality 
+    Operators?
+    ans:
+    Boolean data is either true or false.
+
+        let isOldEnoughToDrive = true;
+        console.log(isOldEnoughToDrive); // true
+
+    equality operators:
+    i. Equality (==)
+    Compares values only, converts (coerces) data types if necessary
+
+        console.log(5 == "5");
+        true
+    
+    eg: "5" is converted into the number 5
+
+    ii. Strict Equality (===)
+    Compares both value and data type.
+    No type conversion.
+
+        console.log(5 === "5");
+        false
+
+    iii) Inequality (!=)
+    Checks if values are not equal
+    Performs type coercion
+
+        console.log(5 != "5"); //false
+
+    Because "5" becomes 5 so .. 5 != 5 is false
+
+    iv) Strict Inequality (!==)
+    Checks if values or data types are different.
+    No type coercion.
+
+        console.log(5 !== "5"); //true
+
+    Use strict operators whenever possible bc more safer and predictable.
+
+2) What Are Comparison Operators, and How Do They Work?
+    ans:
+    Comparison operators compare two values and always return a boolean
+
+    Commonly used in:
+        - if statements
+        - loops
+        - decision-making in programs
+
+    i- Greater Than (>)
+    Checks if the left value is greater than the right value.
+    syntax: value1 > value2
+
+        let a = 6;
+        let b = 9;
+
+        console.log(a > b); // false
+        console.log(b > a); // true
+
+    ii- Greater Than or Equal To (>=)
+    Checks if the left value is greater than OR equal to the right value.
+    syntax: value1 >= value2
+
+        let a = 6;
+        let b = 9;
+        let c = 6;
+
+        console.log(a >= b); // false
+        console.log(b >= a); // true
+        console.log(a >= c); // true
+    
+    iii- Less Than (<)
+    Checks if the left value is smaller than the right value.
+    syntax: value1 < value2
+
+        let a = 6;
+        let b = 9;
+
+        console.log(a < b); // true
+        console.log(b < a); // false
+
+    iv- Less Than or Equal To (<=)
+    Checks if the left value is smaller than OR equal to the right value.
+    
+        let age = 18;
+
+        if (age >= 18) {
+            console.log("You are an adult.");
+        } else {
+            console.log("You are a minor.");
+        }
