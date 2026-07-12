@@ -1,0 +1,122 @@
+Conditional statemetns...
+    if (null) {
+    console.log("This will not run.");
+    }
+
+    if ("freeCodeCamp") {
+    console.log("This will run.");
+    }
+
+    Note that...
+    - boolean false
+    - 0 (zero)
+    - "" (empty string)
+    - null
+    - undefined
+    - NaN (Not a Number)
+
+    These will not run....
+
+    if else if....
+
+        const score = 87;
+
+        if (score >= 90) {
+            console.log('You got an A'); 
+        } else if (score >= 80) {
+            console.log('You got a B'); // You got a B
+        } else if (score >= 70) {
+            console.log('You got a C');
+        } else {
+            console.log('You failed! You need to study more!');
+        }
+
+    Ternary operation:
+    condition ? expressionIfTrue : expressionIfFalse;
+
+        const temperature = 30;
+        const weather = temperature > 25 ? 'sunny' : 'cool';
+
+        console.log(`It's a ${weather} day!`);
+
+Binary logical operators...
+    i) logical And (&&)
+    - returns the first false value it finds
+    - if both values true then returns second operand
+    - use when all conditions must be true
+
+        true && "hello";   // "hello"
+        0 && 3;            // 0
+        false && 0;        // false
+
+        if (2 < 3 && 3 < 4) {
+            console.log("The if block runs");
+        }
+
+    ii) Logical OR (||)
+    - returns the first truthy value it finds
+    - if the first operand is false, it returns the second
+    - used when atleast one condition must be true
+
+        "This is truthy" || false; // "This is truthy"
+        0 || "This is truthy";     // "This is truthy"
+
+    iii) Nullish Coalescing (??)
+    - returns right hand value only if the left-hand value is null or undefined
+    - Unlike ||, it does not treat 0, false, or "" as missing values.
+    - Useful for setting default values while preserving valid falsy values.
+
+        null ?? "default"; // "default"
+    
+        const userSettings = {
+            theme: null,
+            volume: 0,
+            notifications: false,
+        };
+
+        const theme = userSettings.theme ?? "light"; // "light" 
+
+MATH objects....
+    - Math.random() 
+    random decimal between 0(inclusive) and 1(exclusive)
+
+    - Math.min()
+    returns smallest Number
+        Math.min(1,5,3) //1
+
+    - Math.max()
+    returns biggest number
+        Math.min(1,5,3) //5
+
+    - Math.ceil() 
+    rounds up
+        Math.ceil(4.3) //5
+    
+    - Math.floor()
+    rounds down
+        Math.floor(4.7) //4
+
+    - Math.round()
+    rounds to nearest integer. 0-4 is lower, 5 to 9 is upper
+        Math.round(4.5) //5
+
+    - Math.trunc()
+    removs the decimal
+        Math.trunc(4.9) //4
+    
+    - Math.sqrt()
+    square root
+        Math.sqrt(81) //9
+    
+    - Math.cbrt()
+    cube root
+        Math.cbrt(27) //3
+
+    - Math.abs()
+    absolute value, always psotive
+        Math.abs(-91) //91
+    
+    - Math.pow()
+    raises a number to a power
+        Math.pow(2, 3) //8
+
