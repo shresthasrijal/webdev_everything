@@ -1,0 +1,77 @@
+1) How Do Comparisons Work with Null and Undefined Data Types?
+    ans:
+    Both null and undefined refer to absence of a value, but they have 
+    different meaning and comparisons
+
+    undefined
+        - a variable has been declared but not assinged a value
+        - default value for missing function arguments.
+
+        let x; 
+        console.log(x); //undefined
+    
+    null
+        - represents an intentional absence of value.
+        - assinged explicitly by the programmer
+        
+        let x = null;
+
+    equality comparisions
+
+        null == undefined; //true
+    
+        null === undefined; //false
+
+        null == 0;        // false
+        null == "";       // false
+
+        undefined == 0;   // false
+        undefined == "";  // false
+
+    Other comparions..
+
+        null > 0;   // false
+        null == 0;  // false
+        null >= 0;  // true
+
+    in relational operators (>, <, >=, <=) null becomes 0
+
+    Use === instead of == for predictable comparisons and to avoid 
+    unintended type coercion.
+
+2) What Are Switch Statements and How Do They Differ from If/Else Chains?
+    ans:
+    Both Switch and if/else are control flow statements
+
+    switch statement:
+        - compares one expression against multiple possible values
+        - uses strict equality(===) for comaprisions
+        - each case ends with break to prevent fall through, usaully
+        - default runs if no case matches
+
+        switch (expression) {
+            case value1:
+                // code
+                break;
+            case value2:
+                // code
+                break;
+            default:
+                // code
+        }
+
+    - best to check one variable against multiple fixed values
+    - menus, days of the week, months, status code, etc
+
+            switch (dayOfWeek) {
+                case 1:
+                    console.log("Monday");
+                    break;
+                case 2:
+                    console.log("Tuesday");
+                    break;
+                default:
+                    console.log("Invalid day");
+            }
+
+    

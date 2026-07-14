@@ -1,0 +1,98 @@
+1) How does isNaN work?
+    ans:
+    NaN (Not a Number) is a special numeric value that is for invalid or
+    undefined number results
+    - type is still number btw... 
+
+    eg:
+        0/0 == NaN
+        Number('abc') == NaN
+
+    NaN is never equal to anything, even itself
+
+        NaN === NaN //false
+    
+    isNaN()
+        - converts the value to a number before checking
+        - this type coercion can produce unexpected results
+
+        isNaN(NaN);       // true
+        isNaN(undefined); // true
+        isNaN("blabla");  // true
+
+        isNaN("37");      // false
+        isNaN("");        // false (converted to 0)
+        isNaN(" ");       // false (converted to 0)
+        isNaN(true);      // false (converted to 1)
+    
+    Number.isNan()
+        - doesnt change value or type
+        - returns true if value itself is NaN
+
+        Number.isNaN(NaN);       // true
+        Number.isNaN(0 / 0);     // true
+
+        Number.isNaN("NaN");     // false
+        Number.isNaN(undefined); // false
+        Number.isNaN("blabla");  // false
+
+    Note: Use Number.isNaN() instead of the global isNaN() because it is 
+        more accurate and avoids unexpected type conversions.
+
+2) How Do the parseFloat() and parseInt() Methods Work?
+    ans:
+    parseFloat() and parseInt() converts strings to numbers. Good for 
+    handling user inputs and string data.
+
+    parseFloat()
+        - converts a string to a floating-point (decimal) number
+        - parses from the start of the string until it encounters and
+            invalid character
+        - returns NaN if the string doesnt start with valid number
+
+        parseFloat("3.14");      // 3.14
+        parseFloat("3.14 abc");  // 3.14
+        parseFloat("3.14.5");    // 3.14
+        parseFloat("abc 3.14");  // NaN
+
+    parseInt()
+        - converts a string to an integer
+        - stops parsing at the first non-digit character
+        - ignores the decimal part of floating point numbers
+        - returns nan if start with invalid
+
+        parseInt("42");      // 42
+        parseInt("42px");    // 42
+        parseInt("3.14");    // 3
+        parseInt("abc123");  // NaN
+
+    - ignores leading whitespace
+    - supports + and - signs
+
+        parseFloat("+3.14"); // 3.14
+        parseInt("-42");     // -42
+
+3) What Is the toFixed() Method, and How Does It Work?
+    ans:
+    The .toFixed() method formats a number using fixed-point notation by 
+    specifying the number of digits after the decimal point.
+
+    number.toFixed(digits)
+    - digits is optional
+    - returns a string btw
+
+        let num = 3.14159
+        console.log(num.toFixed(2)); //3.14
+
+    Rounding behavior....
+
+        (3.14159).toFixed(3); // "3.142"
+        (3.14449).toFixed(3); // "3.144"
+        (3.14550).toFixed(3); // "3.146"
+
+    if no value given for decimal rounds to 0 by default
+    
+        let num = 3.14159;
+        console.log(num.toFixed()); // "3"
+
+        
