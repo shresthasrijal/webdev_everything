@@ -1,0 +1,172 @@
+let fruits = ["apple", "banana", "orange"];
+
+first index is  0... last is length-1
+fruits.length = 3
+
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers[2]); //3
+-------------
+let fruits = ["apple", "banana", "cherry"];
+console.log(fruits[1]); // "banana"
+console.log(fruits[3]); // undefined
+
+fruits[1] = "blueberry";
+console.log(fruits); // ["apple", "blueberry", "cherry"]
+
+---------
+add remove elements... at start or end
+    push(), pop(), shift(), and unshift()\
+
+#1 (push)
+const fruits = ["apple", "banana"];
+const newLength = fruits.push("orange");
+console.log(newLength); // 3
+console.log(fruits); // ["apple", "banana", "orange"]
+
+const fruits = ["apple", "banana"];
+fruits = ["This", "will", "not", "work"];
+console.log(fruits); // Uncaught TypeError: Assignment to constant 
+variable. 
+
+This is bc const value can be changed like the array can have data added 
+but u cant re assign variables....
+
+#2 (pop)
+let fruits = ["apple", "banana", "orange"];
+let lastFruit = fruits.pop();
+console.log(fruits); // ["apple", "banana"]
+console.log(lastFruit); // "orange"
+
+pop() method removes the last element (orange) from the array and returns it.
+
+#3 (unshift) 
+this method adds one or more elements to the beginning of an array
+
+let numbers = [2, 3];
+let newLength = numbers.unshift(1);
+console.log(numbers); // [1, 2, 3]
+console.log(newLength); // 3
+
+#4 (shift)
+it removes the first element from an array and returns that element
+
+let colors = ["red", "green", "blue"];
+let firstColor = colors.shift();
+console.log(colors); // ["green", "blue"]
+console.log(firstColor); // "red"
+
+----------
+arrays are fundamental data structures used to store collections of 
+elements
+
+A one-dimensional array, often called an array, is like a single row of 
+boxes. 
+let fruits = ["apple", "banana", "cherry", "date"];
+console.log(fruits[2]); // "cherry"
+
+If a one-dimensional array is like a single row of lockers, a 
+two-dimensional array is like a grid of locker
+
+let chessboard = [
+    ["R", "N", "B", "Q", "K", "B", "N", "R"],
+    ["P", "P", "P", "P", "P", "P", "P", "P"],
+    [" ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " "],
+    ["p", "p", "p", "p", "p", "p", "p", "p"],
+    ["r", "n", "b", "q", "k", "b", "n", "r"]
+];
+
+console.log(chessboard[0][3]); // "Q"
+
+--------------
+Array destructuring is a feature in JavaScript that allows you to extract 
+values from arrays and assign them to variables in a more concise and 
+readable way. 
+
+let fruits = ["apple", "banana", "orange"];
+
+let [first, second, third] = fruits;
+
+console.log(first);  // "apple"
+console.log(second); // "banana"
+console.log(third);  // "orange"
+
+better than doing...
+
+const first = fruits[0];
+const second = fruits[1];
+const third = fruits[2];
+
+console.log(first); // "apple"
+console.log(second); // "banana"
+console.log(third); // "orange"
+
+u can also skip elements in between ...
+
+let colors = ["red", "green", "blue", "yellow"];
+let [firstColor, , thirdColor] = colors;
+
+console.log(firstColor); // "red"
+console.log(thirdColor); // "blue"
+
+U can also use default values..
+
+let numbers = [1, 2];
+let [a, b, c = 3] = numbers;
+
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // 3
+
+U can also have rest syntax denoted via ...rest
+It allows you to capture the remaining elements of an array that haven’t been destructured into a new array
+
+let fruits = ["apple", "banana", "orange", "mango", "kiwi"];
+let [first, second, ...rest] = fruits;
+
+console.log(first);  // "apple"
+console.log(second); // "banana"
+console.log(rest);   // ["orange", "mango", "kiwi"]
+
+rest captures all remaining elements as a new array.
+REST IS ALWAYS LAST in the destructuring pattern.
+
+
+----------------
+
+Reversing a string is a common programming task that can be accomplished in JavaScript using a combination of string and array methods.
+
+Splitting the string into an array of characters.
+Reversing the array.
+Joining the characters back into a string.
+
+methods: split(), reverse(), and join()
+
+1) split()
+divide a string into an array via split..
+    - "" splits into individual characters
+    - " " splits every space
+    - "-" splits at each - character
+
+    let str = "hello";
+    let charArray = str.split("");
+    console.log(charArray); // ["h", "e", "l", "l", "o"]
+
+2) reverse()
+array method that reverses the elements of an array in place.
+
+let charArray = ["h", "e", "l", "l", "o"];
+charArray.reverse();
+console.log(charArray); // ["o", "l", "l", "e", "h"]
+
+3) join()
+method creates and returns a new string by concatenating all the elements 
+in an array,
+
+let reversedArray = ["o", "l", "l", "e", "h"];
+let reversedString = reversedArray.join("");
+console.log(reversedString); // "olleh"
+
+join("") (with an empty string passed to it as an argument)
