@@ -1,0 +1,148 @@
+-indexOf
+
+array.indexOf(element, fromIndex)
+
+    if not present retuns -1
+
+    let fruits = ["apple", "banana", "orange", "banana"];
+    let index = fruits.indexOf("banana");
+    console.log(index); // 1
+
+    if u want to search after certain index number
+
+    let colors = ["red", "green", "blue", "yellow", "green"];
+    let index = colors.indexOf("green", 3);
+    console.log(index); // 4
+
+    0 to n-1
+
+add or remove in middle of array
+
+    It is important to note that this method will mutate the 
+    original array, modifying it in place rather than creating a 
+    new array
+
+    '''
+    array.splice(startIndex, itemsToRemove, item1, item2, item..)
+
+    let fruits = ["apple", "banana", "orange", "mango", "kiwi"];
+    let removed = fruits.splice(2, 2);
+
+    console.log(fruits);  // ["apple", "banana", "kiwi"]
+    console.log(removed); // ["orange", "mango"]
+    '''
+     starts at index 2 and removes 2 elements
+
+
+    let colors = ["red", "green", "blue"];
+    colors.splice(1, 0, "yellow", "purple");
+
+    console.log(colors);
+
+    Here splice(1, 0, "yellow", "purple") starts at index 1, 
+    removes 0 elements, and inserts yellow and purple. The 
+    second parameter (0) means no elements are removed before 
+    insertion.
+
+    let numbers = [1, 2, 3, 4, 5];
+    numbers.splice(1, 2, 6, 7, 8);
+
+    console.log(numbers); // [1, 6, 7, 8, 4, 5]
+
+    at index 1 removed 2 relements so 2, 3 gone and inserts
+    6,7,8 so u have 1, 6, 7, 8, 4, 5
+
+    to modify without chaning original
+
+    let original = [1, 2, 3, 4, 5];
+    let copy = [...original];
+    copy.splice(2, 1, 6);
+
+    console.log(original); // [1, 2, 3, 4, 5]
+    console.log(copy);     // [1, 2, 6, 4, 5]
+
+    --- common use ---
+
+    let fruits = ["apple", "banana", "orange", "mango"];
+    let indexToRemove = fruits.indexOf("orange");
+    if (indexToRemove !== -1) {
+        fruits.splice(indexToRemove, 1);
+    }
+
+    console.log(fruits); // ["apple", "banana", "mango"]
+
+    You can also use splice() to clear an array by removing all elements:
+
+    let array = [1, 2, 3, 4, 5];
+    array.splice(0);
+
+    console.log(array); // []
+
+    ---- includes method
+    simple and efficient way to check if an array contains a specific value. returns true and false
+
+    let fruits = ["apple", "banana", "orange", "mango"];
+    console.log(fruits.includes("banana")); // true
+    console.log(fruits.includes("grape"));  // false
+
+    - case sensitive
+     so bananaa is true whilst Bananan is false
+    
+    - can specify where to start search
+
+        let numbers = [10, 20, 30, 40, 50, 30];
+
+        numbers.includes(30, 3); // true
+
+    - Different types are different
+
+    let arr = [1, "2", 3];
+
+    arr.includes(2);   // false
+    arr.includes("2"); // true
+
+    arr.includes(value)
+    arr.includes(value, startIndex)
+
+    ----
+    shallow copy of any array
+    - new array that has same items as the original
+    - if array has only primitve values. new array is
+    completely seperate
+    - if array contains other arrays inside, both original
+    and copy have reference to same inner array.
+    So if any change to shared inner array is seen in both array.
+
+    -> shallow copies -> helpful when modifying top
+    level structure, such as adding removing or reorder
+    elements without modifying orginal or inner array
+    via concat(), slice()
+
+    concat()
+    const originalArray = [1, 2, 3];
+    const copyArray = [].concat(originalArray);
+
+    console.log(copyArray); // [1, 2, 3]
+    console.log(copyArray === originalArray); // false
+
+    slice()
+    Another method to create a shallow copy is the slice() method. When called without arguments
+
+    const originalArray = [1, 2, 3];
+    const copyArray = originalArray.slice();
+
+    console.log(copyArray); // [1, 2, 3]
+    console.log(copyArray === originalArray); // false
+
+    (...) spread operator
+    spreads the elements of originalArray into a new array, effectively creating a shallow copy
+
+    const originalArray = [1, 2, 3];
+    const copyArray = [...originalArray];
+
+    console.log(copyArray); // [1, 2, 3]
+    console.log(copyArray === originalArray); // false
+
+    copyArray.push(4);
+    console.log(originalArray); // [1, 2, 3]
+    console.log(copyArray);     // [1, 2, 3, 4]
