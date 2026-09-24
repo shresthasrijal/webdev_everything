@@ -1,0 +1,44 @@
+JSON = JavaScript Object Notation
+lightweight, text-based, dataformat
+- common for data exchange betn server n client
+
+famous bc machine parseable and human readbale. 
+JSON supports many data types including objects, 
+    arrays, strings, booleans, null, and numbers.
+
+{
+  "name": "Alice",
+  "age": 30,
+  "isStudent": false,
+  "list of courses": ["Mathematics", "Physics", "Computer Science"]
+}
+
+keyvalue pairs..
+Each key must be wrapped in double quotes, otherwise 
+you will get an error.
+
+JSON is a versatile format that can store many data 
+types, including arrays and nested objects
+
+-------------------
+JSON.parse() and JSON.stringify() 
+
+JSON.stringify() is used to convert a JavaScript 
+object into a JSON string. 
+ also accepts an optional parameter called a replacer, 
+ which can be a function or an array.
+
+const developerObj = {
+  firstName: "Jessica",
+  isAwesome: true,
+  isMusician: true,
+  country: "USA",
+};
+
+// result: {"firstName":"Jessica","country":"USA"}
+console.log(JSON.stringify(developerObj, ["firstName", "country"]));
+
+JSON.stringify(user, null, 2);
+the third parameter maens how nicely json formatted
+-2 here means that the json obj is indented by 2 spaces
+
