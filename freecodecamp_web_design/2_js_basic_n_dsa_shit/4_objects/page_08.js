@@ -21,7 +21,6 @@ const recordCollection = {
 // id = number (album id)
 // prop = a string representing the name of the album’s property to update
 // value = sring with value to udpate prop
-
 function updateRecords(records, id, prop, value) {
   if (value === "") {
     delete records[id][prop];
